@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Mood Today</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/normalize/6.0.0/normalize.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+    $( function() {
+      $( "#datepicker" ).datepicker();
+    } );
+    </script>
+</head>
+<body>
+    <nav role="navigation">
+        <a href="./dashboard.html">My Dashboard</a>
+    </nav>
+    <main role="main">
+        <header role="banner">
+            <h1>My Calendar</h1>
+        </header>
+
+        <section>
+            <h1>Click on a date to see your entry for that day</h1>
+        </section>
+
+        <div class="calendar" style="text-align:center">
+            <div id="datepicker" style="display:inline-block;margin:0 auto;"></div>
+        </div>
+
+        <div class="temp">
+            <a href="./calendar-day.html">TEMPORARY LINK go to sample date</a>
+        </div>
+
+    </main>
+    <footer role="content-info">Footer</footer>
+</body>
+</html>

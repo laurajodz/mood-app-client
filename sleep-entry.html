@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Mood Today</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/normalize/6.0.0/normalize.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+    <main role="main">
+
+        <h1>How many hours did you sleep last night?</h1>
+
+        <div class="input-group plus-minus-input">
+            <div class="input-group-button">
+                <button type="button" class="button hollow circle" data-quantity="minus" data-field="quantity">
+                    <i class="fa fa-minus" aria-hidden="true"></i>
+                </button>
+            </div>
+            <input class="input-group-field" type="number" name="hours" value="8">
+            <div class="input-group-button">
+                <button type="button" class="button hollow circle" data-quantity="plus" data-field="quantity">
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+
+        <a href="./mood-entry.html"><< Previous</a>
+        <a href="./eating-entry.html">Next >></a>
+
+        <div><a href="./dashboard.html">Cancel</a></div>
+
+    </main>
+    <footer role="content-info">Footer</footer>
+</body>
+</html>
