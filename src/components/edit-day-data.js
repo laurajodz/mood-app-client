@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 // import './edit-day-data.css';
 
 
@@ -10,7 +10,7 @@ export default function EditDayData(props) {
     const eating = props.eating;
     const exercise = props.exercise;
     const notes = props.notes;
-    
+
     render() {
         return (
 

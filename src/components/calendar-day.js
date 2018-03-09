@@ -1,4 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
+import DeleteDayData from './delete-day-data';
+import EditDayData from './edit-day-data';
 // import './calendar-day.css';
 
 
@@ -14,7 +16,7 @@ export default function CalendarDay(props) {
     render() {
         return (
 
-            <div className="day">
+            <div className="calendar-day">
 
                 <div className="entry">
                     <h1>{day}</h1>
@@ -29,7 +31,7 @@ export default function CalendarDay(props) {
                     className="edit-button"
                     // onClick={() => this.setEditing(true)}>
                 >
-                    Edit  //go to edit-day-data
+                    Edit //go to edit-day-data
                 </button>
 
                 <button
