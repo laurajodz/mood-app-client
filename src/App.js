@@ -7,8 +7,6 @@ import CalendarDay from './components/calendar-day';
 import EditDayData from './components/edit-day-data';
 import DeleteDayData from './components/delete-day-data';
 
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import './App.css';
 
