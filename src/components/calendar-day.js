@@ -1,8 +1,6 @@
 import React from 'react';
-import DeleteDayData from './delete-day-data';
-import EditDayData from './edit-day-data';
 
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 // import './calendar-day.css';
 

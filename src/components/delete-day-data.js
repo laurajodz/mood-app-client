@@ -1,7 +1,7 @@
 import React from 'react';
 // import './delete-day-data.css';
 
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 export default function DeleteDayData(props) {
 

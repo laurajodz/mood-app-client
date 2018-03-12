@@ -1,11 +1,11 @@
 import React from 'react';
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 // import './sleep-entry.css';
 
 export default function SleepEntry(props) {
 
-    const sleep = props.sleep;
+    // const sleep = props.sleep;
 
     return (
         <div className="sleep">
@@ -32,13 +32,13 @@ export default function SleepEntry(props) {
             <button
                 className="previous-button"
             >
-                <Link to="/mood-entry">Previous</Link>
+                <Link to="/form-entry/mood-entry">Previous</Link>
             </button>
 
             <button
                 className="next-button"
             >
-                <Link to="/eating-entry">Next</Link>  {/*onClick, capture input and go to eating entry*/}
+                <Link to="/form-entry/eating-entry">Next</Link>  {/*onClick, capture input and go to eating entry*/}
             </button>
 
             <button

@@ -1,7 +1,7 @@
 import React from 'react';
-import CalendarDay from './calendar-day';
+// import CalendarDay from './calendar-day';
 
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 // import './calendar.css';
 

@@ -1,11 +1,11 @@
 import React from 'react';
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 // import './eating-entry.css';
 
 export default function EatingEntry(props) {
 
-    const eating = props.eating;
+    // const eating = props.eating;
 
     return (
         <div className="eating">
@@ -21,13 +21,13 @@ export default function EatingEntry(props) {
             <button
                 className="previous-button"
             >
-                <Link to="/sleep-entry">Previous</Link>
+                <Link to="/form-entry/sleep-entry">Previous</Link>
             </button>
 
             <button
                 className="next-button"
             >
-                <Link to="/exercise-entry">Next</Link>  {/*onClick, capture input and go to exercise entry*/}
+                <Link to="/form-entry/exercise-entry">Next</Link>  {/*onClick, capture input and go to exercise entry*/}
             </button>
 
             <button

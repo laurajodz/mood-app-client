@@ -1,22 +1,22 @@
 import React from 'react';
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 // import './mood-entry.css';
 
 export default function MoodEntry(props) {
 
-    const mood = props.mood;
+    // const mood = props.mood;
 
     return (
         <div className="mood">
 
             <h1>First, rate your mood. Overall, how did you feel today?</h1>
 
-            <div className="slidecontainer">
-                <input type="range" min="1" max="5" value="3" className="slider" id="myRange"/>
-            </div>
+                <div className="slidecontainer">
+                    <input type="range" min="1" max="5" value="3" className="slider" id="myRange"/>
+                </div>
 
-            <p>A slider from 5 to 1 with colors or emojis</p>
+                <p>A slider from 5 to 1 with colors or emojis</p>
 
             <h1>Next, what words would you use to describe your mood today?</h1>
 
@@ -104,7 +104,7 @@ export default function MoodEntry(props) {
             <button
                 className="next-button"
             >
-                <Link to="/sleep-entry">Next</Link>  {/*onClick, capture input and go to sleep entry*/}
+                <Link to="/form-entry/sleep-entry">Next</Link>  {/*onClick, capture input and go to sleep entry*/}
             </button>
 
             <button

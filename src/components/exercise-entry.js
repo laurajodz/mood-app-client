@@ -1,11 +1,11 @@
 import React from 'react';
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 // import './exercise-entry.css';
 
 export default function ExerciseEntry(props) {
 
-    const exercise = props.exercise;
+    // const exercise = props.exercise;
 
     return (
         <div className="exercise">
@@ -19,13 +19,13 @@ export default function ExerciseEntry(props) {
             <button
                 className="previous-button"
             >
-                <Link to="/eating-entry">Previous</Link>
+                <Link to="/form-entry/eating-entry">Previous</Link>
             </button>
 
             <button
                 className="next-button"
             >
-                <Link to="/notes-entry">Next</Link>  {/*onClick, capture input and go to notes entry*/}
+                <Link to="/form-entry/notes-entry">Next</Link>  {/*onClick, capture input and go to notes entry*/}
             </button>
 
             <button

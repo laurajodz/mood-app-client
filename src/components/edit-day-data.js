@@ -1,16 +1,16 @@
 import React from 'react';
 // import './edit-day-data.css';
 
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 export default function EditDayData(props) {
 
     const day = props.day;
-    const mood = props.mood;
-    const sleep = props.sleep;
-    const eating = props.eating;
-    const exercise = props.exercise;
-    const notes = props.notes;
+    // const mood = props.mood;
+    // const sleep = props.sleep;
+    // const eating = props.eating;
+    // const exercise = props.exercise;
+    // const notes = props.notes;
 
     return (
 

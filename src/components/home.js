@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './header';
-import Login from './login';
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+
+import {Link} from 'react-router-dom';
 
 // import './home.css';
 

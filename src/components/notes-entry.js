@@ -1,11 +1,11 @@
 import React from 'react';
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 // import './notes-entry.css';
 
 export default function NotesEntry(props) {
 
-    const notes = props.notes;
+    // const notes = props.notes;
 
     return (
         <div className="notes">
@@ -18,13 +18,13 @@ export default function NotesEntry(props) {
             <button
                 className="finish-button"
             >
-                <Link to="/done">Finish!</Link>  {/*onSubmit, capture input, make post call to api, and go to done*/}
+                <Link to="/form-entry/done">Finish!</Link>  {/*onSubmit, capture input, make post call to api, and go to done*/}
             </button>
 
             <button
                 className="previous-button"
             >
-                <Link to="/exercise-entry">Previous</Link>
+                <Link to="/form-entry/exercise-entry">Previous</Link>
 
             </button>
 
