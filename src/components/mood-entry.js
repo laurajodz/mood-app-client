@@ -37,8 +37,8 @@ export default function MoodEntry(props) {
                     <label htmlFor="relaxed">relaxed</label>
                 </div>
                 <div>
-                    <input type="checkbox" id="wide-awake" name="moodType" value="wide awake" />
-                    <label htmlFor="wide-awake">wide awake</label>
+                    <input type="checkbox" id="alert" name="moodType" value="alert" />
+                    <label htmlFor="alert">alert</label>
                 </div>
                 <div>
                     <input type="checkbox" id="great" name="moodType" value="great" />

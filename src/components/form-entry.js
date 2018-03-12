@@ -1,4 +1,5 @@
 import React from 'react';
+// import {reduxForm, Field} from 'redux-form';
 
 import MoodEntry from './mood-entry';
 import SleepEntry from './sleep-entry';
@@ -6,6 +7,9 @@ import EatingEntry from './eating-entry';
 import ExerciseEntry from './exercise-entry';
 import NotesEntry from './notes-entry';
 import Done from './done';
+
+// import store from '../store';
+// import {addEntry} from '../actions';
 
 import {Route} from 'react-router-dom';
 
@@ -31,6 +35,21 @@ export default function FormEntry(props) {
                 <Route exact path='/form-entry/notes-entry' component={NotesEntry} />
                 <Route exact path='/form-entry/done' component={Done} />
             </section>
+
+            {/*}<section>
+                console.log(store.getState());
+
+                store.dispatch(addEntry(
+                    {date: 'January 8, 2018',
+                    mood: 9,
+                    sleep: 6,
+                    eating: 5,
+                    exercise: 'Yes',
+                    notes: 'Went swimming'}
+                ));
+
+                console.log(store.getState());
+            </section>*/}
 
         </div>
 
