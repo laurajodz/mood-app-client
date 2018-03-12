@@ -1,37 +1,32 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 import CalendarDay from './calendar-day';
+
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 
 // import './calendar.css';
 
-
 export default function Calendar(props) {
 
-    render() {
-        return (
+    return (
 
-          <div className="calendar">
+        <div className="calendar">
 
-              <nav role="navigation">
-                  My Dashboard
-              </nav>
+            <section>
+                <Link to="/dashboard">My Dashboard</Link>
+            </section>
 
-              <header role="banner">
-                  <h1>My Calendar</h1>
-              </header>
+            <h1>My Calendar</h1>
 
-              <h1>Click on a date to see your entry for that day</h1>  //on click make get call to api
+            <h2>Click on a date to see your entry for that day</h2>  {/*on click make get call to api*/}
 
-              <div>
-                  Calendar
-                      <div>
-                          {props.calendarDay}
-                      </div>
-              </div>
+            <section>
+                Calendar
+                    <div>
+                        {props.calendarDay}
+                    </div>
+            </section>
 
-          </div>
+        </div>
     );
-  }
-}
 
-export default Calendar;
+}

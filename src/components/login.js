@@ -1,47 +1,37 @@
 import React from 'react';
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+
 // import './login.css';
 
 export default function Login(props) {
 
-    render() {
-        return (
+    return (
 
-          <div className="login">
+        <form className="login">
 
-              <header role="banner">
-                  <h1>Mood Today</h1>
-              </header>
+            <div>
+                <label for="username">Username</label>
+                <input type="text" name='username' id='username' />
+            </div>
 
-              <form class="login">
-                  <div>
-                      <label for="username">Username</label>
-                      <input type="text" name='username' id='username' />
-                  </div>
+            <div>
+                <label for="password">Password</label>
+                <input type="password" name='password' id='password' />
+            </div>
 
-                  <div>
-                      <label for="password">Password</label>
-                      <input type="password" name='password' id='password' />
-                  </div>
+            <button
+                className="login-button"
+            >
+                <Link to="/dashboard">Login</Link> {/*onClick, capture input, auth or throw error, and go to dashboard*/}
+            </button>
 
-                  <button
-                      className="login-button"
-                      // onClick={() => this.setEditing(true)}>
-                  >
-                      Login  //capture input, authenticate or throw error, and go to dashboard
-                  </button>
+            <button
+                className="cancel-button"
+            >
+                <Link to="/home">Cancel</Link>
+            </button>
 
-                  <button
-                      className="cancel-button"
-                      // onClick={() => this.setEditing(true)}>
-                  >
-                      Cancel  //go to home
-                  </button>
-
-              </form>
-
-          </div>
+        </form>
     );
-  }
-}
 
-export default Login
+}

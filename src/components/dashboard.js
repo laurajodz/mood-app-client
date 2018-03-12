@@ -1,37 +1,52 @@
 import React from 'react';
-// import './dashboard.css';
+import Calendar from './calendar';
+import MoodEntry from './mood-entry';
+import SleepEntry from './sleep-entry';
+import EatingEntry from './eating-entry';
+import ExerciseEntry from './exercise-entry';
+import NotesEntry from './notes-entry';
+import Done from './done';
 
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+
+// import './dashboard.css';
 
 export default function Dashboard(props) {
 
-    render() {
-        return (
+    return (
+        <Router>
+            <div className="dashboard">
 
-          <div className="dashboard">
+                <section>
+                    <Link to="/home">Home</Link>
+                    <Link to="/calendar">My Calendar</Link>
+                </section>
 
-              <nav role="navigation">
-                  Home
-                  <Calendar />
-              </nav>
+                <section>
+                    <h1>My Dashboard</h1>
+                </section>
 
-              <header role="banner">
-                  <h1>My Dashboard</h1>
-              </header>
+                <section>
+                    <Route exact path='/mood-entry' component={MoodEntry} />
+                    <Route exact path='/sleep-entry' component={SleepEntry} />
+                    <Route exact path='/eating-entry' component={EatingEntry} />
+                    <Route exact path='/exercise-entry' component={ExerciseEntry} />
+                    <Route exact path='/notes-entry' component={NotesEntry} />
+                    <Route exact path='/done' component={Done} />
+                </section>
 
-              <button
-                  className="start-entry-button"
-                  // onClick={() => this.setEditing(true)}>
-              >
-                  Enter Mood for Today  //go to mood entry
-              </button>
+                <section>
+                    <button className="start-entry-button">
+                        <Link to="/mood-entry">Enter Mood for Today</Link>  {/* add OnClick event, go to mood entry */}
+                    </button>
+                </section>
 
-              <div>
-                  Analytics
-              </div>
+                <section>
+                    Analytics
+                </section>
 
-          </div>
+            </div>
+        </Router>
     );
-  }
-}
 
-export default Dashboard;
+}

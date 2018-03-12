@@ -1,27 +1,24 @@
 import React from 'react';
-// import './done.css';
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 
+// import './done.css';
 
 export default function Done(props) {
 
-    render() {
-        return (
-          <div className="done">
+    return (
+        <div className="done">
 
-              <p>Animated checkmark placeholder</p>
+            <p>Animated checkmark placeholder</p>
 
-              <h1>Great! You are done</h1>
+            <h1>Great! You are done</h1>
 
-              <button
-                  className="return-button"
-                  // onClick={() => this.setEditing(true)}>
-              >
-                  Return to My Dashboard  //go to dashboard
-              </button>
+            <button
+                className="return-button"
+            >
+                <Link to="/dashboard">Return to My Dashboard</Link>
+            </button>
 
-          </div>
-    );
-  }
+        </div>
+    )
+
 }
-
-export default Done;

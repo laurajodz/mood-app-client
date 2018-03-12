@@ -1,45 +1,47 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import Login from './components/login';
+import Home from './components/home';
+import Dashboard from './components/dashboard';
+import Calendar from './components/calendar';
+import CalendarDay from './components/calendar-day';
+import EditDayData from './components/edit-day-data';
+import DeleteDayData from './components/delete-day-data';
+
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import './App.css';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-          <nav>
-              <Login /> //go to login page
-          </nav>
+export default class App extends React.Component {
+    constructor(props) {
+        super(props);
+    };
 
-          <header role="banner">
-              <h1>Mood Today</h1>
-          </header>
+    render() {
+        return (
+            <Router >
+                <div className="App">
 
-          <section>
-              <h2>Record Your Moods</h2>
-              <h2>Look For Patterns</h2>
-              <h2>Gain Insights</h2>
-          </section>
+                    <main role="main">
+                        <h1>Mood Today</h1>
+                        <Route exact path='/' component={Home} />
+                        <Route exact path='/home' component={Home} />
+                        <Route exact path='/login' component={Login} />
+                        <Route exact path='/dashboard' component={Dashboard} />
+                        <Route exact path='/calendar' component={Calendar} />
+                        <Route exact path='/calendar-day' component={CalendarDay} />
+                        <Route exact path='/edit-day-data' component={EditDayData} />
+                        <Route exact path='/delete-day-data' component={DeleteDayData} />
+                    </main>
 
-          <section>
-              <p>Screen shot 1 - Recording a mood</p>
-          </section>
+                    <footer>
+                        Copyright 2018, Laura Jodz
+                        GitHub Link
+                        Portfolio Link
+                    </footer>
 
-          <section>
-              <p>Screen shot 2 - Seeing your history on a calendar</p>
-          </section>
-
-          <section>
-              <p>Screen shot 3 - Data analytics</p>
-          </section>
-
-          <section>
-              <Login /> //go to login page
-          </section>
-
-      </div>
-    );
+                </div>
+            </Router>
+      );
+    }
   }
-}
-
-
-export default App;

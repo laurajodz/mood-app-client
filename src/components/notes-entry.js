@@ -1,44 +1,40 @@
 import React from 'react';
-// import './notes-entry.css';
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 
+// import './notes-entry.css';
 
 export default function NotesEntry(props) {
 
     const notes = props.notes;
 
-    render() {
-        return (
-          <div className="notes">
+    return (
+        <div className="notes">
 
-              <h1>Enter any notes for today. What is going on in your world?</h1>
+            <h1>Enter any notes for today. What is going on in your world?</h1>
 
-              <textarea autofocus>
-              </textarea>
+            <textarea autofocus>
+            </textarea>
 
-              <button
-                  className="finish-button"
-                  // onSubmit={this.onSubmit}
-              >
-                  Finish!  //capture input, make post call to api, and go to done
-              </button>
+            <button
+                className="finish-button"
+            >
+                <Link to="/done">Finish!</Link>  {/*onSubmit, capture input, make post call to api, and go to done*/}
+            </button>
 
-              <button
-                  className="previous-button"
-                  // onClick={() => this.setEditing(true)}>
-              >
-                  Previous  //go to exercise entry
-              </button>
+            <button
+                className="previous-button"
+            >
+                <Link to="/exercise-entry">Previous</Link>
 
-              <button
-                  className="cancel-button"
-                  // onClick={() => this.setEditing(true)}>
-              >
-                  Cancel  //go to dashboard
-              </button>
+            </button>
 
-          </div>
+            <button
+                className="cancel-button"
+            >
+                <Link to="/dashboard">Cancel</Link>
+            </button>
+
+        </div>
     );
-  }
-}
 
-export default NotesEntry;
+}

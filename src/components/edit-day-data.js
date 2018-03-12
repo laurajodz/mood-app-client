@@ -1,6 +1,7 @@
 import React from 'react';
 // import './edit-day-data.css';
 
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 
 export default function EditDayData(props) {
 
@@ -11,94 +12,86 @@ export default function EditDayData(props) {
     const exercise = props.exercise;
     const notes = props.notes;
 
-    render() {
-        return (
+    return (
 
-            <form onSubmit>
+        <form onSubmit>
 
-                <h1>{day}</h1>
+            <h1>{day}</h1>
 
-                <h2><label htmlFor="moodEntry">Mood Level (1-10):
-                    <input
-                        type="number"
-                        name="mood"
-                        id="moodEntry"
-                        className="moodLevel"
-                        min="1"
-                        max="10"
-                        autoComplete="off"
-                        // ref={input => (this.mood = mood)}
-                    />
-                </label></h2>
+            <h2><label htmlFor="moodEntry">Mood Level (1-10):
+                <input
+                    type="number"
+                    name="mood"
+                    id="moodEntry"
+                    className="moodLevel"
+                    min="1"
+                    max="10"
+                    autoComplete="off"
+                />
+            </label></h2>
 
-                <h3>
+            <h3>
 
-                <label htmlFor="sleepEntry">Hours of sleep last night:
-                    <input
-                        type="number"
-                        name="sleep"
-                        id="sleepEntry"
-                        className="sleepHours"
-                        min="1"
-                        max="24"
-                        autoComplete="off"
-                        // ref={input => (this.sleep = sleep)}
-                    />
-                </label>
+            <label htmlFor="sleepEntry">Hours of sleep last night:
+                <input
+                    type="number"
+                    name="sleep"
+                    id="sleepEntry"
+                    className="sleepHours"
+                    min="1"
+                    max="24"
+                    autoComplete="off"
+                />
+            </label>
 
-                <label htmlFor="eatingEntry">Healthy Eating Level (1-5):
-                    <input
-                        type="number"
-                        name="eating"
-                        id="eatingEntry"
-                        className="eatingLevel"
-                        min="1"
-                        max="5"
-                        autoComplete="off"
-                        // ref={input => (this.eating = eating)}
-                    />
-                </label>
+            <label htmlFor="eatingEntry">Healthy Eating Level (1-5):
+                <input
+                    type="number"
+                    name="eating"
+                    id="eatingEntry"
+                    className="eatingLevel"
+                    min="1"
+                    max="5"
+                    autoComplete="off"
+                />
+            </label>
 
-                <p>Exercise Today: </p>
-                    <input
-                        type="radio"
-                        name="exercise"
-                        id="radioYes"
-                        value="yes"
-                        autoComplete="off"
-                        // ref={input => (this.exercise = exercise)}
-                    />
-                    <label htmlFor="radioYes">Yes</label>
-                    <input
-                        type="radio"
-                        name="exercise"
-                        id="radioNo"
-                        value="no"
-                        autoComplete="off"
-                        // ref={input => (this.input = input)}
-                    />
-                    <label htmlFor="radioNo">No</label>
+            <p>Exercise Today:
+                <input
+                    type="radio"
+                    name="exercise"
+                    id="radioYes"
+                    value="yes"
+                    autoComplete="off"
+                />
+                <label htmlFor="radioYes">Yes</label>
+                <input
+                    type="radio"
+                    name="exercise"
+                    id="radioNo"
+                    value="no"
+                    autoComplete="off"
+                />
+                <label htmlFor="radioNo">No</label>
+            </p>
 
-                <p>Notes: </p>
-                    <textarea
-                        name="notes"
-                        // ref={input => (this.notes = notes)}
-                    />
+            <p>Notes: </p>
+                <textarea
+                    name="notes"
+                />
 
-                </h3>
+            </h3>
 
-                <button
-                  type="submit"
-                  name="submit"
-                  id="updateButton"
-                  className="button"
-                >
-                    Update  //call to the put api and back to calendar day
-                </button>
+            <button
+              type="submit"
+              name="submit"
+              id="updateButton"
+              className="button"
+            >
+                <Link to="/calendar-day">Update</Link>  {/*call to the put api and back to calendar day*/}
+            </button>
 
-            </form>
+        </form>
     );
-  }
-}
 
-export default EditDayData;
+}
