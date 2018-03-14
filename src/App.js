@@ -5,7 +5,6 @@ import Dashboard from './components/dashboard';
 import Calendar from './components/calendar';
 import CalendarDay from './components/calendar-day';
 import EditDayData from './components/edit-day-data';
-import DeleteDayData from './components/delete-day-data';
 import FormEntry from './components/form-entry';
 
 import {BrowserRouter as Router, Route} from 'react-router-dom';
@@ -27,7 +26,6 @@ export default class App extends React.Component {
                         <Route exact path='/calendar' component={Calendar} />
                         <Route exact path='/calendar-day' component={CalendarDay} />
                         <Route exact path='/edit-day-data' component={EditDayData} />
-                        <Route exact path='/delete-day-data' component={DeleteDayData} />
                         <Route path='/form-entry' component={FormEntry} />
                     </main>
 

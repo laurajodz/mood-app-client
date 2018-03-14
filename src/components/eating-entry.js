@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-// import './eating-entry.css';
+import './eating-entry.css';
 
 export default function EatingEntry(props) {
 
@@ -10,13 +10,19 @@ export default function EatingEntry(props) {
     return (
         <div className="eating">
 
-            <h1>How healthy did you eat today?</h1>
-
-            <div className="slidecontainer">
-                <input type="range" min="1" max="5" value="3" className="slider" id="myRange" />
+            <div class="progress-bar">
+                <div class="progress-bar-gray round">
+                    <div class="progress-bar-blue round">60%</div>
+                </div>
             </div>
 
-            <p>A slider from 1 to 5</p>
+            <h1>How healthy did you eat today?</h1>
+
+                <div className="slidecontainer">
+                    <input type="range" min="1" max="5" value="3" className="slider" id="myRange" />
+                </div>
+
+                <p>A slider from 1 to 5</p>
 
             <button
                 className="previous-button"

@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-// import './mood-entry.css';
+import './mood-entry.css';
 
 export default function MoodEntry(props) {
 
@@ -9,6 +9,12 @@ export default function MoodEntry(props) {
 
     return (
         <div className="mood">
+
+            <div class="progress-bar">
+                <div class="progress-bar-gray round">
+                    <div class="progress-bar-blue round">20%</div>
+                </div>
+            </div>
 
             <h1>First, rate your mood. Overall, how did you feel today?</h1>
 

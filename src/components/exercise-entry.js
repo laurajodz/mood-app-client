@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-// import './exercise-entry.css';
+import './exercise-entry.css';
 
 export default function ExerciseEntry(props) {
 
@@ -9,6 +9,12 @@ export default function ExerciseEntry(props) {
 
     return (
         <div className="exercise">
+
+            <div class="progress-bar">
+                <div class="progress-bar-gray round">
+                    <div class="progress-bar-blue round">80%</div>
+                </div>
+            </div>
 
             <h1>Did you get 30 minutes of exercise today?</h1>
 

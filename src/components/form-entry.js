@@ -1,5 +1,5 @@
 import React from 'react';
-// import {reduxForm, Field} from 'redux-form';
+// import {reduxForm, Field} from 'redux-form';  --> I would like to wrap the routes below in a form
 
 import MoodEntry from './mood-entry';
 import SleepEntry from './sleep-entry';
@@ -21,7 +21,7 @@ export default function FormEntry(props) {
 
     return (
 
-        <div className="form-entry">
+        <form className="form-entry" onSubmit={"placeholder"}>
 
             <section>
                 <h1>Entry for {day}</h1>
@@ -41,8 +41,8 @@ export default function FormEntry(props) {
 
                 store.dispatch(addEntry(
                     {date: 'January 8, 2018',
-                    mood: 9,
-                    sleep: 6,
+                    mood: 5,
+                    sleep: 5,
                     eating: 5,
                     exercise: 'Yes',
                     notes: 'Went swimming'}
@@ -51,7 +51,7 @@ export default function FormEntry(props) {
                 console.log(store.getState());
             </section>*/}
 
-        </div>
+        </form>
 
     );
 

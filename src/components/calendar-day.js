@@ -19,8 +19,8 @@ export default function CalendarDay(props) {
 
             <div className="entry">
                 <h1>Date: {day} </h1>
-                <h2>Mood Level: {mood} out of 10</h2>
-                <h3>Hours of Sleep Last night: {sleep} hours</h3>
+                <h2>Mood Level: {mood} out of 5</h2>
+                <h3>Sleep Quality Level Last Night: {sleep} out of 5</h3>
                 <h3>Healthy Eating Level: {eating} out of 5</h3>
                 <h3>Exercise Today: {exercise}</h3>
                 <h3>Notes: {notes}</h3>
@@ -33,15 +33,9 @@ export default function CalendarDay(props) {
             </button>
 
             <button
-                className="delete-button"
+                className="close-button"
             >
-                <Link to="/delete-day-entry">Delete</Link>  {/*onClick, go to delete-day-data*/}
-            </button>
-
-            <button
-                className="back-button"
-            >
-                <Link to="/calendar">Back</Link>  {/*onClick, go to calendar*/}
+                <Link to="/calendar">Close</Link>  {/*onClick, close calendar-day*/}
             </button>
 
         </div>

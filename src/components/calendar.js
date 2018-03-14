@@ -1,5 +1,5 @@
 import React from 'react';
-// import CalendarDay from './calendar-day';
+import CalendarDay from './calendar-day';
 // import {DatePicker} from 'material-ui-pickers';
 
 import {Link} from 'react-router-dom';
@@ -24,7 +24,11 @@ export default function Calendar(props) {
 
                 {/*}<DatePicker />*/}
 
-                <Link to="/calendar-day">Temp Day Link</Link>
+            </section>
+
+            <section>
+
+                <CalendarDay />
 
             </section>
 
