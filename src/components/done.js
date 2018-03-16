@@ -8,8 +8,6 @@ export default function Done(props) {
     return (
         <div className="done">
 
-            <p>Animated checkmark placeholder</p>
-
             <h1>Great! You are done</h1>
 
             <button

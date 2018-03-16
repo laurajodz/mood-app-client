@@ -1,46 +1,55 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
+import {connect} from 'react-redux';
+import {addExercise} from '../actions/index';
 
 import './exercise-entry.css';
 
-export default function ExerciseEntry(props) {
+export class ExerciseEntry extends Component{
 
-    // const exercise = props.exercise;
+    selectExercise(exercise){
+        this.props.dispatch(addExercise(exercise));
+    }
 
-    return (
-        <div className="exercise">
+    render() {
+        return (
+            <div className="exercise">
 
-            <div class="progress-bar">
-                <div class="progress-bar-gray round">
-                    <div class="progress-bar-blue round">80%</div>
-                </div>
+                <h1>Did you get 30 minutes of exercise today?</h1>
+
+                <input type="radio" name="exercise" value="yes" onClick={() => this.selectExercise('yes')} /> Yes <br/>
+
+                <input type="radio" name="exercise" value="no" onClick={() => this.selectExercise('no')} /> No <br/>
+
+                <p>
+
+                    <button
+                        className="previous-button"
+                    >
+                        <Link to="/form-entry/eating-entry">Previous</Link>
+                    </button>
+
+                    <button
+                        className="next-button"
+                    >
+                        <Link to="/form-entry/notes-entry">Next</Link>
+                    </button>
+
+                    <button
+                        className="cancel-button"
+                    >
+                        <Link to="/dashboard">Cancel</Link>
+                    </button>
+
+                </p>
+
             </div>
-
-            <h1>Did you get 30 minutes of exercise today?</h1>
-
-            <input type="radio" name="exercise" value="yes" /> Yes <br/>
-
-            <input type="radio" name="exercise" value="no" /> No <br/>
-
-            <button
-                className="previous-button"
-            >
-                <Link to="/form-entry/eating-entry">Previous</Link>
-            </button>
-
-            <button
-                className="next-button"
-            >
-                <Link to="/form-entry/notes-entry">Next</Link>  {/*onClick, capture input and go to notes entry*/}
-            </button>
-
-            <button
-                className="cancel-button"
-            >
-                <Link to="/dashboard">Cancel</Link>
-            </button>
-
-        </div>
-    );
-
+        );
+    }
 }
+
+const mapStateToProps = state => ({
+    exercise: state.entry.newEntry.exercise
+});
+
+export default connect(mapStateToProps)(ExerciseEntry);

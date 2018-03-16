@@ -1,48 +1,71 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
+import {connect} from 'react-redux';
+import {addSleep} from '../actions/index';
 
 import './sleep-entry.css';
 
-export default function SleepEntry(props) {
+export class SleepEntry extends Component{
 
-    // const sleep = props.sleep;
+    selectSleep(sleep){
+        this.props.dispatch(addSleep(sleep));
+    }
 
-    return (
-        <div className="sleep">
+    render() {
+        return (
+            <div className="sleep">
 
-            <div class="progress-bar">
-                <div class="progress-bar-gray round">
-                    <div class="progress-bar-blue round">40%</div>
-                </div>
+                <h1>What was the quality level of your sleep last night?</h1>
+
+                <input type="radio" id="sleep1"
+                 name="sleep" value="1" onClick={() => this.selectSleep(1)} />
+                <label htmlFor="sleep1">Lousy</label>
+
+                <input type="radio" id="sleep2"
+                 name="sleep" value="2" onClick={() => this.selectSleep(2)} />
+                <label htmlFor="sleep2">Meh</label>
+
+                <input type="radio" id="sleep3"
+                 name="sleep" value="3" onClick={() => this.selectSleep(3)} />
+                <label htmlFor="sleep3">Alright</label>
+
+                <input type="radio" id="sleep4"
+                 name="sleep" value="4" onClick={() => this.selectSleep(4)} />
+                <label htmlFor="sleep4">Good</label>
+
+                <input type="radio" id="sleep5"
+                 name="sleep" value="5" onClick={() => this.selectSleep(5)} />
+                <label htmlFor="sleep5">Great</label>
+
+                <p>
+
+                    <button
+                        className="previous-button"
+                    >
+                        <Link to="/form-entry">Previous</Link>
+                    </button>
+
+                    <button
+                        className="next-button"
+                    >
+                        <Link to="/form-entry/eating-entry">Next</Link>
+                    </button>
+
+                    <button
+                        className="cancel-button"
+                    >
+                        <Link to="/dashboard">Cancel</Link>
+                    </button>
+
+                </p>
+
             </div>
-
-            <h1>What was the quality level of your sleep last night?</h1>
-
-                <div className="slidecontainer">
-                    <input type="range" min="1" max="5" value="3" className="slider" id="myRange" />
-                </div>
-
-                <p>A slider from 1 to 5</p>
-
-            <button
-                className="previous-button"
-            >
-                <Link to="/form-entry">Previous</Link>
-            </button>
-
-            <button
-                className="next-button"
-            >
-                <Link to="/form-entry/eating-entry">Next</Link>  {/*onClick, capture input and go to eating entry*/}
-            </button>
-
-            <button
-                className="cancel-button"
-            >
-                <Link to="/dashboard">Cancel</Link>
-            </button>
-
-        </div>
-    );
-
+        );
+    }
 }
+
+const mapStateToProps = state => ({
+    sleep: state.entry.newEntry.sleep
+});
+
+export default connect(mapStateToProps)(SleepEntry);

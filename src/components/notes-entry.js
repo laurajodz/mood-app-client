@@ -1,52 +1,61 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
-
-// import {connect} from 'react-redux';
-import {addEntry} from '../actions';
+import {connect} from 'react-redux';
+import {addNotes} from '../actions/index';
 
 import './notes-entry.css';
 
-export default function NotesEntry(props) {
+export class NotesEntry extends Component{
 
-    // const notes = props.notes;
+    selectNotes(notes){
+        this.props.dispatch(addNotes(notes));
+    }
 
-    return (
-        <div className="notes">
+    render() {
+        return (
+            <div className="notes">
 
-            <div class="progress-bar">
-                <div class="progress-bar-gray round">
-                    <div class="progress-bar-blue round">100%</div>
-                </div>
+                <h1>Enter any notes for today. What is going on in your world?</h1>
+
+                <textarea autoFocus>
+                </textarea>
+
+                <p>
+
+                    <button
+                        className="finish-button"
+                        type="submit"
+                        onClick={() => this.selectNotes()} 
+                    >
+                        <Link to="/form-entry/done">Finish!</Link>  {/*onSubmit, capture input, make post call to api, and go to done*/}
+                    </button>
+
+                </p>
+
+                <p>
+
+                    <button
+                        className="previous-button"
+                    >
+                        <Link to="/form-entry/exercise-entry">Previous</Link>
+
+                    </button>
+
+                    <button
+                        className="cancel-button"
+                    >
+                        <Link to="/dashboard">Cancel</Link>
+                    </button>
+
+                </p>
+
             </div>
-
-            <h1>Enter any notes for today. What is going on in your world?</h1>
-
-            <textarea autofocus>
-            </textarea>
-
-            <button
-                className="finish-button"
-                type="submit"
-                onClick={() =>
-                    props.dispatch(addEntry())
-                }>
-                <Link to="/form-entry/done">Finish!</Link>  {/*onSubmit, capture input, make post call to api, and go to done*/}
-            </button>
-
-            <button
-                className="previous-button"
-            >
-                <Link to="/form-entry/exercise-entry">Previous</Link>
-
-            </button>
-
-            <button
-                className="cancel-button"
-            >
-                <Link to="/dashboard">Cancel</Link>
-            </button>
-
-        </div>
-    );
-
+        );
+    }
 }
+
+const mapStateToProps = state => ({
+    notes: state.entry.newEntry.notes
+});
+
+export default connect(mapStateToProps)(NotesEntry);

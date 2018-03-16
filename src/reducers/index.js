@@ -1,6 +1,15 @@
 import * as actions from '../actions';
 
 const initialState = {
+    newEntry: {
+        date: null,
+        mood: null,
+        moodTypes: [],
+        sleep: null,
+        eating: null,
+        exercise: null,
+        notes: null
+    },
     entries: [{
         date: 'January 1, 2018',
         mood: 5,
@@ -73,6 +82,37 @@ export const entryReducer = (state=initialState, action) => {
                 notes: action.notes
             }]
         });
+    } else if (action.type === actions.ADD_DATE) {
+          return Object.assign({}, state, {
+              newEntry: {date: action.date}
+          })
+    } else if (action.type === actions.ADD_MOOD) {
+        return Object.assign({}, state, {
+            newEntry: {mood: action.mood}
+        })
+    } else if (action.type === actions.ADD_MOOD_TYPES) {
+        return Object.assign({}, state, {
+            newEntry: {
+              moodTypes: [...state.newEntry.moodTypes, action.moodTypes]
+            }
+        })
+    } else if (action.type === actions.ADD_SLEEP) {
+        return Object.assign({}, state, {
+            newEntry: {sleep: action.sleep}
+        })
+    } else if (action.type === actions.ADD_EATING) {
+        return Object.assign({}, state, {
+            newEntry: {eating: action.eating}
+        })
+    } else if (action.type === actions.ADD_EXERCISE) {
+        return Object.assign({}, state, {
+            newEntry: {exercise: action.exercise}
+        })
+    } else if (action.type === actions.ADD_NOTES) {
+        return Object.assign({}, state, {
+            newEntry: {notes: action.notes}
+        })
     }
+
     return state;
 };

@@ -1,125 +1,132 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
+import {connect} from 'react-redux';
+import {addMood, addMoodTypes} from '../actions/index';
 
 import './mood-entry.css';
 
-export default function MoodEntry(props) {
+export class MoodEntry extends Component{
 
-    // const mood = props.mood;
+    selectMood(mood){
+        this.props.dispatch(addMood(mood));
+    }
 
-    return (
-        <div className="mood">
+    selectMoodTypes(moodTypes){
+        this.props.dispatch(addMoodTypes(moodTypes));
+    }
 
-            <div class="progress-bar">
-                <div class="progress-bar-gray round">
-                    <div class="progress-bar-blue round">20%</div>
-                </div>
+    render() {
+        return (
+            <div className="mood">
+
+                <h1>First, rate your mood. Overall, how did you feel today?</h1>
+
+                <input type="radio" id="mood1"
+                 name="mood" value="1" onClick={() => this.selectMood(1)} />
+                <label htmlFor="mood1">Lousy</label>
+
+                <input type="radio" id="mood2"
+                 name="mood" value="2" onClick={() => this.selectMood(2)} />
+                <label htmlFor="mood2">Meh</label>
+
+                <input type="radio" id="mood3"
+                 name="mood" value="3" onClick={() => this.selectMood(3)} />
+                <label htmlFor="mood3">Alright</label>
+
+                <input type="radio" id="mood4"
+                 name="mood" value="4" onClick={() => this.selectMood(4)} />
+                <label htmlFor="mood4">Good</label>
+
+                <input type="radio" id="mood5"
+                 name="mood" value="5" onClick={() => this.selectMood(5)} />
+                <label htmlFor="mood5">Great</label>
+
+                <h1>Next, what words would you use to describe your mood today?</h1>
+
+                <input type="checkbox" id="happy" name="moodType" value="happy" onChange={() => this.selectMoodTypes('happy')} />
+                <label htmlFor="happy">happy</label>
+
+                <input type="checkbox" id="excited" name="moodType" value="excited" onChange={() => this.selectMoodTypes('excited')} />
+                <label htmlFor="excited">excited</label>
+
+                <input type="checkbox" id="optimistic" name="moodType" value="optimistic" onChange={() => this.selectMoodTypes('optimistic')} />
+                <label htmlFor="optimistic">optimistic</label>
+
+                <input type="checkbox" id="relaxed" name="moodType" value="relaxed" onChange={() => this.selectMoodTypes('relaxed')} />
+                <label htmlFor="relaxed">relaxed</label>
+
+                <input type="checkbox" id="alert" name="moodType" value="alert" onChange={() => this.selectMoodTypes('alert')} />
+                <label htmlFor="alert">alert</label>
+
+                <input type="checkbox" id="great" name="moodType" value="great" onChange={() => this.selectMoodTypes('great')} />
+                <label htmlFor="great">great</label>
+
+                <input type="checkbox" id="peaceful" name="moodType" value="peaceful" onChange={() => this.selectMoodTypes('peaceful')} />
+                <label htmlFor="peaceful">peaceful</label>
+
+                <input type="checkbox" id="silly" name="moodType" value="silly" onChange={() => this.selectMoodTypes('silly')} />
+                <label htmlFor="silly">silly</label>
+
+                <input type="checkbox" id="giddy" name="moodType" value="giddy" onChange={() => this.selectMoodTypes('giddy')} />
+                <label htmlFor="giddy">giddy</label>
+
+                <input type="checkbox" id="energetic" name="moodType" value="energetic" onChange={() => this.selectMoodTypes('energetic')} />
+                <label htmlFor="energetic">energetic</label>
+
+                <input type="checkbox" id="sad" name="moodType" value="sad" onChange={() => this.selectMoodTypes('sad')} />
+                <label htmlFor="sad">sad</label>
+
+                <input type="checkbox" id="angry" name="moodType" value="angry" onChange={() => this.selectMoodTypes('angry')} />
+                <label htmlFor="angry">angry</label>
+
+                <input type="checkbox" id="agitated" name="moodType" value="agitated" onChange={() => this.selectMoodTypes('agitated')} />
+                <label htmlFor="agitated">agitated</label>
+
+                <input type="checkbox" id="tired" name="moodType" value="tired" onChange={() => this.selectMoodTypes('tired')} />
+                <label htmlFor="tired">tired</label>
+
+                <input type="checkbox" id="restless" name="moodType" value="restless" onChange={() => this.selectMoodTypes('restless')} />
+                <label htmlFor="restless">restless</label>
+
+                <input type="checkbox" id="nervous" name="moodType" value="nervous" onChange={() => this.selectMoodTypes('nervous')} />
+                <label htmlFor="nervous">nervous</label>
+
+                <input type="checkbox" id="pessimistic" name="moodType" value="pessimistic" onChange={() => this.selectMoodTypes('pessimistic')} />
+                <label htmlFor="pessimistic">pessimistic</label>
+
+                <input type="checkbox" id="bad" name="moodType" value="bad" onChange={() => this.selectMoodTypes('bad')} />
+                <label htmlFor="bad">bad</label>
+
+                <input type="checkbox" id="lonely" name="moodType" value="lonely" onChange={() => this.selectMoodTypes('lonely')} />
+                <label htmlFor="lonely">lonely</label>
+
+                <input type="checkbox" id="irritated" name="moodType" value="irritated" onChange={() => this.selectMoodTypes('irritated')} />
+                <label htmlFor="irritated">irritated</label>
+
+                <p>
+
+                    <button
+                        className="next-button"
+                    >
+                        <Link to="/form-entry/sleep-entry">Next</Link>
+                    </button>
+
+                    <button
+                        className="cancel-button"
+                    >
+                        <Link to="/dashboard">Cancel</Link>
+                    </button>
+
+                </p>
+
             </div>
-
-            <h1>First, rate your mood. Overall, how did you feel today?</h1>
-
-                <div className="slidecontainer">
-                    <input type="range" min="1" max="5" value="3" className="slider" id="myRange"/>
-                </div>
-
-                <p>A slider from 5 to 1 with colors or emojis</p>
-
-            <h1>Next, what words would you use to describe your mood today?</h1>
-
-                <div>
-                    <input type="checkbox" id="happy" name="moodType" value="happy" />
-                    <label htmlFor="happy">happy</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="excited" name="moodType" value="excited" />
-                    <label htmlFor="excited">excited</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="content" name="moodType" value="content" />
-                    <label htmlFor="content">content</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="relaxed" name="moodType" value="relaxed" />
-                    <label htmlFor="relaxed">relaxed</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="alert" name="moodType" value="alert" />
-                    <label htmlFor="alert">alert</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="great" name="moodType" value="great" />
-                    <label htmlFor="great">great</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="peaceful" name="moodType" value="peaceful" />
-                    <label htmlFor="peaceful">peaceful</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="silly" name="moodType" value="silly" />
-                    <label htmlFor="silly">silly</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="giddy" name="moodType" value="giddy" />
-                    <label htmlFor="giddy">giddy</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="energetic" name="moodType" value="energetic" />
-                    <label htmlFor="energetic">energetic</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="sad" name="moodType" value="sad" />
-                    <label htmlFor="sad">sad</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="angry" name="moodType" value="angry" />
-                    <label htmlFor="angry">angry</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="agitated" name="moodType" value="agitated" />
-                    <label htmlFor="agitated">agitated</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="sleepy" name="moodType" value="sleepy" />
-                    <label htmlFor="sleepy">sleepy</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="restless" name="moodType" value="restless" />
-                    <label htmlFor="restless">restless</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="nervous" name="moodType" value="nervous" />
-                    <label htmlFor="nervous">nervous</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="tense" name="moodType" value="tense" />
-                    <label htmlFor="tense">tense</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="bad" name="moodType" value="bad" />
-                    <label htmlFor="bad">bad</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="anxious" name="moodType" value="anxious" />
-                    <label htmlFor="anxious">anxious</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="irritated" name="moodType" value="irritated" />
-                    <label htmlFor="irritated">irritated</label>
-                </div>
-
-            <button
-                className="next-button"
-            >
-                <Link to="/form-entry/sleep-entry">Next</Link>  {/*onClick, capture input and go to sleep entry*/}
-            </button>
-
-            <button
-                className="cancel-button"
-            >
-                <Link to="/dashboard">Cancel</Link>
-            </button>
-
-        </div>
-    );
-
+        );
+    }
 }
+
+const mapStateToProps = state => ({
+    mood: state.entry.newEntry.mood,
+    moodTypes: state.entry.newEntry.moodTypes
+});
+
+export default connect(mapStateToProps)(MoodEntry);

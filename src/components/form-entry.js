@@ -8,32 +8,33 @@ import ExerciseEntry from './exercise-entry';
 import NotesEntry from './notes-entry';
 import Done from './done';
 
-// import store from '../store';
-// import {addEntry} from '../actions';
-
-import {Route} from 'react-router-dom';
+import StepZilla from 'react-stepzilla';
 
 // import './form-entry.css';
+import './stepzilla.css';
 
 export default function FormEntry(props) {
 
-    const day = props.day;
+    const steps = [
+      {name: 'Mood', component: <MoodEntry />},
+      {name: 'Sleep', component: <SleepEntry />},
+      {name: 'Eating', component: <EatingEntry />},
+      {name: 'Exercise', component: <ExerciseEntry />},
+      {name: 'Notes', component: <NotesEntry />},
+      {name: 'Done!', component: <Done />}
+    ]
 
     return (
 
-        <form className="form-entry" onSubmit={"placeholder"}>
+        <form className="form-entry">
 
             <section>
-                <h1>Entry for {day}</h1>
+                <h1>Daily Entry for</h1>
+                <h2>date</h2>
             </section>
 
-            <section>
-                <Route exact path='/form-entry' component={MoodEntry} />
-                <Route exact path='/form-entry/sleep-entry' component={SleepEntry} />
-                <Route exact path='/form-entry/eating-entry' component={EatingEntry} />
-                <Route exact path='/form-entry/exercise-entry' component={ExerciseEntry} />
-                <Route exact path='/form-entry/notes-entry' component={NotesEntry} />
-                <Route exact path='/form-entry/done' component={Done} />
+            <section className='step-progress'>
+                <StepZilla steps={steps} showNavigation={false}/>
             </section>
 
             {/*}<section>
