@@ -1,5 +1,4 @@
 import React from 'react';
-// import {reduxForm, Field} from 'redux-form';  --> I would like to wrap the routes below in a form
 
 import MoodEntry from './mood-entry';
 import SleepEntry from './sleep-entry';
@@ -24,35 +23,22 @@ export default function FormEntry(props) {
       {name: 'Done!', component: <Done />}
     ]
 
+    var today = new Date().toDateString();
+
     return (
 
-        <form className="form-entry">
+        <section className="form-entry">
 
             <section>
                 <h1>Daily Entry for</h1>
-                <h2>date</h2>
+                <h2>{today}</h2>
             </section>
 
             <section className='step-progress'>
-                <StepZilla steps={steps} showNavigation={false}/>
+                <StepZilla steps={steps} prevBtnOnLastStep={false}/>
             </section>
 
-            {/*}<section>
-                console.log(store.getState());
-
-                store.dispatch(addEntry(
-                    {date: 'January 8, 2018',
-                    mood: 5,
-                    sleep: 5,
-                    eating: 5,
-                    exercise: 'Yes',
-                    notes: 'Went swimming'}
-                ));
-
-                console.log(store.getState());
-            </section>*/}
-
-        </form>
+        </section>
 
     );
 

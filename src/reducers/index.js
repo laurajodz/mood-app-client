@@ -66,53 +66,48 @@ const initialState = {
         eating: 4,
         exercise: 'Yes',
         notes: ''
-    }]
+    }],
 };
 
 export const entryReducer = (state=initialState, action) => {
-    if (action.type === actions.ADD_ENTRY) {
+    if (action.type === actions.ADD_MOOD) {
         return Object.assign({}, state, {
-            entries: [...state.entries, {
-                date: action.date,
-                mood: action.mood,
-                moodTypes: action.moodTypes,
-                sleep: action.sleep,
-                eating: action.eating,
-                exercise: action.exercise,
-                notes: action.notes
-            }]
-        });
-    } else if (action.type === actions.ADD_DATE) {
-          return Object.assign({}, state, {
-              newEntry: {date: action.date}
-          })
-    } else if (action.type === actions.ADD_MOOD) {
-        return Object.assign({}, state, {
-            newEntry: {mood: action.mood}
+            newEntry: {
+                ...state.newEntry, mood: action.mood}
         })
     } else if (action.type === actions.ADD_MOOD_TYPES) {
         return Object.assign({}, state, {
             newEntry: {
-              moodTypes: [...state.newEntry.moodTypes, action.moodTypes]
+                ...state.newEntry,
+                moodTypes: [...state.newEntry.moodTypes, action.moodTypes]
             }
         })
     } else if (action.type === actions.ADD_SLEEP) {
         return Object.assign({}, state, {
-            newEntry: {sleep: action.sleep}
+            newEntry: {
+                ...state.newEntry, sleep: action.sleep}
         })
     } else if (action.type === actions.ADD_EATING) {
         return Object.assign({}, state, {
-            newEntry: {eating: action.eating}
+            newEntry: {
+                ...state.newEntry, eating: action.eating}
         })
     } else if (action.type === actions.ADD_EXERCISE) {
         return Object.assign({}, state, {
-            newEntry: {exercise: action.exercise}
+            newEntry: {
+                ...state.newEntry, exercise: action.exercise}
         })
     } else if (action.type === actions.ADD_NOTES) {
         return Object.assign({}, state, {
-            newEntry: {notes: action.notes}
+            newEntry: {
+                ...state.newEntry, notes: action.notes}
+        })
+    } else if (action.type === actions.ADD_ENTRY) {
+        return Object.assign({}, state, {
+            entries: [...state.entries, {
+                ...state.newEntry, date: Date.now()
+            }]
         })
     }
-
     return state;
 };

@@ -24,7 +24,7 @@ export default function Home(props) {
             </section>
 
             <section>
-                <p>Screen shot 2 - Seeing your history on a calendar</p>
+                <p>Screen shot 2 - Seeing your history</p>
             </section>
 
             <section>

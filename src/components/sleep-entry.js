@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {addSleep} from '../actions/index';
 
@@ -27,7 +26,7 @@ export class SleepEntry extends Component{
 
                 <input type="radio" id="sleep3"
                  name="sleep" value="3" onClick={() => this.selectSleep(3)} />
-                <label htmlFor="sleep3">Alright</label>
+                <label htmlFor="sleep3">OK</label>
 
                 <input type="radio" id="sleep4"
                  name="sleep" value="4" onClick={() => this.selectSleep(4)} />
@@ -36,28 +35,6 @@ export class SleepEntry extends Component{
                 <input type="radio" id="sleep5"
                  name="sleep" value="5" onClick={() => this.selectSleep(5)} />
                 <label htmlFor="sleep5">Great</label>
-
-                <p>
-
-                    <button
-                        className="previous-button"
-                    >
-                        <Link to="/form-entry">Previous</Link>
-                    </button>
-
-                    <button
-                        className="next-button"
-                    >
-                        <Link to="/form-entry/eating-entry">Next</Link>
-                    </button>
-
-                    <button
-                        className="cancel-button"
-                    >
-                        <Link to="/dashboard">Cancel</Link>
-                    </button>
-
-                </p>
 
             </div>
         );

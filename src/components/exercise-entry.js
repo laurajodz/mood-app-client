@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {addExercise} from '../actions/index';
 
@@ -20,28 +19,6 @@ export class ExerciseEntry extends Component{
                 <input type="radio" name="exercise" value="yes" onClick={() => this.selectExercise('yes')} /> Yes <br/>
 
                 <input type="radio" name="exercise" value="no" onClick={() => this.selectExercise('no')} /> No <br/>
-
-                <p>
-
-                    <button
-                        className="previous-button"
-                    >
-                        <Link to="/form-entry/eating-entry">Previous</Link>
-                    </button>
-
-                    <button
-                        className="next-button"
-                    >
-                        <Link to="/form-entry/notes-entry">Next</Link>
-                    </button>
-
-                    <button
-                        className="cancel-button"
-                    >
-                        <Link to="/dashboard">Cancel</Link>
-                    </button>
-
-                </p>
 
             </div>
         );

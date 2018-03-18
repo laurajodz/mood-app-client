@@ -12,7 +12,7 @@ export default function Dashboard(props) {
 
             <section>
                 <Link to="/home">Home</Link>
-                <Link to="/calendar">My Calendar</Link>
+                <Link to="/history">My History</Link>
             </section>
 
             <section>

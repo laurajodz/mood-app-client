@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {addMood, addMoodTypes} from '../actions/index';
 
@@ -31,7 +30,7 @@ export class MoodEntry extends Component{
 
                 <input type="radio" id="mood3"
                  name="mood" value="3" onClick={() => this.selectMood(3)} />
-                <label htmlFor="mood3">Alright</label>
+                <label htmlFor="mood3">OK</label>
 
                 <input type="radio" id="mood4"
                  name="mood" value="4" onClick={() => this.selectMood(4)} />
@@ -102,22 +101,6 @@ export class MoodEntry extends Component{
 
                 <input type="checkbox" id="irritated" name="moodType" value="irritated" onChange={() => this.selectMoodTypes('irritated')} />
                 <label htmlFor="irritated">irritated</label>
-
-                <p>
-
-                    <button
-                        className="next-button"
-                    >
-                        <Link to="/form-entry/sleep-entry">Next</Link>
-                    </button>
-
-                    <button
-                        className="cancel-button"
-                    >
-                        <Link to="/dashboard">Cancel</Link>
-                    </button>
-
-                </p>
 
             </div>
         );

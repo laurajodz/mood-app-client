@@ -1,21 +1,3 @@
-export const ADD_ENTRY = 'ADD_ENTRY';
-export const addEntry = (date, mood, moodTypes, sleep, eating, exercise, notes) => ({
-    type: ADD_ENTRY,
-    date,
-    mood,
-    moodTypes,
-    sleep,
-    eating,
-    exercise,
-    notes
-});
-
-export const ADD_DATE = 'ADD_DATE';
-export const addDate = date => ({
-    type: ADD_DATE,
-    date
-});
-
 export const ADD_MOOD = 'ADD_MOOD';
 export const addMood = mood => ({
     type: ADD_MOOD,
@@ -50,4 +32,9 @@ export const ADD_NOTES = 'ADD_NOTES';
 export const addNotes = notes => ({
     type: ADD_NOTES,
     notes
+});
+
+export const ADD_ENTRY = 'ADD_ENTRY';
+export const addEntry = () => ({
+    type: ADD_ENTRY
 });

@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {addEating} from '../actions/index';
 
@@ -27,7 +26,7 @@ export class EatingEntry extends Component{
 
                 <input type="radio" id="eating3"
                  name="eating" value="3" onClick={() => this.selectEating(3)} />
-                <label htmlFor="eating3">Alright</label>
+                <label htmlFor="eating3">OK</label>
 
                 <input type="radio" id="eating4"
                  name="eating" value="4" onClick={() => this.selectEating(4)} />
@@ -36,28 +35,6 @@ export class EatingEntry extends Component{
                 <input type="radio" id="eating5"
                  name="eating" value="5" onClick={() => this.selectEating(5)} />
                 <label htmlFor="eating5">Great</label>
-
-                <p>
-
-                    <button
-                        className="previous-button"
-                    >
-                        <Link to="/form-entry/sleep-entry">Previous</Link>
-                    </button>
-
-                    <button
-                        className="next-button"
-                    >
-                        <Link to="/form-entry/exercise-entry">Next</Link>
-                    </button>
-
-                    <button
-                        className="cancel-button"
-                    >
-                        <Link to="/dashboard">Cancel</Link>
-                    </button>
-
-                </p>
 
             </div>
         );

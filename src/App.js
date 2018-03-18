@@ -2,9 +2,7 @@ import React from 'react';
 import Login from './components/login';
 import Home from './components/home';
 import Dashboard from './components/dashboard';
-import Calendar from './components/calendar';
-import CalendarDay from './components/calendar-day';
-import EditDayData from './components/edit-day-data';
+import History from './components/history';
 import FormEntry from './components/form-entry';
 
 import {BrowserRouter as Router, Route} from 'react-router-dom';
@@ -23,9 +21,7 @@ export default class App extends React.Component {
                         <Route exact path='/login' component={Login} />
                         <Route exact path='/home' component={Home} />
                         <Route exact path='/dashboard' component={Dashboard} />
-                        <Route exact path='/calendar' component={Calendar} />
-                        <Route exact path='/calendar-day' component={CalendarDay} />
-                        <Route exact path='/edit-day-data' component={EditDayData} />
+                        <Route exact path='/history' component={History} />
                         <Route path='/form-entry' component={FormEntry} />
                     </main>
 

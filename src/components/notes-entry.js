@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {addNotes} from '../actions/index';
 
@@ -17,37 +16,8 @@ export class NotesEntry extends Component{
 
                 <h1>Enter any notes for today. What is going on in your world?</h1>
 
-                <textarea autoFocus>
+                <textarea autoFocus onChange={(event) => this.selectNotes(event.target.value)}>
                 </textarea>
-
-                <p>
-
-                    <button
-                        className="finish-button"
-                        type="submit"
-                        onClick={() => this.selectNotes()} 
-                    >
-                        <Link to="/form-entry/done">Finish!</Link>  {/*onSubmit, capture input, make post call to api, and go to done*/}
-                    </button>
-
-                </p>
-
-                <p>
-
-                    <button
-                        className="previous-button"
-                    >
-                        <Link to="/form-entry/exercise-entry">Previous</Link>
-
-                    </button>
-
-                    <button
-                        className="cancel-button"
-                    >
-                        <Link to="/dashboard">Cancel</Link>
-                    </button>
-
-                </p>
 
             </div>
         );
