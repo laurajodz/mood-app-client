@@ -18,43 +18,43 @@ export function Done(props) {
 
     if (moodDescriptionValue == null) {
         moodDescription = " ";
-    } else if (moodDescriptionValue = 5) {
+    } else if (moodDescriptionValue === 5) {
         moodDescription = "Great";
-    } else if (moodDescriptionValue = 4) {
+    } else if (moodDescriptionValue === 4) {
         moodDescription = "Good";
-    } else if (moodDescriptionValue = 3) {
+    } else if (moodDescriptionValue === 3) {
         moodDescription = "OK";
-    } else if (moodDescriptionValue = 2) {
+    } else if (moodDescriptionValue === 2) {
         moodDescription = "Meh";
-    } else if (moodDescriptionValue = 1) {
+    } else if (moodDescriptionValue === 1) {
         moodDescription = "Lousy";
     }
 
     if (sleepDescriptionValue == null) {
         sleepDescription = " ";
-    } else if (sleepDescriptionValue = 5) {
+    } else if (sleepDescriptionValue === 5) {
         sleepDescription = "Great";
-    } else if (sleepDescriptionValue = 4) {
+    } else if (sleepDescriptionValue === 4) {
         sleepDescription = "Good";
-    } else if (sleepDescriptionValue = 3) {
+    } else if (sleepDescriptionValue === 3) {
         sleepDescription = "OK";
-    } else if (sleepDescriptionValue = 2) {
+    } else if (sleepDescriptionValue === 2) {
         sleepDescription = "Meh";
-    } else if (sleepDescriptionValue = 1) {
+    } else if (sleepDescriptionValue === 1) {
         sleepDescription = "Lousy";
     }
 
     if (eatingDescriptionValue == null) {
         eatingDescription = " ";
-    } else if (eatingDescriptionValue = 5) {
+    } else if (eatingDescriptionValue === 5) {
         eatingDescription = "Great";
-    } else if (eatingDescriptionValue = 4) {
+    } else if (eatingDescriptionValue === 4) {
         eatingDescription = "Good";
-    } else if (eatingDescriptionValue = 3) {
+    } else if (eatingDescriptionValue === 3) {
         eatingDescription = "OK";
-    } else if (eatingDescriptionValue = 2) {
+    } else if (eatingDescriptionValue === 2) {
         eatingDescription = "Meh";
-    } else if (eatingDescriptionValue = 1) {
+    } else if (eatingDescriptionValue === 1) {
         eatingDescription = "Lousy";
     }
 
