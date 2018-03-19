@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { VictoryBar, VictoryChart, VictoryAxis } from 'victory';
 import {BrowserRouter} from 'react-router-dom';
 import {Provider} from 'react-redux';
 import store from './store';

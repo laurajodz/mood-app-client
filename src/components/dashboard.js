@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import { render } from 'react-dom';
-import {connect} from 'react-redux';
-import { VictoryBar, VictoryChart, VictoryAxis } from 'victory';
+// import { render } from 'react-dom';
+// import {connect} from 'react-redux';
+import {VictoryBar, VictoryChart} from 'victory';
 import {Link} from 'react-router-dom';
 
 import './dashboard.css';
