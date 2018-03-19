@@ -16,25 +16,39 @@ export class SleepEntry extends Component{
 
                 <h1>What was the quality level of your sleep last night?</h1>
 
-                <input type="radio" id="sleep1"
-                 name="sleep" value="1" onClick={() => this.selectSleep(1)} />
-                <label htmlFor="sleep1">Lousy</label>
+                <section className="choices">
 
-                <input type="radio" id="sleep2"
-                 name="sleep" value="2" onClick={() => this.selectSleep(2)} />
-                <label htmlFor="sleep2">Meh</label>
+                    <div className="red">
+                        <input type="radio" id="sleep1"
+                         name="sleep" value="1" onClick={() => this.selectSleep(1)} />
+                        <label htmlFor="sleep1">Lousy</label>
+                    </div>
 
-                <input type="radio" id="sleep3"
-                 name="sleep" value="3" onClick={() => this.selectSleep(3)} />
-                <label htmlFor="sleep3">OK</label>
+                    <div className="orange">
+                        <input type="radio" id="sleep2"
+                         name="sleep" value="2" onClick={() => this.selectSleep(2)} />
+                        <label htmlFor="sleep2">Meh</label>
+                    </div>
 
-                <input type="radio" id="sleep4"
-                 name="sleep" value="4" onClick={() => this.selectSleep(4)} />
-                <label htmlFor="sleep4">Good</label>
+                    <div className="yellow">
+                        <input type="radio" id="sleep3"
+                         name="sleep" value="3" onClick={() => this.selectSleep(3)} />
+                        <label htmlFor="sleep3">OK</label>
+                    </div>
 
-                <input type="radio" id="sleep5"
-                 name="sleep" value="5" onClick={() => this.selectSleep(5)} />
-                <label htmlFor="sleep5">Great</label>
+                    <div className="yellow-green">
+                        <input type="radio" id="sleep4"
+                         name="sleep" value="4" onClick={() => this.selectSleep(4)} />
+                        <label htmlFor="sleep4">Good</label>
+                    </div>
+
+                    <div className="green">
+                        <input type="radio" id="sleep5"
+                         name="sleep" value="5" onClick={() => this.selectSleep(5)} />
+                        <label htmlFor="sleep5">Great</label>
+                    </div>
+
+                </section>
 
             </div>
         );

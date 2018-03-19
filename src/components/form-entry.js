@@ -9,7 +9,7 @@ import Done from './done';
 
 import StepZilla from 'react-stepzilla';
 
-// import './form-entry.css';
+import './form-entry.css';
 import './stepzilla.css';
 
 export default function FormEntry(props) {

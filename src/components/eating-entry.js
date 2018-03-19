@@ -16,25 +16,39 @@ export class EatingEntry extends Component{
 
                 <h1>How healthy did you eat today?</h1>
 
-                <input type="radio" id="eating1"
-                 name="eating" value="1" onClick={() => this.selectEating(1)} />
-                <label htmlFor="eating1">Lousy</label>
+                <section className="choices">
 
-                <input type="radio" id="eating2"
-                 name="eating" value="2" onClick={() => this.selectEating(2)} />
-                <label htmlFor="eating2">Meh</label>
+                    <div className="red">
+                        <input type="radio" id="eating1"
+                         name="eating" value="1" onClick={() => this.selectEating(1)} />
+                        <label htmlFor="eating1">Lousy</label>
+                    </div>
 
-                <input type="radio" id="eating3"
-                 name="eating" value="3" onClick={() => this.selectEating(3)} />
-                <label htmlFor="eating3">OK</label>
+                    <div className="orange">
+                        <input type="radio" id="eating2"
+                         name="eating" value="2" onClick={() => this.selectEating(2)} />
+                        <label htmlFor="eating2">Meh</label>
+                    </div>
 
-                <input type="radio" id="eating4"
-                 name="eating" value="4" onClick={() => this.selectEating(4)} />
-                <label htmlFor="eating4">Good</label>
+                    <div className="yellow">
+                        <input type="radio" id="eating3"
+                         name="eating" value="3" onClick={() => this.selectEating(3)} />
+                        <label htmlFor="eating3">OK</label>
+                    </div>
 
-                <input type="radio" id="eating5"
-                 name="eating" value="5" onClick={() => this.selectEating(5)} />
-                <label htmlFor="eating5">Great</label>
+                    <div className="yellow-green">
+                        <input type="radio" id="eating4"
+                         name="eating" value="4" onClick={() => this.selectEating(4)} />
+                        <label htmlFor="eating4">Good</label>
+                    </div>
+
+                    <div className="green">
+                        <input type="radio" id="eating5"
+                         name="eating" value="5" onClick={() => this.selectEating(5)} />
+                        <label htmlFor="eating5">Great</label>
+                    </div>
+
+                </section>
 
             </div>
         );
