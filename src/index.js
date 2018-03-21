@@ -7,15 +7,10 @@ import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
-import DateFnsUtils from 'material-ui-pickers/utils/date-fns-utils';
-import MuiPickersUtilsProvider from 'material-ui-pickers/utils/MuiPickersUtilsProvider';
-
 ReactDOM.render((
     <BrowserRouter>
         <Provider store={store}>
-            <MuiPickersUtilsProvider utils={DateFnsUtils}>
-                <App />
-            </MuiPickersUtilsProvider>
+            <App />
         </Provider>
     </BrowserRouter>
 ), document.getElementById('root'));

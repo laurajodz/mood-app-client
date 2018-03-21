@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 import AddEntryCard from './add-entry-card';
 import {fetchEntries} from '../actions';
 
-// import './history.css';
+import './history.css';
 
 export class History extends Component{
 
@@ -14,7 +14,7 @@ export class History extends Component{
 
     render() {
 
-        const entries = this.state.entries.map((entry, index) => (
+        const entries = this.props.entries.map((entry, index) => (
             <li className="entry" key={index}>
                 <AddEntryCard index={index} {...entry} />
             </li>
@@ -40,8 +40,8 @@ export class History extends Component{
 }
 
 const mapStateToProps = state => ({
-    entries: state.entries,
-    error: state.error
+    entries: state.entry.entries,
+    error: state.entry.error
 });
 
 export default connect(mapStateToProps)(History);

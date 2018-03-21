@@ -36,10 +36,17 @@ export const addNotes = notes => ({
     notes
 });
 
-export const ADD_ENTRY = 'ADD_ENTRY';
-export const addEntry = () => ({
-    type: ADD_ENTRY
-});
+export const fetchEntries = () => dispatch => {
+    dispatch(fetchEntriesRequest());
+    fetch(`${API_BASE_URL}/entries`)
+        .then(res => res.json())
+        .then(entries => {
+            dispatch(fetchEntriesSuccess(entries));
+        })
+        .catch(error => {
+            dispatch(fetchEntriesError(error));
+        });
+};
 
 export const FETCH_ENTRIES_REQUEST = 'FETCH_ENTRIES_REQUEST';
 export const fetchEntriesRequest = () => ({
@@ -58,13 +65,60 @@ export const fetchEntriesError = error => ({
     error
 });
 
-export const fetchEntries = () => dispatch => {
-    dispatch(fetchEntriesRequest());
+export const addEntry = (entry) => dispatch => {
+    dispatch(addEntryRequest());
     fetch(`${API_BASE_URL}/entries`)
-        .then(entries => {
-            dispatch(fetchEntriesSuccess(entries));
+        .then(res => res.json())
+        .then(entry => {
+            dispatch(addEntrySuccess(entry));
         })
         .catch(error => {
-            dispatch(fetchEntriesError(error));
+            dispatch(addEntryError(error));
         });
 };
+
+export const ADD_ENTRY_REQUEST = 'ADD_ENTRY_REQUEST';
+export const addEntryRequest = () => ({
+    type: ADD_ENTRY_REQUEST
+});
+
+export const ADD_ENTRY_SUCCESS = 'ADD_ENTRY_SUCCESS';
+export const addEntrySuccess = entry => ({
+    type: ADD_ENTRY_SUCCESS,
+    entry
+});
+
+export const ADD_ENTRY_ERROR = 'ADD_ENTRY_ERROR';
+export const addEntryError = error => ({
+    type: ADD_ENTRY_ERROR,
+    error
+});
+
+export const editEntry = (entry) => dispatch => {
+    dispatch(editEntryRequest());
+    fetch(`${API_BASE_URL}/entries`)
+        .then(res => res.json())
+        .then(entry => {
+            dispatch(editEntrySuccess(entry));
+        })
+        .catch(error => {
+            dispatch(editEntryError(error));
+        });
+};
+
+export const EDIT_ENTRY_REQUEST = 'EDIT_ENTRY_REQUEST';
+export const editEntryRequest = () => ({
+    type: EDIT_ENTRY_REQUEST
+});
+
+export const EDIT_ENTRY_SUCCESS = 'EDIT_ENTRY_SUCCESS';
+export const editEntrySuccess = entry => ({
+    type: EDIT_ENTRY_SUCCESS,
+    entry
+});
+
+export const EDIT_ENTRY_ERROR = 'EDIT_ENTRY_ERROR';
+export const editEntryError = error => ({
+    type: EDIT_ENTRY_ERROR,
+    error
+});
