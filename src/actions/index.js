@@ -1,3 +1,5 @@
+import {API_BASE_URL} from '../config';
+
 export const ADD_MOOD = 'ADD_MOOD';
 export const addMood = mood => ({
     type: ADD_MOOD,
@@ -38,3 +40,31 @@ export const ADD_ENTRY = 'ADD_ENTRY';
 export const addEntry = () => ({
     type: ADD_ENTRY
 });
+
+export const FETCH_ENTRIES_REQUEST = 'FETCH_ENTRIES_REQUEST';
+export const fetchEntriesRequest = () => ({
+    type: FETCH_ENTRIES_REQUEST
+});
+
+export const FETCH_ENTRIES_SUCCESS = 'FETCH_ENTRIES_SUCCESS';
+export const fetchEntriesSuccess = entries => ({
+    type: FETCH_ENTRIES_SUCCESS,
+    entries
+});
+
+export const FETCH_ENTRIES_ERROR = 'FETCH_ENTRIES_ERROR';
+export const fetchEntriesError = error => ({
+    type: FETCH_ENTRIES_ERROR,
+    error
+});
+
+export const fetchEntries = () => dispatch => {
+    dispatch(fetchEntriesRequest());
+    fetch(`${API_BASE_URL}/entries`)
+        .then(entries => {
+            dispatch(fetchEntriesSuccess(entries));
+        })
+        .catch(error => {
+            dispatch(fetchEntriesError(error));
+        });
+};

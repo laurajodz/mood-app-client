@@ -70,7 +70,7 @@ export function Done(props) {
             <h2>Notes: {props.newEntry.notes}</h2>
 
             <button
-                className="return-button" onClick={props.dispatch(addEntry())}
+                className="return-button" onClick={() => props.dispatch(addEntry())}
             >
                 <Link to="/dashboard">Save Entry</Link>
             </button>

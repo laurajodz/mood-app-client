@@ -17,6 +17,7 @@
     "react-stepzilla": "^4.7.0",
     "redux": "^3.7.2",
     "redux-form": "^7.3.0",
+    "redux-thunk": "^2.2.0",
     "victory": "^0.25.6"
   },
   "scripts": {

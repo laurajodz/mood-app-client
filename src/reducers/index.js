@@ -67,6 +67,7 @@ const initialState = {
         exercise: 'Yes',
         notes: ''
     }],
+    error: null
 };
 
 export const entryReducer = (state=initialState, action) => {
@@ -108,6 +109,19 @@ export const entryReducer = (state=initialState, action) => {
                 ...state.newEntry, date: Date.now()
             }]
         })
+    } else if (action.type === actions.FETCH_ENTRIES_REQUEST) {
+        return Object.assign({}, state, {
+            error: null
+        })
+    } else if (action.type === actions.FETCH_ENTRIES_SUCCESS) {
+        return Object.assign({}, state, {
+            entries: action.entries,
+            error: null
+        })
+    } else if (action.type === actions.FETCH_ENTRIES_ERROR) {
+        return Object.assign({}, state, {
+            error: action.error
+        });
     }
     return state;
 };
