@@ -25,7 +25,7 @@ export class History extends Component{
             <div className="history">
 
                 <section>
-                    <Link to="/dashboard">My Dashboard</Link>
+                    <Link to="/dashboard" className="nav">My Dashboard</Link>
                 </section>
 
                 <h1>My History</h1>
