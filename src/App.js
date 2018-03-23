@@ -8,8 +8,7 @@ import HeaderBar from './components/header-bar';
 import {refreshAuthToken} from './actions/auth';
 
 import {connect} from 'react-redux';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
-import {withRouter} from "react-router-dom";
+import {BrowserRouter as Router, Route, withRouter} from 'react-router-dom';
 
 import './App.css';
 
