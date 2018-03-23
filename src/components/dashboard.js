@@ -14,6 +14,10 @@ export class Dashboard extends Component{
             <div className="dashboard">
 
                 <section>
+                    Hello, {this.props.user.username}
+                </section>
+
+                <section>
                     <Link to="/home" className="home">Home</Link>
                     <Link to="/history" className="history">My History</Link>
                 </section>
@@ -52,7 +56,8 @@ export class Dashboard extends Component{
 }
 
 const mapStateToProps = state => ({
-    entries: state.entry.entries
+    entries: state.entry.entries,
+    user: state.auth.currentUser
 });
 
 export default connect(mapStateToProps)(Dashboard);
