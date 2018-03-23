@@ -48,7 +48,7 @@ export class App extends Component{
             <Router >
                 <div className="App">
 
-                    <HeaderBar />
+
 
                     <main role="main">
                         <h1>Mood Today</h1>
