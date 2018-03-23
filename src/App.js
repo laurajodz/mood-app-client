@@ -1,19 +1,53 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Login from './components/login';
 import Home from './components/home';
 import Dashboard from './components/dashboard';
 import History from './components/history';
 import FormEntry from './components/form-entry';
+import HeaderBar from './components/header-bar';
+import {refreshAuthToken} from './actions/auth';
 
-import {BrowserRouter as Router, Route} from 'react-router-dom';
+import {connect} from 'react-redux';
+import {withRouter, BrowserRouter as Router, Route} from 'react-router-dom';
 import './App.css';
 
-export default class App extends React.Component {
+export class App extends Component{
+
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.loggedIn && !this.props.loggedIn) {
+            // When we are logged in, refresh the auth token periodically
+            this.startPeriodicRefresh();
+        } else if (!nextProps.loggedIn && this.props.loggedIn) {
+            // Stop refreshing when we log out
+            this.stopPeriodicRefresh();
+        }
+    }
+
+    componentWillUnmount() {
+        this.stopPeriodicRefresh();
+    }
+
+    startPeriodicRefresh() {
+        this.refreshInterval = setInterval(
+            () => this.props.dispatch(refreshAuthToken()),
+            60 * 60 * 1000 // One hour
+        );
+    }
+
+    stopPeriodicRefresh() {
+        if (!this.refreshInterval) {
+            return;
+        }
+
+        clearInterval(this.refreshInterval);
+    }
 
     render() {
         return (
             <Router >
                 <div className="App">
+
+                    <HeaderBar />
 
                     <main role="main">
                         <h1>Mood Today</h1>
@@ -26,8 +60,8 @@ export default class App extends React.Component {
                     </main>
 
                     <footer>
-                        Copyright 2018, Laura Jodz
-                        GitHub Link
+                        Copyright 2018, Laura Jodz *
+                        GitHub Link *
                         Portfolio Link
                     </footer>
 
@@ -35,4 +69,12 @@ export default class App extends React.Component {
             </Router>
       );
     }
-  }
+}
+
+const mapStateToProps = state => ({
+    hasAuthToken: state.auth.authToken !== null,
+    loggedIn: state.auth.currentUser !== null
+});
+
+// Deal with update blocking - https://reacttraining.com/react-router/web/guides/dealing-with-update-blocking
+export default withRouter(connect(mapStateToProps)(App));

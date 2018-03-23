@@ -1,37 +1,57 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
+import React, {Component} from 'react';
+import {Field, reduxForm, focus} from 'redux-form';
+import Input from './input';
+import {login} from '../actions/auth';
+import {required, nonEmpty} from '../validators';
 
 // import './login.css';
 
-export default function Login(props) {
+export class Login extends Component{
+    onSubmit(values) {
+        return this.props.dispatch(login(values.username, values.password));
+    }
 
-    return (
-
-        <form className="login">
-
-            <div>
+    render() {
+        let error;
+        if (this.props.error) {
+            error = (
+                <div className="form-error" aria-live="polite">
+                    {this.props.error}
+                </div>
+            );
+        }
+        return (
+            <form
+                className="login"
+                onSubmit={this.props.handleSubmit(values =>
+                    this.onSubmit(values)
+                )}>
+                {error}
                 <label htmlFor="username">Username</label>
-                <input type="text" name='username' id='username' />
-            </div>
-
-            <div>
+                <Field
+                    component={Input}
+                    type="text"
+                    name="username"
+                    id="username"
+                    validate={[required, nonEmpty]}
+                />
                 <label htmlFor="password">Password</label>
-                <input type="password" name='password' id='password' />
-            </div>
-
-            <button
-                className="login-button"
-            >
-                <Link to="/dashboard">Login</Link> {/*onClick, capture input, auth or throw error, and go to dashboard*/}
-            </button>
-
-            <button
-                className="cancel-button"
-            >
-                <Link to="/home">Cancel</Link>
-            </button>
-
-        </form>
-    );
-
+                <Field
+                    component={Input}
+                    type="password"
+                    name="password"
+                    id="password"
+                    validate={[required, nonEmpty]}
+                />
+                <button disabled={this.props.pristine || this.props.submitting}>
+                    Log in
+                </button>
+            </form>
+        );
+    }
 }
+
+export default reduxForm({
+    form: 'login',
+    onSubmitFail: (errors, dispatch) => dispatch(focus('login', 'username'))
+})(Login);
