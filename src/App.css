@@ -8,6 +8,10 @@
   height: 80px;
 }
 
+.logo {
+  text-align: left;
+}
+
 .App-header {
   background-color: #222;
   height: 150px;

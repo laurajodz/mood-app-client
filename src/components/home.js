@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from './header';
+import HeaderLogin from './header-login';
 
 import {Link} from 'react-router-dom';
 
@@ -11,7 +11,7 @@ export default function Home(props) {
 
         <div className="home">
 
-            <Header />
+            <HeaderLogin />
 
             <section className="section1">
 

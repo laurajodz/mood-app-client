@@ -6,13 +6,13 @@ export default function AddEntryCard(props) {
 
         return (
             <div className="add-entry-card">
-                <h1>Date: {props.date}</h1>
-                <h1>Mood: {props.mood}</h1>
-                <h1>Description: {props.moodTypes}</h1>
-                <h2>Sleep: {props.sleep}</h2>
-                <h2>Healthy Eating: {props.eating}</h2>
-                <h2>Exercise: {props.exercise}</h2>
-                <h2>Notes: {props.notes}</h2>
+                <p>Date: {props.date}</p>
+                <p>Mood: {props.mood} out of 5</p>
+                <p>Description: {props.moodTypes}</p>
+                <p>Sleep: {props.sleep} out of 5</p>
+                <p>Healthy Eating: {props.eating} out of 5</p>
+                <p>Exercise: {props.exercise}</p>
+                <p>Notes: {props.notes}</p>
             </div>
         );
 }
