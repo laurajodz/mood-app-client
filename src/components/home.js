@@ -1,17 +1,23 @@
 import React from 'react';
-import HeaderLogin from './header-login';
-
-import {Link} from 'react-router-dom';
+import {connect} from 'react-redux';
+import Login from './login';
+import {Link, Redirect} from 'react-router-dom';
 
 import './home.css';
 
-export default function Home(props) {
+export function Home(props) {
+
+    if (props.loggedIn) {
+        return <Redirect to="/dashboard" />;
+    }
 
     return (
 
         <div className="home">
 
-            <HeaderLogin />
+            <section className="login">
+                <Link to="/login">Login</Link>
+            </section>
 
             <section className="section1">
 
@@ -41,8 +47,14 @@ export default function Home(props) {
             </section>
 
             <section className="section5">
-                <Link to="/login">Login</Link>
+                <Login />
             </section>
         </div>
     );
 }
+
+const mapStateToProps = state => ({
+    loggedIn: state.auth.currentUser !== null
+});
+
+export default connect(mapStateToProps)(Home);

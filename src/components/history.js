@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
+import HistoryHeader from './history-header';
 import {connect} from 'react-redux';
-import {Link} from 'react-router-dom';
 import AddEntryCard from './add-entry-card';
 import {fetchEntries} from '../actions';
 
@@ -25,7 +25,7 @@ export class History extends Component{
             <div className="history">
 
                 <section>
-                    <Link to="/dashboard" className="nav">My Dashboard</Link>
+                    <HistoryHeader />
                 </section>
 
                 <h1>My History</h1>

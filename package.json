@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "date-fns": "^2.0.0-alpha.7",
+    "enzyme-adapter-react-16": "^1.1.1",
     "jwt-decode": "^2.2.0",
     "material-ui": "^1.0.0-beta.37",
     "material-ui-icons": "^1.0.0-beta.36",
@@ -15,15 +16,21 @@
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.1",
     "react-stepzilla": "^4.7.0",
+    "react-test-renderer": "^16.2.0",
     "redux": "^3.7.2",
     "redux-form": "^7.3.0",
     "redux-thunk": "^2.2.0",
-    "victory": "^0.25.6"
+    "validator": "^9.4.1",
+    "victory": "^0.25.6",
+    "webpack": "^3.11.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "enzyme": "^3.3.0"
   }
 }

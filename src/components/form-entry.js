@@ -30,6 +30,10 @@ export default function FormEntry(props) {
         <section className="form-entry">
 
             <section>
+                Mood Today
+            </section>
+
+            <section>
                 <h1>Daily Entry for</h1>
                 <h2>{today}</h2>
             </section>
