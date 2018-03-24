@@ -1,0 +1,33 @@
+.dashboard-header {
+    background-color: gray;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li {
+    color: white;
+    display: inline-block;
+}
+
+.logo {
+    float: left;
+    vertical-align: middle;
+    font-size: 2em;
+    padding-top: 20px;
+}
+
+.home, .history {
+    float: left;
+    text-decoration: none;
+    color: white;
+    padding-top: 20px;
+}
+
+.logout {
+    float: right;
+}

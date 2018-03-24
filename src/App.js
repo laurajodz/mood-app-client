@@ -4,7 +4,6 @@ import Home from './components/home';
 import Dashboard from './components/dashboard';
 import History from './components/history';
 import FormEntry from './components/form-entry';
-import HeaderBar from './components/header-bar';
 import {refreshAuthToken} from './actions/auth';
 
 import {connect} from 'react-redux';
@@ -48,10 +47,7 @@ export class App extends Component{
             <Router >
                 <div className="App">
 
-
-
                     <main role="main">
-                        <h1>Mood Today</h1>
                         <Route exact path='/' component={Home} />
                         <Route exact path='/login' component={Login} />
                         <Route exact path='/home' component={Home} />

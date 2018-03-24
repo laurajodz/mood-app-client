@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
+import DashboardHeader from './dashboard-header';
 import {connect} from 'react-redux';
 import {VictoryBar, VictoryChart} from 'victory';
 import {Link} from 'react-router-dom';
 import moment from 'moment';
 
-import './dashboard.css';
+// import './dashboard.css';
 
 export class Dashboard extends Component{
 
@@ -14,12 +15,11 @@ export class Dashboard extends Component{
             <div className="dashboard">
 
                 <section>
-                    Hello, {this.props.user.username}
+                    <DashboardHeader />
                 </section>
 
                 <section>
-                    <Link to="/home" className="home">Home</Link>
-                    <Link to="/history" className="history">My History</Link>
+                    Hello, {this.props.user.username}
                 </section>
 
                 <section>

@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import Login from './login';
-import {Redirect} from 'react-router-dom';
+import {Link, Redirect} from 'react-router-dom';
 
 import './home.css';
 
@@ -14,6 +14,10 @@ export function Home(props) {
     return (
 
         <div className="home">
+
+            <section className="login">
+                <Link to="/login">Login</Link>
+            </section>
 
             <section className="section1">
 
