@@ -22,7 +22,7 @@
     "redux-thunk": "^2.2.0",
     "validator": "^9.4.1",
     "victory": "^0.25.6",
-    "webpack": "^4.2.0"
+    "webpack": "^3.11.0"
   },
   "scripts": {
     "start": "react-scripts start",
