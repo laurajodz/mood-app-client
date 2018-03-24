@@ -5,7 +5,7 @@ import {VictoryBar, VictoryChart} from 'victory';
 import {Link} from 'react-router-dom';
 import moment from 'moment';
 
-// import './dashboard.css';
+import './dashboard.css';
 
 export class Dashboard extends Component{
 
@@ -18,17 +18,15 @@ export class Dashboard extends Component{
                     <DashboardHeader />
                 </section>
 
-                <section>
+                <h1>My Dashboard</h1>
+
+                <section className="hello">
                     Hello, {this.props.user.username}
                 </section>
 
                 <section>
-                    <h1>My Dashboard</h1>
-                </section>
-
-                <section>
-                    <button className="start-entry-button">
-                        <Link to="/form-entry">Enter Mood for Today</Link>
+                    <button>
+                        <Link to="/form-entry" className="start-entry-button">Enter Mood for Today</Link>
                     </button>
                 </section>
 

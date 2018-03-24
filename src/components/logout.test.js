@@ -1,10 +1,10 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 
-import {HeaderBar} from './header-bar';
+import {Logout} from './logout';
 
-describe('<HeaderBar />', () => {
+describe('<Logout />', () => {
     it('Renders without crashing', () => {
-        shallow(<HeaderBar />);
+        shallow(<Logout />);
     });
 });

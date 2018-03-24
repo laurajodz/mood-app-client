@@ -15,9 +15,9 @@ export class History extends Component{
     render() {
 
         const entries = this.props.entries.map((entry, index) => (
-            <p className="entry" key={index}>
+            <li className="entry" key={index}>
                 <AddEntryCard index={index} {...entry} />
-            </p>
+            </li>
         ));
 
         return (
@@ -30,9 +30,13 @@ export class History extends Component{
 
                 <h1>My History</h1>
 
-                <section className="entries">
+                {/*<section className="hello">
+                    Hello, {this.props.user.username}
+                </section>*/}
+
+                <ul className="entries">
                     {entries}
-                </section>
+                </ul>
 
             </div>
         );

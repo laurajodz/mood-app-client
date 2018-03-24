@@ -1,9 +1,9 @@
-.dashboard-header {
-    border-bottom: 2px solid pink;
+.history-header {
+    border-bottom: 2px solid purple;
     font-family: 'Libre Baskerville', serif;
 }
 
-ul {
+.historyHeader {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -21,7 +21,7 @@ li {
     padding-top: 20px;
 }
 
-.homeLink, .historyLink {
+.dashboardLink {
     text-decoration: none;
     color: black;
     padding-top: 20px;

@@ -2,3 +2,10 @@ button {
   padding: 1.5em;
   margin: 1.5em;
 }
+
+.logoForm {
+  font-size: 2em;
+  padding: 20px;
+  font-family: 'Libre Baskerville', serif;
+  border-bottom: 2px solid magenta;
+}

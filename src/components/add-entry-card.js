@@ -1,10 +1,9 @@
 import React from 'react';
 
-// import './display-entries.css';
-
 export default function AddEntryCard(props) {
 
         return (
+
             <div className="add-entry-card">
                 <p>Date: {props.date}</p>
                 <p>Mood: {props.mood} out of 5</p>

@@ -1,15 +1,19 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import HeaderBar from './header-bar';
+import Logout from './logout';
 
-export default function DashboardHeader(props) {
+import './history-header.css';
+
+export default function HistoryHeader(props) {
 
     return (
 
-        <section className="dashboard-header">
-            <p className="logo">Mood Today</p>
-            <Link to="/dashboard">My Dashboard</Link>
-            <HeaderBar />
-        </section>
+        <div className="history-header">
+            <ul className="historyHeader">
+                <li className="logo">Mood Today</li>
+                <li><Link to="/dashboard" className="dashboardLink">My Dashboard</Link></li>
+                <li className="logout"><Logout /></li>
+            </ul>
+        </div>
     );
 }
