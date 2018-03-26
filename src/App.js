@@ -56,7 +56,7 @@ export class App extends Component{
                         <Route path='/form-entry' component={FormEntry} />
                     </main>
 
-                    <footer>
+                    <footer className="footer">
                         Copyright 2018, Laura Jodz *
                         GitHub Link *
                         Portfolio Link

@@ -1,11 +1,15 @@
 .App {
   text-align: center;
-  font-family: 'Libre Baskerville', serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
+}
+
+.logo {
+  text-align: left;
 }
 
 .App-header {

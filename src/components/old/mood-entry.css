@@ -1,0 +1,14 @@
+.mood {
+  border: 1px solid black;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.choices, .types {
+  display: flex;
+  flex-direction: column;
+}
+
+.red, .orange, .yellow, .yellow-green, .green, .moodTypeItem {
+  list-style: none;
+}

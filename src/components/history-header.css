@@ -1,4 +1,4 @@
-.dashboard-header {
+.history-header {
     border-bottom: 2px solid black;
     margin: auto;
     font-family: 'Libre Baskerville', serif;
@@ -6,14 +6,14 @@
     color: white;
 }
 
-.dashLogo{
+.histLogo {
     max-width: 50%;
     font-size: 1.5em;
     float: left;
     margin-top: 15px;
 }
 
-.dashLogout {
+.histLogout {
     max-width: 50%;
     float: right;
     margin-right: 5px;
@@ -23,21 +23,21 @@
     clear:both
 }
 
-.dashboardHeader {
+.historyHeader {
     list-style-type: none;
     padding: 0;
     text-align: left;
 }
 
-.dashHomeLink, .dashHistoryLink, .pipe {
+.histHomeLink, .histDashboardLink, .pipe {
     display: inline;
 }
 
-.dashHomeLink, .dashHistoryLink {
+.histHomeLink, .histDashboardLink {
     cursor: pointer;
 }
 
-.homeLink, .historyLink {
+.homeLink, .dashboardLink {
     text-decoration: none;
     color: white;
     margin-left: 5px;

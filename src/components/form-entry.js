@@ -29,7 +29,7 @@ export default function FormEntry(props) {
 
         <section className="form-entry">
 
-            <section>
+            <section className="logoForm">
                 Mood Today
             </section>
 

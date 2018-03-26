@@ -1,29 +1,37 @@
-.red {
-  background-color: #FF0000;
-}
-
-.orange {
-  background-color: #FF7700;
-}
-
-.yellow {
-  background-color: #FFFF00;
-}
-
-.yellow-green {
-  background-color: #99FF00;
-}
-
-.green {
-  background-color: #00FF00;
+.eating {
+  border: 1px solid black;
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 10px;
 }
 
 .choices {
-  margin-top: 3em;
-  margin-bottom: 5em;
+  margin: 0 auto;
+  padding: 0;
 }
 
-.red, .orange, .yellow, .yellow-green, .green {
-  display: inline;
-  padding: 1.5em;
+.eatings {
+list-style: none;
 }
+
+.hide {
+  display: none;
+}
+
+.fa-circle {
+  padding-right: 10px;
+}
+
+input[type="radio"] + .fa-circle:before, input[type="radio"] + label > .fa-circle:before {
+  content: "\f1db";
+}
+
+input[type="radio"]:checked + .fa-circle:before, input[type="radio"]:checked + label > .fa-circle:before {
+  content: "\f111";
+}
+
+i#red.fa.fa-fw.fa-circle {color: hsl(0, 75%, 50%);}
+i#orange.fa.fa-fw.fa-circle {color: hsl(33, 100%, 50%);}
+i#yellow.fa.fa-fw.fa-circle {color: hsl(60, 100%, 50%);}
+i#chartreuse.fa.fa-fw.fa-circle {color: hsl(90, 100%, 50%);}
+i#green.fa.fa-fw.fa-circle {color: hsl(120, 75%, 35%);}
