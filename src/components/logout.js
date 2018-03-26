@@ -18,9 +18,9 @@ export class Logout extends Component{
             );
         }
         return (
-            <div className="logout">
+            <p className="logout">
                 {logOutButton}
-            </div>
+            </p>
         );
     }
 }

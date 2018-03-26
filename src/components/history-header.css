@@ -1,5 +1,5 @@
 .history-header {
-    border-bottom: 2px solid purple;
+    border-bottom: 2px solid pink;
     font-family: 'Libre Baskerville', serif;
 }
 
@@ -11,23 +11,18 @@
     display: inline-block;
 }
 
-li {
-    display: inline-block;
-    margin-left: 50px;
-}
-
 .logo {
     font-size: 2em;
     padding-top: 20px;
+    margin: auto;
+    display: block;
 }
 
 .dashboardLink {
     text-decoration: none;
     color: black;
     padding-top: 20px;
+    margin: auto;
+    display: block;
     cursor: pointer;
-}
-
-.logout {
-    float: right;
 }

@@ -3,7 +3,7 @@
     font-family: 'Libre Baskerville', serif;
 }
 
-ul {
+.dashboardHeader {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -11,23 +11,18 @@ ul {
     display: inline-block;
 }
 
-li {
-    display: inline-block;
-    margin-left: 50px;
-}
-
 .logo {
     font-size: 2em;
     padding-top: 20px;
+    margin: auto;
+    display: block;
 }
 
 .homeLink, .historyLink {
     text-decoration: none;
     color: black;
     padding-top: 20px;
+    margin: auto;
+    display: inline;
     cursor: pointer;
-}
-
-.logout {
-    float: right;
 }

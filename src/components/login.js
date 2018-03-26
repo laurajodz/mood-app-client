@@ -4,7 +4,7 @@ import Input from './input';
 import {login} from '../actions/auth';
 import {required, nonEmpty} from '../validators';
 
-// import './login.css';
+import './login.css';
 
 export class Login extends Component{
     onSubmit(values) {
@@ -43,7 +43,7 @@ export class Login extends Component{
                     id="password"
                     validate={[required, nonEmpty]}
                 />
-                <button disabled={this.props.pristine || this.props.submitting}>
+                <button className="loginButton" disabled={this.props.pristine || this.props.submitting}>
                     Log in
                 </button>
             </form>

@@ -9,11 +9,11 @@ export default function DashboardHeader(props) {
     return (
 
         <div className="dashboard-header">
+            <Logout />
             <ul className="dashboardHeader">
                 <li className="logo">Mood Today</li>
                 <li><Link to="/home" className="homeLink">Home</Link></li>
                 <li><Link to="/history" className="historyLink">My History</Link></li>
-                <li className="logout"><Logout /></li>
             </ul>
         </div>
     );

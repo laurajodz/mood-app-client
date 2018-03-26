@@ -25,11 +25,11 @@ export class Done extends Component{
         } else if (moodDescriptionValue === 4) {
             moodDescription = "Good";
         } else if (moodDescriptionValue === 3) {
-            moodDescription = "OK";
+            moodDescription = "Okay";
         } else if (moodDescriptionValue === 2) {
             moodDescription = "Meh";
         } else if (moodDescriptionValue === 1) {
-            moodDescription = "Lousy";
+            moodDescription = "Bad";
         }
 
         if (sleepDescriptionValue == null) {
@@ -39,11 +39,11 @@ export class Done extends Component{
         } else if (sleepDescriptionValue === 4) {
             sleepDescription = "Good";
         } else if (sleepDescriptionValue === 3) {
-            sleepDescription = "OK";
+            sleepDescription = "Okay";
         } else if (sleepDescriptionValue === 2) {
             sleepDescription = "Meh";
         } else if (sleepDescriptionValue === 1) {
-            sleepDescription = "Lousy";
+            sleepDescription = "Bad";
         }
 
         if (eatingDescriptionValue == null) {
@@ -53,11 +53,11 @@ export class Done extends Component{
         } else if (eatingDescriptionValue === 4) {
             eatingDescription = "Good";
         } else if (eatingDescriptionValue === 3) {
-            eatingDescription = "OK";
+            eatingDescription = "Okay";
         } else if (eatingDescriptionValue === 2) {
             eatingDescription = "Meh";
         } else if (eatingDescriptionValue === 1) {
-            eatingDescription = "Lousy";
+            eatingDescription = "Bad";
         }
 
         return (
