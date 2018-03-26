@@ -4,11 +4,10 @@ import Home from './components/home';
 import Dashboard from './components/dashboard';
 import History from './components/history';
 import FormEntry from './components/form-entry';
-import HeaderBar from './components/header-bar';
 import {refreshAuthToken} from './actions/auth';
 
 import {connect} from 'react-redux';
-import {BrowserRouter as Router, Route, withRouter} from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Protected from './components/protected';
 import './App.css';
 
@@ -48,10 +47,7 @@ export class App extends Component{
             <Router >
                 <div className="App">
 
-                    <HeaderBar />
-
                     <main role="main">
-                        <h1>Mood Today</h1>
                         <Route exact path='/' component={Home} />
                         <Route exact path='/login' component={Login} />
                         <Route exact path='/home' component={Home} />
@@ -78,4 +74,4 @@ const mapStateToProps = state => ({
 });
 
 // Deal with update blocking - https://reacttraining.com/react-router/web/guides/dealing-with-update-blocking
-export default withRouter(connect(mapStateToProps)(App));
+export default connect(mapStateToProps)(App);
