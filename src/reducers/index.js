@@ -11,7 +11,40 @@ const initialState = {
         notes: null
     },
     entries: [],
-    error: null
+    error: null,
+    moods: [
+      {
+          name: 'bad',
+          colour: 'red',
+          value:1,
+          id: 'mood1'
+      },
+      {
+        name: 'meh',
+        colour: 'orange',
+        value:2,
+        id: 'mood2'
+      },
+      {
+        name: 'okay',
+        colour: 'yellow',
+        value:3,
+        id: 'mood3'
+      },
+      {
+        name: 'good',
+        colour: 'chartreuse',
+        value:4,
+        id: 'mood4'
+      },
+      {
+        name: 'great',
+        colour: 'green',
+        value:5,
+        id: 'mood5'
+      }
+
+    ]
 };
 
 export const entryReducer = (state=initialState, action) => {
