@@ -9,11 +9,13 @@ export default function DashboardHeader(props) {
     return (
 
         <div className="dashboard-header">
-            <Logout />
+            <div className="dashLogo">Mood Today</div>
+            <div className="dashLogout"><Logout /></div>
+            <div className="clearfix"></div>
             <ul className="dashboardHeader">
-                <li className="logo">Mood Today</li>
-                <li><Link to="/home" className="homeLink">Home</Link></li>
-                <li><Link to="/history" className="historyLink">My History</Link></li>
+                {/* <li className="dashHomeLink"><Link to="/home" className="homeLink">Home  </Link></li>
+                <li className="pipe"> | </li>*/}
+                <li className="dashHistoryLink"><Link to="/history" className="historyLink">My History</Link></li>
             </ul>
         </div>
     );

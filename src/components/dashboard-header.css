@@ -1,28 +1,44 @@
 .dashboard-header {
-    border-bottom: 2px solid pink;
+    border-bottom: 2px solid black;
+    margin: auto;
     font-family: 'Libre Baskerville', serif;
+    background-color: #3E00E5;
+    color: white;
+}
+
+.dashLogo{
+    max-width: 50%;
+    font-size: 1.5em;
+    float: left;
+    margin-top: 15px;
+}
+
+.dashLogout {
+    max-width: 50%;
+    float: right;
+    margin-right: 5px;
+}
+
+.clearfix{
+    clear:both
 }
 
 .dashboardHeader {
     list-style-type: none;
-    margin: 0;
     padding: 0;
-    overflow: hidden;
-    display: inline-block;
+    text-align: left;
 }
 
-.logo {
-    font-size: 2em;
-    padding-top: 20px;
-    margin: auto;
-    display: block;
+.dashHomeLink, .dashHistoryLink, .pipe {
+    display: inline;
+}
+
+.dashHomeLink, .dashHistoryLink {
+    cursor: pointer;
 }
 
 .homeLink, .historyLink {
     text-decoration: none;
-    color: black;
-    padding-top: 20px;
-    margin: auto;
-    display: inline;
-    cursor: pointer;
+    color: white;
+    margin-left: 5px;
 }

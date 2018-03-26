@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import DashboardHeader from './dashboard-header';
 import {connect} from 'react-redux';
-import {VictoryBar, VictoryChart} from 'victory';
+import {VictoryBar, VictoryChart, VictoryAxis, VictoryTheme} from 'victory';
 import {Link} from 'react-router-dom';
 import moment from 'moment';
 
@@ -18,15 +18,15 @@ export class Dashboard extends Component{
                     <DashboardHeader />
                 </section>
 
-                <h1>My Dashboard</h1>
+                <h1>MY DASHBOARD</h1>
 
                 <section className="hello">
                     Hello, {this.props.user.username}
                 </section>
 
-                <section>
-                    <button>
-                        <Link to="/form-entry" className="start-entry-button">Enter Mood for Today</Link>
+                <section className="start">
+                    <button className="start-entry-button">
+                        <Link to="/form-entry" className="start-entry-button-link">Enter Mood for Today</Link>
                     </button>
                 </section>
 
@@ -35,11 +35,22 @@ export class Dashboard extends Component{
                 </section>
 
                 <section>
-                    <VictoryChart>
+                    <p>Mood Rating Per Day</p>
+                    <VictoryChart
+                    theme={VictoryTheme.material}
+                    domainPadding={20}
+                    >
+                        <VictoryAxis
+                        style={{tickLabels: { angle: -50 } }}
+                        />
+                        <VictoryAxis dependentAxis
+                        tickValues={[1, 2, 3, 4, 5]}
+                        />
                         <VictoryBar
                             data={this.props.entries}
-                            x={day => moment(day.date).format('DD-MMM-YY')}
+                            x={day => moment(day.date).format('MMM D')}
                             y='mood'
+                            style={{ data: { fill: "blue" } }}
                         />
                     </VictoryChart>
                 </section>

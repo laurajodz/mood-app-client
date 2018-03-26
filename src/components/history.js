@@ -3,6 +3,7 @@ import HistoryHeader from './history-header';
 import {connect} from 'react-redux';
 import AddEntryCard from './add-entry-card';
 import {fetchEntries} from '../actions';
+// import {editEntry} from '../actions';
 
 import './history.css';
 
@@ -10,6 +11,12 @@ export class History extends Component{
 
     componentDidMount() {
         this.props.dispatch(fetchEntries());
+        this.props = {isEditing: false};
+        this.toggleEdit = this.toggleEdit.bind(this);
+    }
+
+    toggleEdit() {
+        this.setState({isEditing: !this.props.isEditing})
     }
 
     render() {
@@ -20,25 +27,37 @@ export class History extends Component{
             </li>
         ));
 
+        if (this.props.isEditing) {
+            return (
+                <div className="history">
+
+                    <section>
+                        <HistoryHeader />
+                    </section>
+
+                    <h1>MY HISTORY</h1>
+
+                    <div>
+                        <p>edit entry</p>
+                    </div>
+
+                </div>
+            );
+        }
         return (
+                <div className="history">
 
-            <div className="history">
+                    <section>
+                        <HistoryHeader />
+                    </section>
 
-                <section>
-                    <HistoryHeader />
-                </section>
+                    <h1>MY HISTORY</h1>
 
-                <h1>My History</h1>
+                    <ul className="entries">
+                        {entries}
+                    </ul>
 
-                {/*<section className="hello">
-                    Hello, {this.props.user.username}
-                </section>*/}
-
-                <ul className="entries">
-                    {entries}
-                </ul>
-
-            </div>
+                </div>
         );
     }
 }

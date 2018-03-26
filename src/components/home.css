@@ -11,8 +11,8 @@
 
 .homeLogo {
   float: left;
-  margin: 20px 10px;
-  font-size: 3em;
+  margin: 30px 10px;
+  font-size: 2em;
 }
 
 .homeLogin {
@@ -35,12 +35,37 @@
 .section1 {
   padding-top: 20px;
   background-color: #0088D9;
-  height: auto;
   color: white;
   text-align: center;
 }
 
-.sub1 {
+.section2 {
+  padding-top: 20px;
+  background-color: #145ADD;
+  color: white;
+  text-align: center;
+}
+
+.section3 {
+  padding-top: 20px;
+  background-color: #292DE1;
+  color: white;
+  text-align: center;
+}
+
+.section4 {
+  padding-top: 20px;
+  background-color: #3E00E5;
+  color: white;
+  text-align: center;
+}
+
+.section5 {
+  padding-top: 20px;
+  background-color: white;
+}
+
+.sectionHeader {
   font-size: 2em;
   text-align: center;
   list-style-type: none;
@@ -48,66 +73,32 @@
   padding: 0;
 }
 
-.firstText, .secondText, .thirdText {
+.sectionContent {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  padding: 10px;
+  padding: 20px;
   margin: 20px;
   background-color: #FFF0F2;
   color: black;
-}
-
-.section2 {
-  padding-top: 20px;
-  background-color: #145ADD;
-  height: 100%;
-  color: white;
-  text-align: left;
-}
-
-.sub {
-  font-size: 2em;
-  text-align: center;
-}
-
-.section3 {
-  padding-top: 20px;
-  background-color: #292DE1;
-  height: 100%;
-  color: white;
-  text-align: left;
-}
-
-.section4 {
-  padding-top: 20px;
-  background-color: #3E00E5;
-  height: 100%;
-  color: white;
-  text-align: left;
-}
-
-.section5 {
-  padding-top: 20px;
-  background-color: white;
-  height: auto;
+  font-size: 0.5em;
+  min-width: 70%;
 }
 
 .homeFooter {
   padding: 10px;
 }
 
+.port {
+  text-decoration: none;
+  cursor: pointer;
+  color: black;
+}
+
 i#git.fa.fa-github-square {
-  margin-left: 30px;
-  margin-right: 30px;
+  margin-right: 10px;
   color: #0088D9;
 }
 
 i#linked.fa.fa-linkedin-square {
-  margin-right: 30px;
-  color: #0088D9;
-}
-
-.port {
-  text-decoration: none;
   color: #0088D9;
 }
 

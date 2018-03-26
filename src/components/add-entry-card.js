@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './add-entry-card.css';
+
 export default function AddEntryCard(props) {
 
         return (
@@ -12,6 +14,7 @@ export default function AddEntryCard(props) {
                 <p>Healthy Eating: {props.eating} out of 5</p>
                 <p>Exercise: {props.exercise}</p>
                 <p>Notes: {props.notes}</p>
+                <button className="editButton">edit</button>
             </div>
         );
 }

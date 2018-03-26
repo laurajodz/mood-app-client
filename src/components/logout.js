@@ -3,6 +3,8 @@ import {connect} from 'react-redux';
 import {clearAuth} from '../actions/auth';
 import {clearAuthToken} from '../local-storage';
 
+import './logout.css';
+
 export class Logout extends Component{
     logOut() {
         this.props.dispatch(clearAuth());
@@ -14,7 +16,7 @@ export class Logout extends Component{
         let logOutButton;
         if (this.props.loggedIn) {
             logOutButton = (
-                <button onClick={() => this.logOut()}>Log out</button>
+                <button className="outButton" onClick={() => this.logOut()}>Log out</button>
             );
         }
         return (
