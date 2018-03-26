@@ -15,7 +15,7 @@ export class Dashboard extends Component{
             <div className="dashboard">
 
                 <section>
-                    <DashboardHeader />
+                  <DashboardHeader />
                 </section>
 
                 <h1>MY DASHBOARD</h1>

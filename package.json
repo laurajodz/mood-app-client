@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "date-fns": "^2.0.0-alpha.7",
-    "enzyme-adapter-react-16": "^1.1.1",
     "jwt-decode": "^2.2.0",
     "material-ui": "^1.0.0-beta.37",
     "material-ui-icons": "^1.0.0-beta.36",
@@ -31,6 +30,7 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "enzyme": "^3.3.0"
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1"
   }
 }

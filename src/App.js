@@ -7,8 +7,8 @@ import FormEntry from './components/form-entry';
 import {refreshAuthToken} from './actions/auth';
 
 import {connect} from 'react-redux';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
-
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Protected from './components/protected';
 import './App.css';
 
 export class App extends Component{
@@ -51,7 +51,7 @@ export class App extends Component{
                         <Route exact path='/' component={Home} />
                         <Route exact path='/login' component={Login} />
                         <Route exact path='/home' component={Home} />
-                        <Route exact path='/dashboard' component={Dashboard} />
+                        <Route exact path='/dashboard' render={(props) => <Protected render={() => <Dashboard/>}/>} />
                         <Route exact path='/history' component={History} />
                         <Route path='/form-entry' component={FormEntry} />
                     </main>
