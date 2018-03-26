@@ -3,7 +3,8 @@ import {Field, reduxForm, focus} from 'redux-form';
 import Input from './input';
 import {login} from '../actions/auth';
 import {required, nonEmpty} from '../validators';
-
+import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 // import './login.css';
 
 export class Login extends Component{
@@ -12,6 +13,11 @@ export class Login extends Component{
     }
 
     render() {
+
+        if(this.props.user){
+          return <Redirect to="/dashboard"/>
+        }
+
         let error;
         if (this.props.error) {
             error = (
@@ -51,7 +57,11 @@ export class Login extends Component{
     }
 }
 
+const mapStateToProps = state => ({
+  user: state.auth.currentUser
+});
+
 export default reduxForm({
     form: 'login',
     onSubmitFail: (errors, dispatch) => dispatch(focus('login', 'username'))
-})(Login);
+})(connect(mapStateToProps)(Login));
