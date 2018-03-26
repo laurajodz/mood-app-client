@@ -1,12 +1,12 @@
 .history-header {
     border-bottom: 2px solid black;
     margin: auto;
-    font-family: 'Libre Baskerville', serif;
     background-color: #3E00E5;
     color: white;
 }
 
 .histLogo {
+    font-family: 'Libre Baskerville', serif;
     max-width: 50%;
     font-size: 1.5em;
     float: left;

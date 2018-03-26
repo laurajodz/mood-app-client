@@ -14,10 +14,10 @@ const initialState = {
     error: null,
     moods: [
       {
-          name: 'bad',
-          colour: 'red',
-          value:1,
-          id: 'mood1'
+        name: 'bad',
+        colour: 'red',
+        value:1,
+        id: 'mood1'
       },
       {
         name: 'meh',
@@ -43,7 +43,22 @@ const initialState = {
         value:5,
         id: 'mood5'
       }
-
+    ],
+    types: [
+      {name: 'happy'},
+      {name: 'excited'},
+      {name: 'optimistic'},
+      {name: 'relaxed'},
+      {name: 'great'},
+      {name: 'silly'},
+      {name: 'energetic'},
+      {name: 'sad'},
+      {name: 'angry'},
+      {name: 'restless'},
+      {name: 'nervous'},
+      {name: 'pessimistic'},
+      {name: 'bad'},
+      {name: 'irritated'}
     ]
 };
 

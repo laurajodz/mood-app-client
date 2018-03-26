@@ -52,7 +52,7 @@ export class App extends Component{
                         <Route exact path='/login' component={Login} />
                         <Route exact path='/home' component={Home} />
                         <Route exact path='/dashboard' render={(props) => <Protected render={() => <Dashboard/>}/>} />
-                        <Route exact path='/history' component={History} />
+                        <Route exact path='/history' render={(props) => <Protected render={() => <History/>}/>} />
                         <Route path='/form-entry' component={FormEntry} />
                     </main>
 

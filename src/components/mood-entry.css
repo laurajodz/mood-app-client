@@ -3,15 +3,23 @@
   max-width: 80%;
   margin: 0 auto;
   padding: 10px;
+  background-color: #e5d8d9;
 }
 
 .choices, .types {
   margin: 0 auto;
   padding: 0;
+  text-align: left;
+}
+
+.types {
+  columns: 2;
 }
 
 .moods, .moodTypeItem {
   list-style: none;
+  width: 100px;
+  margin: auto;
 }
 
 .hide {

@@ -5,7 +5,9 @@
   border-bottom: 2px solid #0088D9;
 }
 
-button {
-  padding: 1.5em;
-  margin: 1.5em;
+#next-button, #prev-button {
+  padding: 10px;
+  margin: 20px 60px;
+  border: 1px solid black;
+  border-radius: 10px;
 }
