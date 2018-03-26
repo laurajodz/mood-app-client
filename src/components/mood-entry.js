@@ -15,39 +15,25 @@ export class MoodEntry extends Component{
     }
 
     render() {
+
+        const moods = this.props.moods.map((mood, key) => {
+            const checked = this.props.mood == mood.value ? 'checked': '';
+            return (
+                <li className="moods" key={key}>
+                  <input type="radio" id={mood.id} className="hide"
+                         name="mood" value={mood.value} onClick={() => this.selectMood(mood.value)} checked={checked} />
+                  <label htmlFor={mood.id}><i className="fa fa-fw fa-circle" id={mood.colour}></i>{mood.name}</label>
+                </li>
+            )
+        });
+
         return (
             <div className="mood">
 
                 <h1>First, rate your mood. Overall, how did you feel today?</h1>
 
                 <ul className="choices">
-
-                    <li className="moods">
-                        <input type="radio" id="mood1" className="hide"
-                         name="mood" value="1" onClick={() => this.selectMood(1)} />
-                        <label htmlFor="mood1"><i className="fa fa-fw fa-circle" id="red"></i>bad</label>
-                    </li>
-                    <li className="moods">
-                        <input type="radio" id="mood2" className="hide"
-                         name="mood" value="2" onClick={() => this.selectMood(2)} />
-                        <label htmlFor="mood2"><i className="fa fa-fw fa-circle" id="orange"></i>meh</label>
-                    </li>
-                    <li className="moods">
-                        <input type="radio" id="mood3" className="hide"
-                         name="mood" value="3" onClick={() => this.selectMood(3)} />
-                        <label htmlFor="mood3"><i className="fa fa-fw fa-circle" id="yellow"></i>okay</label>
-                    </li>
-                    <li className="moods">
-                        <input type="radio" id="mood4" className="hide"
-                         name="mood" value="4" onClick={() => this.selectMood(4)} />
-                        <label htmlFor="mood4"><i className="fa fa-fw fa-circle" id="chartreuse"></i>good</label>
-                    </li>
-                    <li className="moods">
-                        <input type="radio" id="mood5" className="hide"
-                         name="mood" value="5" onClick={() => this.selectMood(5)} />
-                        <label htmlFor="mood5"><i className="fa fa-fw fa-circle" id="green"></i>great</label>
-                    </li>
-
+                  {moods}
                 </ul>
 
                 <h1>Next, what words would you use to describe your mood today?</h1>
@@ -133,7 +119,8 @@ export class MoodEntry extends Component{
 
 const mapStateToProps = state => ({
     mood: state.entry.newEntry.mood,
-    moodTypes: state.entry.newEntry.moodTypes
+    moodTypes: state.entry.newEntry.moodTypes,
+    moods: state.entry.moods
 });
 
 export default connect(mapStateToProps)(MoodEntry);
