@@ -11,44 +11,34 @@ export class SleepEntry extends Component{
     }
 
     render() {
+
+        const sleeps = this.props.sleeps.map((sleep, key) => {
+            const checked = this.props.sleep === sleep.value ? 'checked': '';
+            return (
+                <li className="sleeps" key={key}>
+                  <input type="radio" id={sleep.id} className="hide"
+                         name="sleep" value={sleep.value} onClick={() => this.selectSleep(sleep.value)} checked={checked} />
+                  <label htmlFor={sleep.id}><i className="fa fa-fw fa-circle" id={sleep.colour}></i>{sleep.name}</label>
+                </li>
+            )
+        });
+
         return (
             <div className="sleep">
 
-                <h1>What was the quality level of your sleep last night?</h1>
+                <div className="card">
 
-                <ul className="choices">
+                    <img src={ require('../images/sleep.png')} alt="Sleep icon" />
 
-                    <li className="sleeps">
-                        <input type="radio" id="sleep1" className="hide"
-                         name="sleep" value="1" onClick={() => this.selectSleep(1)} />
-                        <label htmlFor="sleep1"><i className="fa fa-fw fa-circle" id="red"></i>bad</label>
-                    </li>
+                    <h1>What was the quality level of your sleep last night?</h1>
 
-                    <li className="sleeps">
-                        <input type="radio" id="sleep2" className="hide"
-                         name="sleep" value="2" onClick={() => this.selectSleep(2)} />
-                        <label htmlFor="sleep2"><i className="fa fa-fw fa-circle" id="orange"></i>meh</label>
-                    </li>
+                    <ul className="choices">
+                        {sleeps}
+                    </ul>
 
-                    <li className="sleeps">
-                        <input type="radio" id="sleep3" className="hide"
-                         name="sleep" value="3" onClick={() => this.selectSleep(3)} />
-                        <label htmlFor="sleep3"><i className="fa fa-fw fa-circle" id="yellow"></i>okay</label>
-                    </li>
+                </div>
 
-                    <li className="sleeps">
-                        <input type="radio" id="sleep4" className="hide"
-                         name="sleep" value="4" onClick={() => this.selectSleep(4)} />
-                        <label htmlFor="sleep4"><i className="fa fa-fw fa-circle" id="chartreuse"></i>good</label>
-                    </li>
-
-                    <li className="sleeps">
-                        <input type="radio" id="sleep5" className="hide"
-                         name="sleep" value="5" onClick={() => this.selectSleep(5)} />
-                        <label htmlFor="sleep5"><i className="fa fa-fw fa-circle" id="green"></i>great</label>
-                    </li>
-
-                </ul>
+                <p className="icons">Icons made by Cursor Creative from <a href="http://www.flaticon.com" className="icons" target="_blank" rel="noopener noreferrer">www.flaticon.com</a></p>
 
             </div>
         );
@@ -56,7 +46,8 @@ export class SleepEntry extends Component{
 }
 
 const mapStateToProps = state => ({
-    sleep: state.entry.newEntry.sleep
+    sleep: state.entry.newEntry.sleep,
+    sleeps: state.entry.sleeps
 });
 
 export default connect(mapStateToProps)(SleepEntry);

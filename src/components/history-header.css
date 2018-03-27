@@ -1,7 +1,7 @@
 .history-header {
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid #0088D9;
     margin: auto;
-    background-color: #3E00E5;
+    background-color: #0088D9;
     color: white;
 }
 
@@ -11,6 +11,7 @@
     font-size: 1.5em;
     float: left;
     margin-top: 15px;
+    margin-left: 5px;
 }
 
 .histLogout {

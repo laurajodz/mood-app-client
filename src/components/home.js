@@ -37,14 +37,23 @@ export function Home(props) {
                 </section>
 
                 <section className="section2">
-                    <ul className="sectionHeader">Record your daily mood
-                        <li className="sectionContent">
-                        Rate your mood every day and describe it.<br/>
-                        Add more information, including the quality of your sleep, how healthy you ate, if you got some exercise or not, plus enter any notes about your day.<br/>
-                        <img src={ require('../images/moodEntry.png')} alt="Mood Entry" /><br/>
-                        <img src={ require('../images/notesEntry.png')} alt="Notes Entry" />
-                        </li>
-                    </ul>
+                    <div className="sectionHeader">Record your daily mood
+                        <div className="sectionContent">
+                            <p>Every day, rate and describe your</p>
+                            <img src={ require('../images/happy.png')} alt="Happy Face" />
+                            <img src={ require('../images/ok.png')} alt="OK Face" />
+                            <img src={ require('../images/sad.png')} alt="Sad Face" />
+                            <p>mood</p>
+                            <img src={ require('../images/sleep.png')} alt="Sleep icon" />
+                            <p>the quality of your sleep</p>
+                            <img src={ require('../images/eating.png')} alt="Eating icon" />
+                            <p>how healthy you ate</p>
+                            <img src={ require('../images/exercise.png')} alt="Exercise icon" />
+                            <p>if you got some exercise or not</p>
+                            <p>and</p>
+                            <p>free form notes about your day</p>
+                        </div>
+                    </div>
                 </section>
 
                 <section className="section3">
@@ -75,6 +84,7 @@ export function Home(props) {
                     Copyright 2018, <a href="http://www.laurajodz.com" className="port" target="_blank" rel="noopener noreferrer">Laura Jodz</a><br/>
                     <a href="https://github.com/laurajodz" target="_blank" rel="noopener noreferrer"><i className="fa fa-github-square" id="git"></i></a>
                     <a href="https://www.linkedin.com/in/laurajodz" target="_blank" rel="noopener noreferrer"><i className="fa fa-linkedin-square" id="linked"></i></a>
+                    <p className="icons">Icons made by <a href="https://www.flaticon.com/authors/freepik" className="icons" target="_blank" rel="noopener noreferrer">Freepik</a>, <a href="http://www.baianat.com/" className="icons" target="_blank" rel="noopener noreferrer">Baianet</a>, and Cursor Creative from <a href="http://www.flaticon.com" className="icons" target="_blank" rel="noopener noreferrer">www.flaticon.com</a></p>
                 </section>
 
             </section>

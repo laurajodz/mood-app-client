@@ -9,18 +9,20 @@
     box-shadow: 0px 0px 0px 2px #3E00E5;
     transition: box-shadow 0.6s linear;
     margin: 1em;
-    font-size: 1em;
+    font-size: 2em;
+    background-color: #3E00E5;
+    border: none;
 }
 
 .start-entry-button:hover {
-  box-shadow: 0px 0px 0px 7px #3E00E5;
+    box-shadow: 0px 0px 0px 7px #3E00E5;
 }
 
 .start-entry-button-link {
     text-decoration: none;
-    color: black;
+    color: white;
 }
 
 .start {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #0088D9;
 }

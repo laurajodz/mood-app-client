@@ -11,14 +11,34 @@ export class ExerciseEntry extends Component{
     }
 
     render() {
+
+        const exercises = this.props.exercises.map((exercise, key) => {
+            const checked = this.props.exercise === exercise.value ? 'checked': '';
+            return (
+                <li className="exercises" key={key}>
+                    <input type="radio" className="hide" id={exercise.id}
+                           name="exercise" value={exercise.value} onClick={() => this.selectExercise(exercise.value)} checked={checked} />
+                    <label htmlFor={exercise.id}><i className="fa fa-fw fa-circle" id={exercise.colour}></i>{exercise.value}</label>
+                </li>
+            )
+        });
+
         return (
             <div className="exercise">
 
-                <h1>Did you get 30 minutes of exercise today?</h1>
+                <div className="card">
 
-                <input type="radio" name="exercise" value="yes" onClick={() => this.selectExercise('yes')} /> Yes <br/>
+                    <img src={ require('../images/exercise.png')} alt="Exercise icon" />
 
-                <input type="radio" name="exercise" value="no" onClick={() => this.selectExercise('no')} /> No <br/>
+                    <h1>Did you get 30 minutes of exercise today?</h1>
+
+                    <ul className="choices">
+                        {exercises}
+                    </ul>
+
+                </div>
+
+                <p className="icons">Icons made by <a href="https://www.flaticon.com/authors/freepik" className="icons" target="_blank" rel="noopener noreferrer">Freepik</a> from <a href="http://www.flaticon.com" className="icons" target="_blank" rel="noopener noreferrer">www.flaticon.com</a></p>
 
             </div>
         );
@@ -26,7 +46,8 @@ export class ExerciseEntry extends Component{
 }
 
 const mapStateToProps = state => ({
-    exercise: state.entry.newEntry.exercise
+    exercise: state.entry.newEntry.exercise,
+    exercises: state.entry.exercises
 });
 
 export default connect(mapStateToProps)(ExerciseEntry);

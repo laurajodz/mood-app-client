@@ -41,17 +41,27 @@ export class MoodEntry extends Component{
         return (
             <div className="mood">
 
-                <h1>First, rate your mood. Overall, how did you feel today?</h1>
+                <div className="card">
 
-                <ul className="choices">
-                    {moods}
-                </ul>
+                    <img src={ require('../images/happy.png')} alt="Happy Face" />
+                    <img src={ require('../images/ok.png')} alt="OK Face" />
+                    <img src={ require('../images/sad.png')} alt="Sad Face" />
 
-                <h1>Next, what words would you use to describe your mood today?</h1>
+                    <h1>First, rate your mood. Overall, how did you feel today?</h1>
 
-                <ul className="types">
-                    {types}
-                </ul>
+                    <ul className="choices">
+                        {moods}
+                    </ul>
+
+                    <h1>Next, what words would you use to describe your mood today?</h1>
+
+                    <ul className="types">
+                        {types}
+                    </ul>
+
+                </div>
+
+                <p className="icons">Icons made by <a href="http://www.baianat.com/" className="icons" target="_blank" rel="noopener noreferrer">Baianet</a> from <a href="http://www.flaticon.com" className="icons" target="_blank" rel="noopener noreferrer">www.flaticon.com</a></p>
 
             </div>
         );

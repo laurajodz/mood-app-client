@@ -13,7 +13,7 @@
   font-family: 'Libre Baskerville', serif;
   float: left;
   margin: 30px 10px;
-  font-size: 2em;
+  font-size: 2.5em;
 }
 
 .homeLogin {
@@ -78,7 +78,7 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   padding: 20px;
   margin: 20px;
-  background-color: #FFF0F2;
+  background-color: #e6f3fb;
   color: black;
   font-size: 0.5em;
   min-width: 70%;
@@ -96,13 +96,15 @@
 
 i#git.fa.fa-github-square {
   margin-right: 10px;
-  color: #0088D9;
+  color: #3E00E5;
 }
 
 i#linked.fa.fa-linkedin-square {
-  color: #0088D9;
+  color: #3E00E5;
 }
 
-.footer {
-  display: none;
+.icons {
+  font-size: .25em;
+  text-decoration: none;
+  color: black;
 }

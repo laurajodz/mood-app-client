@@ -11,44 +11,34 @@ export class EatingEntry extends Component{
     }
 
     render() {
+
+        const eatings = this.props.eatings.map((eating, key) => {
+            const checked = this.props.eating === eating.value ? 'checked': '';
+            return (
+                <li className="eatings" key={key}>
+                  <input type="radio" id={eating.id} className="hide"
+                         name="eating" value={eating.value} onClick={() => this.selectEating(eating.value)} checked={checked} />
+                  <label htmlFor={eating.id}><i className="fa fa-fw fa-circle" id={eating.colour}></i>{eating.name}</label>
+                </li>
+            )
+        });
+
         return (
             <div className="eating">
 
-                <h1>How healthy did you eat today?</h1>
+                <div className="card">
 
-                <ul className="choices">
+                    <img src={ require('../images/eating.png')} alt="Eating icon" />
 
-                    <li className="eatings">
-                        <input type="radio" id="eating1" className="hide"
-                         name="eating" value="1" onClick={() => this.selectEating(1)} />
-                        <label htmlFor="eating1"><i className="fa fa-fw fa-circle" id="red"></i>bad</label>
-                    </li>
+                    <h1>How healthy did you eat today?</h1>
 
-                    <li className="eatings">
-                        <input type="radio" id="eating2" className="hide"
-                         name="eating" value="2" onClick={() => this.selectEating(2)} />
-                        <label htmlFor="eating2"><i className="fa fa-fw fa-circle" id="orange"></i>meh</label>
-                    </li>
+                    <ul className="choices">
+                        {eatings}
+                    </ul>
 
-                    <li className="eatings">
-                        <input type="radio" id="eating3" className="hide"
-                         name="eating" value="3" onClick={() => this.selectEating(3)} />
-                        <label htmlFor="eating3"><i className="fa fa-fw fa-circle" id="yellow"></i>okay</label>
-                    </li>
+                </div>
 
-                    <li className="eatings">
-                        <input type="radio" id="eating4" className="hide"
-                         name="eating" value="4" onClick={() => this.selectEating(4)} />
-                        <label htmlFor="eating4"><i className="fa fa-fw fa-circle" id="chartreuse"></i>good</label>
-                    </li>
-
-                    <li className="eatings">
-                        <input type="radio" id="eating5" className="hide"
-                         name="eating" value="5" onClick={() => this.selectEating(5)} />
-                        <label htmlFor="eating5"><i className="fa fa-fw fa-circle" id="green"></i>great</label>
-                    </li>
-
-                </ul>
+                <p className="icons">Icons made by <a href="https://www.flaticon.com/authors/freepik" className="icons" target="_blank" rel="noopener noreferrer">Freepik</a> from <a href="http://www.flaticon.com" className="icons" target="_blank" rel="noopener noreferrer">www.flaticon.com</a></p>
 
             </div>
         );
@@ -56,7 +46,8 @@ export class EatingEntry extends Component{
 }
 
 const mapStateToProps = state => ({
-    eating: state.entry.newEntry.eating
+    eating: state.entry.newEntry.eating,
+    eatings: state.entry.eatings
 });
 
 export default connect(mapStateToProps)(EatingEntry);

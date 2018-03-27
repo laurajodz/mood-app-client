@@ -59,7 +59,84 @@ const initialState = {
       {name: 'pessimistic'},
       {name: 'bad'},
       {name: 'irritated'}
-    ]
+    ],
+    sleeps: [
+      {
+        name: 'bad',
+        colour: 'red',
+        value:1,
+        id: 'sleep1'
+      },
+      {
+        name: 'meh',
+        colour: 'orange',
+        value:2,
+        id: 'sleep2'
+      },
+      {
+        name: 'okay',
+        colour: 'yellow',
+        value:3,
+        id: 'sleep3'
+      },
+      {
+        name: 'good',
+        colour: 'chartreuse',
+        value:4,
+        id: 'sleep4'
+      },
+      {
+        name: 'great',
+        colour: 'green',
+        value:5,
+        id: 'sleep5'
+      }
+    ],
+    eatings: [
+      {
+        name: 'bad',
+        colour: 'red',
+        value:1,
+        id: 'eating1'
+      },
+      {
+        name: 'meh',
+        colour: 'orange',
+        value:2,
+        id: 'eating2'
+      },
+      {
+        name: 'okay',
+        colour: 'yellow',
+        value:3,
+        id: 'eating3'
+      },
+      {
+        name: 'good',
+        colour: 'chartreuse',
+        value:4,
+        id: 'eating4'
+      },
+      {
+        name: 'great',
+        colour: 'green',
+        value:5,
+        id: 'eating5'
+      }
+    ],
+    exercises: [
+      {
+        value: 'yes',
+        colour: 'green',
+        id: 'exercise1'
+      },
+      {
+        value: 'no',
+        colour: 'red',
+        id: 'exercise2'
+      }
+    ],
+    notes: null
 };
 
 export const entryReducer = (state=initialState, action) => {

@@ -39,7 +39,7 @@ export default function FormEntry(props) {
             </section>
 
             <section className='step-progress'>
-                <StepZilla steps={steps} prevBtnOnLastStep={false}/>
+                <StepZilla steps={steps} />
             </section>
 
         </section>

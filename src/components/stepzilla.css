@@ -43,7 +43,7 @@ ol.progtrckr li.progtrckr-doing {
 
 ol.progtrckr li.progtrckr-done {
   color: black;
-  border-bottom: 4px solid #3E00E5;
+  border-bottom: 4px solid #0088D9;
 }
 
 ol.progtrckr li:after {
@@ -66,7 +66,7 @@ ol.progtrckr li.progtrckr-todo:before {
 }
 
 ol.progtrckr li.progtrckr-todo:hover:before {
-  color: #3E00E5;
+  color: #0088D9;
 }
 
 ol.progtrckr li.progtrckr-doing:before {
@@ -85,7 +85,7 @@ ol.progtrckr li.progtrckr-doing:hover:before {
 ol.progtrckr li.progtrckr-done:before {
   content: "\2713";
   color: white;
-  background-color: #3E00E5;
+  background-color: #0088D9;
   width: 1.2em;
   line-height: 1.2em;
   border-radius: 1.2em;
