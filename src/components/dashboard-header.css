@@ -3,6 +3,9 @@
     margin: auto;
     background-color: #0088D9;
     color: white;
+    list-style-type: none;
+    height: 75px;
+    padding: 0;
 }
 
 .dashLogo{
@@ -14,33 +17,28 @@
     margin-left: 5px;
 }
 
-.dashLogout {
-    max-width: 50%;
+.dashLink {
+    display: inline;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    margin-right: 10px;
+    /* float: right; */
+}
+
+.logout, .dashLogout {
+    float: right;
+}
+
+.outButton {
+    border: none;
+    color: white;
+    display: inline;
+    cursor: pointer;
     float: right;
     margin-right: 5px;
 }
 
-.clearfix{
-    clear:both
-}
-
-.dashboardHeader {
-    list-style-type: none;
-    padding: 0;
-    text-align: left;
-}
-
-.dashHomeLink, .dashHistoryLink, .pipe {
-    display: inline;
-}
-
-.dashHomeLink, .dashHistoryLink {
-    cursor: pointer;
-}
-
-.homeLink, .historyLink {
-    text-decoration: none;
-    color: white;
-    margin-left: 5px;
-    margin-bottom: 20px;
+li .dashLink.active {
+    background-color: #3E00E5;
 }

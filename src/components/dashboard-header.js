@@ -8,13 +8,13 @@ export default function DashboardHeader(props) {
 
     return (
 
-        <div className="dashboard-header">
-            <div className="dashLogo">Mood Today</div>
-            <div className="dashLogout"><Logout /></div>
-            <div className="clearfix"></div>
-            <ul className="dashboardHeader">
-                <li className="dashHistoryLink"><Link to="/history" className="historyLink">My History</Link></li>
-            </ul>
-        </div>
+        <ul className="dashboard-header">
+            <li className="dashLogo">Mood Today</li>
+            <li className="dashLink"><Link to="/dashboard" className="dashLink">My Dashboard</Link></li>
+            <li className="dashLink"><Link to="/history" className="dashLink">My History</Link></li>
+            <li className="dashLogout"><Logout /></li>
+
+        </ul>
+
     );
 }
