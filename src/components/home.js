@@ -16,14 +16,18 @@ export function Home(props) {
         <div className="home">
 
             <ul className="homeHeader">
-                <li><p className="homeLogo">Mood Today</p></li>
                 <li><Link to="/login" className="homeLogin">Log in</Link></li>
+                <li><p className="homeLogo">Mood Today<span className="subtitle"><br/> Your Mood Tracking App</span></p></li>
             </ul>
 
             <section className="homeBody">
 
                 <section className="section1">
-                    <ul className="sectionHeader">Your Mood Tracking App
+                    <ul className="sectionHeader">
+                        <li>Mood Today is on a mission to make sense of our changing moods</li>
+                        <li className="about">If your goal is to better understand your mood patterns,
+                        Mood Today provides an easy way to record and track moods -- as well as environmental
+                        factors (sleep, eating, and exercise) -- to help you on your path to mood management</li>
                         <li className="sectionContent">Record Your Moods <br/>
                             <i className="fa fa-pencil-square-o fa-3x" id="pencil"></i>
                         </li>

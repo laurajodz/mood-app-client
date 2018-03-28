@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import DashboardHeader from './dashboard-header';
 import {connect} from 'react-redux';
-import {VictoryBar, VictoryChart, VictoryAxis, VictoryTheme} from 'victory';
+import {VictoryBar, VictoryChart, VictoryLine, VictoryAxis, VictoryTheme} from 'victory';
 import {Link} from 'react-router-dom';
 import moment from 'moment';
 
@@ -10,6 +10,7 @@ import './dashboard.css';
 export class Dashboard extends Component{
 
     render() {
+
         return (
 
             <div className="dashboard">
@@ -32,27 +33,52 @@ export class Dashboard extends Component{
 
                 <section>
                     <h1>Analytics</h1>
-                </section>
 
-                <section>
-                    <p>Mood Rating Per Day</p>
+                    <h2>Trending Mood Rating</h2>
                     <VictoryChart
                     theme={VictoryTheme.material}
                     domainPadding={20}
+                    width={600} height={200}
+                    animate={{ duration: 4000 }}
                     >
                         <VictoryAxis
-                        style={{tickLabels: { angle: -50 } }}
+                        tickValues={[1, 2, 3, 4, 5]}
+                        />
+                        <VictoryAxis dependentAxis
+                        tickValues={[1, 2, 3, 4, 5]}
+                        />
+                        <VictoryLine
+                        style={{
+                          tickLabels: { angle: -50 },
+                          data: { stroke: "blue"}
+                        }}
+                        data={this.props.entries}
+                        x={day => moment(day.date).format('MMM D')}
+                        y='mood'
+                        />
+                    </VictoryChart>
+
+                    <h2>Average Sleep Quality per Mood</h2>
+                    <VictoryChart
+                    theme={VictoryTheme.material}
+                    domainPadding={20}
+                    width={600} height={200}
+                    animate={{ duration: 4000 }}
+                    >
+                        <VictoryAxis
+                        tickValues={[1, 2, 3, 4, 5]}
                         />
                         <VictoryAxis dependentAxis
                         tickValues={[1, 2, 3, 4, 5]}
                         />
                         <VictoryBar
                             data={this.props.entries}
-                            x={day => moment(day.date).format('MMM D')}
-                            y='mood'
-                            style={{ data: { fill: "blue" } }}
+                            x='mood'
+                            y='sleep'
+                            style={{ data: { fill: "green" } }}
                         />
                     </VictoryChart>
+
                 </section>
 
                 <section>

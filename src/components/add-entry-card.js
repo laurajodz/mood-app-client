@@ -5,7 +5,7 @@ import './add-entry-card.css';
 export default function AddEntryCard(props) {
 
     // let dateRaw = {props.date};
-    // let dateDisplay = dateRaw.toDateString();
+    // let dateDisplay = dateRaw.toDateString().format('MMM D');
     //
     // let moodTypeArray = {props.moodTypes};
     // let moodTypeDisplay = moodTypeArray.join(", ");

@@ -38,9 +38,3 @@
     font-size: 2em;
   }
 }
-
-@media screen and (min-width: 1200px) {
-  .start-entry-link  {
-      font-size: 3em;
-    }
-}
