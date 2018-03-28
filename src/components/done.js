@@ -12,14 +12,23 @@ export class Done extends Component{
         let moodDescriptionValue = this.props.newEntry.mood;
         let moodDescription;
 
+        let moodTypesDescriptionValue = this.props.newEntry.moodTypes;
+        let moodTypesDescription;
+
         let sleepDescriptionValue = this.props.newEntry.sleep;
         let sleepDescription;
 
         let eatingDescriptionValue = this.props.newEntry.eating;
         let eatingDescription;
 
+        let exerciseDescriptionValue = this.props.newEntry.exercise;
+        let exerciseDescription;
+
+        let notesDescriptionValue = this.props.newEntry.notes;
+        let notesDescription;
+
         if (moodDescriptionValue == null) {
-            moodDescription = " ";
+            moodDescription = "not entered";
         } else if (moodDescriptionValue === 5) {
             moodDescription = "great";
         } else if (moodDescriptionValue === 4) {
@@ -32,8 +41,14 @@ export class Done extends Component{
             moodDescription = "bad";
         }
 
+        if (moodTypesDescriptionValue.length === 0) {
+            moodTypesDescription = "not entered";
+        } else if (moodTypesDescriptionValue !== null) {
+            moodTypesDescription = moodTypesDescriptionValue.join(", ");
+        }
+
         if (sleepDescriptionValue == null) {
-            sleepDescription = " ";
+            sleepDescription = "not entered";
         } else if (sleepDescriptionValue === 5) {
             sleepDescription = "great";
         } else if (sleepDescriptionValue === 4) {
@@ -47,7 +62,7 @@ export class Done extends Component{
         }
 
         if (eatingDescriptionValue == null) {
-            eatingDescription = " ";
+            eatingDescription = "not entered";
         } else if (eatingDescriptionValue === 5) {
             eatingDescription = "great";
         } else if (eatingDescriptionValue === 4) {
@@ -60,6 +75,18 @@ export class Done extends Component{
             eatingDescription = "bad";
         }
 
+        if (exerciseDescriptionValue == null) {
+            exerciseDescription = "not entered";
+        } else if (exerciseDescriptionValue !== null) {
+            exerciseDescription = exerciseDescriptionValue;
+        }
+
+        if (notesDescriptionValue == null) {
+            notesDescription = "not entered";
+          } else if (notesDescriptionValue !== null) {
+              notesDescription = notesDescriptionValue;
+          }
+
         return (
             <div className="done">
 
@@ -70,6 +97,9 @@ export class Done extends Component{
                     <img src={ require('../images/ok.png')} alt="OK Face" />
                     <img src={ require('../images/sad.png')} alt="Sad Face" />
                     <p>{moodDescription}</p>
+                    <p> - - - - - - </p>
+                    <p>Your Descriptions:</p>
+                    <p>{moodTypesDescription}</p>
                 </h2>
                 <h2 className="box">
                     <img src={ require('../images/sleep.png')} alt="Sleep icon" />
@@ -81,9 +111,11 @@ export class Done extends Component{
                 </h2>
                 <h2 className="box">
                     <img src={ require('../images/exercise.png')} alt="Exercise icon" />
-                    <p>{this.props.newEntry.exercise}</p>
+                    <p>{exerciseDescription}</p>
                 </h2>
-                <h2 className="box">Notes: {this.props.newEntry.notes}</h2>
+                <h2 className="box">Notes <br/>
+                {notesDescription}
+                </h2>
 
                 <button
                     className="return-button" onClick={() => this.props.dispatch(addEntry())}

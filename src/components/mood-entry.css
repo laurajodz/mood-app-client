@@ -59,7 +59,7 @@ i#yellow.fa.fa-fw.fa-circle {color: hsl(60, 100%, 50%);}
 i#chartreuse.fa.fa-fw.fa-circle {color: hsl(90, 100%, 50%);}
 i#green.fa.fa-fw.fa-circle {color: hsl(120, 75%, 35%);}
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 630px) {
   .card {
     margin: 20px 80px;
   }
@@ -71,7 +71,7 @@ i#green.fa.fa-fw.fa-circle {color: hsl(120, 75%, 35%);}
   }
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 910px) {
   .card {
     margin: 20px 200px;
   }
@@ -80,8 +80,8 @@ i#green.fa.fa-fw.fa-circle {color: hsl(120, 75%, 35%);}
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1350px) {
   .card {
-    margin: 20px 300px;
+    margin: 20px 400px;
   }
 }

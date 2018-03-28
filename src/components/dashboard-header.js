@@ -12,8 +12,8 @@ export default function DashboardHeader(props) {
 
             <li className="dashLogout"><Logout /></li>
             <li className="dashLogo">Mood Today</li>
-            <li className="dashLinks"><Link to="/dashboard" id="active" className="dashLink">My Dashboard</Link></li>
             <li className="dashLinks"><Link to="/history" className="dashLink">My History</Link></li>
+            <li className="dashLinks"><Link to="/dashboard" id="active" className="dashLink">My Dashboard</Link></li>
 
         </ul>
 

@@ -32,7 +32,7 @@ label {
   font-size: 30px;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 630px) {
   .card {
     margin: 10px 80px;
   }
@@ -41,17 +41,11 @@ label {
   }
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 910px) {
   .card {
     margin: 20px 200px;
   }
   .choices {
     margin-left: 50px;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .card {
-    margin: 20px 300px;
   }
 }

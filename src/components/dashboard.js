@@ -21,13 +21,13 @@ export class Dashboard extends Component{
                 <h1>MY DASHBOARD</h1>
 
                 <section className="hello">
-                    Hello, {this.props.user.username}
+                    Welcome, {this.props.user.username}
                 </section>
 
                 <section className="start">
-                    <button className="start-entry-button">
-                        <Link to="/form-entry" className="start-entry-button-link">Enter Mood for Today</Link>
-                    </button>
+                    <p className="start-entry">
+                        <Link to="/form-entry" className="start-entry-link">Enter Mood for Today</Link>
+                    </p>
                 </section>
 
                 <section>
