@@ -7,13 +7,20 @@
 
 #next-button, #prev-button {
   padding: 10px;
-  margin: 20px 40px;
   border: 1px solid black;
   border-radius: 10px;
   font-size: 1em;
 }
 
-@media screen and (min-width: 600px) {
+#next-button {
+  margin-right: 40px;
+}
+
+#prev-button {
+  margin-left: 40px;
+}
+
+@media screen and (min-width: 630px) {
   #next-button {
     margin-right: 200px;
     font-size: 1.5em;
@@ -24,7 +31,7 @@
   }
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 910px) {
   #next-button {
     margin-right: 300px;
   }

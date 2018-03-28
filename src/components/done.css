@@ -1,8 +1,8 @@
-.box {
-  background-color: #e6f3fb;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+.return-button {
+  text-decoration: none;
+  color: black;
   padding: 10px;
-  margin: 0 auto 0 auto;
-  display: block;
-  max-width: 80%;
+  margin: 35px 10px;
+  border: 1px solid black;
+  border-radius: 10px;
 }
