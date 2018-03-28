@@ -13,12 +13,11 @@ export class ExerciseEntry extends Component{
     render() {
 
         const exercises = this.props.exercises.map((exercise, key) => {
-            const checked = this.props.exercise === exercise.value ? 'checked': '';
             return (
                 <li className="exercises" key={key}>
-                    <input type="radio" className="hide" id={exercise.id}
-                           name="exercise" value={exercise.value} onClick={() => this.selectExercise(exercise.value)} checked={checked} />
-                    <label htmlFor={exercise.id}><i className="fa fa-fw fa-circle" id={exercise.colour}></i>{exercise.value}</label>
+                      <input type="radio" id={exercise.id} className="hide"
+                             name="exercise" value={exercise.value} onClick={() => this.selectExercise(exercise.value)} defaultChecked={this.props.exercise === exercise.value} />
+                      <label htmlFor={exercise.id}><i className="fa fa-fw fa-circle" id={exercise.colour}></i>{exercise.value}</label>
                 </li>
             )
         });

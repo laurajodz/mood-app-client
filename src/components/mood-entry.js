@@ -17,23 +17,19 @@ export class MoodEntry extends Component{
     render() {
 
         const moods = this.props.moods.map((mood, key) => {
-            const checked = this.props.mood === mood.value ? 'checked': '';
             return (
                 <li className="moods" key={key}>
-                  <input type="radio" id={mood.id} className="hide"
-                         name="mood" value={mood.value} onClick={() => this.selectMood(mood.value)} checked={checked} />
-                  <label htmlFor={mood.id}><i className="fa fa-fw fa-circle" id={mood.colour}></i>{mood.name}</label>
+                    <input type="radio" id={mood.id} className="hide" name="mood" value={mood.value} onClick={() => this.selectMood(mood.value)} defaultChecked={this.props.mood === mood.value} />
+                    <label htmlFor={mood.id}><i className="fa fa-fw fa-circle" id={mood.colour}></i>{mood.name}</label>
                 </li>
             )
         });
 
         const types = this.props.types.map((type, key) => {
-            const checked = this.props.type === type.name ? 'checked': '';
             return (
                 <li className="moodTypeItem" key={key}>
-                  <input type="checkbox" id={type.name}
-                         name="moodType" value={type.name} onToggle={() => this.selectMoodTypes(type.name)} checked={checked} />
-                  <label htmlFor={type.name}>{type.name}</label>
+                    <input type="checkbox" id={type.name} name="moodType" value={type.name} onClick={() => this.selectMoodTypes(type.name)} defaultChecked={this.props.type === type.name} />
+                    <label htmlFor={type.name}>{type.name}</label>
                 </li>
             )
         })

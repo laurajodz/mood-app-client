@@ -50,8 +50,6 @@ export function Home(props) {
                             <p>how healthy you ate</p>
                             <img src={ require('../images/exercise.png')} alt="Exercise icon" />
                             <p>if you got some exercise or not</p>
-                            <p>and</p>
-                            <p>free form notes about your day</p>
                         </div>
                     </div>
                 </section>
@@ -77,14 +75,27 @@ export function Home(props) {
                 </section>
 
                 <section className="section5">
-                    <Login />
+                    <ul className="sectionHeader">Privacy
+                        <li className="sectionContent">
+                        Your info is yours. Your data is only accessible via your secure login<br/>
+                        <img src={ require('../images/padlock.png')} alt="Lock" />
+                        </li>
+                    </ul>
+                </section>
+
+                <section className="section6">
+                    <ul className="sectionHeader">Login
+                        <li className="sectionContent">
+                            <Login />
+                        </li>
+                    </ul>
                 </section>
 
                 <section className="homeFooter">
                     Copyright 2018, <a href="http://www.laurajodz.com" className="port" target="_blank" rel="noopener noreferrer">Laura Jodz</a><br/>
                     <a href="https://github.com/laurajodz" target="_blank" rel="noopener noreferrer"><i className="fa fa-github-square" id="git"></i></a>
                     <a href="https://www.linkedin.com/in/laurajodz" target="_blank" rel="noopener noreferrer"><i className="fa fa-linkedin-square" id="linked"></i></a>
-                    <p className="icons">Icons made by <a href="https://www.flaticon.com/authors/freepik" className="icons" target="_blank" rel="noopener noreferrer">Freepik</a>, <a href="http://www.baianat.com/" className="icons" target="_blank" rel="noopener noreferrer">Baianet</a>, and Cursor Creative from <a href="http://www.flaticon.com" className="icons" target="_blank" rel="noopener noreferrer">www.flaticon.com</a></p>
+                    <p className="icons">Icons made by <a href="https://www.flaticon.com/authors/freepik" className="icons" target="_blank" rel="noopener noreferrer">Freepik</a>, <a href="http://www.baianat.com/" className="icons" target="_blank" rel="noopener noreferrer">Baianet</a>, Gregor Cresnar, and Cursor Creative from <a href="http://www.flaticon.com" className="icons" target="_blank" rel="noopener noreferrer">www.flaticon.com</a></p>
                 </section>
 
             </section>

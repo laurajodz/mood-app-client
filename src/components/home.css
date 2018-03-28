@@ -29,49 +29,61 @@
 .homeBody {
   margin-top: 30px;
   padding-top: 80px;
-  height:1500px;
   max-width: 100%;
 }
 
 .section1 {
-  padding-top: 20px;
+  padding: 20px;
   background-color: #0088D9;
   color: white;
   text-align: center;
+  /* height: 100%; */
 }
 
 .section2 {
-  padding-top: 20px;
-  background-color: #145ADD;
-  color: white;
+  padding: 20px;
+  /* background-color: #145ADD; */
+  /* color: white; */
   text-align: center;
+  /* height: 100%; */
 }
 
 .section3 {
-  padding-top: 20px;
-  background-color: #292DE1;
-  color: white;
+  padding: 20px;
+  /* background-color: #292DE1; */
+  /* color: white; */
   text-align: center;
+  /* height: 100%; */
 }
 
 .section4 {
-  padding-top: 20px;
-  background-color: #3E00E5;
-  color: white;
+  padding: 20px;
+  /* background-color: #3E00E5; */
+  /* color: white; */
   text-align: center;
+  /* height: 100%; */
 }
 
 .section5 {
-  padding-top: 20px;
-  background-color: white;
+  padding: 20px;
+  /* background-color: white; */
+  text-align: center;
+  /* height: 100%; */
+}
+
+.section6 {
+  padding: 20px;
+  /* background-color: white; */
 }
 
 .sectionHeader {
   font-size: 2em;
   text-align: center;
   list-style-type: none;
-  display: inline-block;
+  display: block;
   padding: 0;
+  max-width: 80%;
+  margin: 0 auto 0 auto;
 }
 
 .sectionContent {
@@ -81,7 +93,6 @@
   background-color: #e6f3fb;
   color: black;
   font-size: 0.5em;
-  min-width: 70%;
 }
 
 .homeFooter {

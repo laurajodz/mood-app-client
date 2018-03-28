@@ -12,4 +12,21 @@ textarea {
     border: 2px solid #ccc;
     border-radius: 4px;
     resize: none;
+    font-size: 14px;
+}
+
+@media screen and (min-width: 600px) {
+  textarea {
+    height: 150px;
+    font-size: 18px;
+  }
+  h1 {
+    font-size: 2em;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .card {
+    margin: 10px 200px;
+  }
 }

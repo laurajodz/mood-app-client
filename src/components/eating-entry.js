@@ -13,12 +13,11 @@ export class EatingEntry extends Component{
     render() {
 
         const eatings = this.props.eatings.map((eating, key) => {
-            const checked = this.props.eating === eating.value ? 'checked': '';
             return (
                 <li className="eatings" key={key}>
-                  <input type="radio" id={eating.id} className="hide"
-                         name="eating" value={eating.value} onClick={() => this.selectEating(eating.value)} checked={checked} />
-                  <label htmlFor={eating.id}><i className="fa fa-fw fa-circle" id={eating.colour}></i>{eating.name}</label>
+                    <input type="radio" id={eating.id} className="hide"
+                           name="eating" value={eating.value} onClick={() => this.selectEating(eating.value)} defaultChecked={this.props.eating === eating.value} />
+                    <label htmlFor={eating.id}><i className="fa fa-fw fa-circle" id={eating.colour}></i>{eating.name}</label>
                 </li>
             )
         });

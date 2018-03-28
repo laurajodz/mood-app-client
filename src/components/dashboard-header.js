@@ -9,10 +9,11 @@ export default function DashboardHeader(props) {
     return (
 
         <ul className="dashboard-header">
-            <li className="dashLogo">Mood Today</li>
-            <li className="dashLink"><Link to="/dashboard" className="dashLink">My Dashboard</Link></li>
-            <li className="dashLink"><Link to="/history" className="dashLink">My History</Link></li>
+
             <li className="dashLogout"><Logout /></li>
+            <li className="dashLogo">Mood Today</li>
+            <li className="dashLinks"><Link to="/dashboard" id="active" className="dashLink">My Dashboard</Link></li>
+            <li className="dashLinks"><Link to="/history" className="dashLink">My History</Link></li>
 
         </ul>
 

@@ -1,8 +1,12 @@
 .history-header {
     border-bottom: 2px solid #0088D9;
-    margin: auto;
+    margin: 0;
     background-color: #0088D9;
     color: white;
+    list-style-type: none;
+    height: 75px;
+    padding: 0;
+    overflow: hidden;
 }
 
 .histLogo {
@@ -10,36 +14,45 @@
     max-width: 50%;
     font-size: 1.5em;
     float: left;
-    margin-top: 15px;
+    margin-top: 25px;
     margin-left: 5px;
 }
 
-.histLogout {
-    max-width: 50%;
+.histLinks {
     float: right;
-    margin-right: 5px;
+    font-size: 10px;
 }
 
-.clearfix{
-    clear:both
-}
-
-.historyHeader {
-    list-style-type: none;
-    padding: 0;
-    text-align: left;
-}
-
-.histHomeLink, .histDashboardLink, .pipe {
-    display: inline;
-}
-
-.histHomeLink, .histDashboardLink {
-    cursor: pointer;
-}
-
-.homeLink, .dashboardLink {
+.histLink {
+    display: block;
+    padding: 5px;
     text-decoration: none;
     color: white;
-    margin-left: 5px;
+}
+
+.logout, .histLogout {
+    max-width: 100px;
+    max-height: 50px;
+    margin: 0;
+    float: right;
+}
+
+.outLink {
+    color: white;
+    cursor: pointer;
+    float: right;
+    margin: 0;
+    font-size: 10px;
+    display: block;
+    padding: 5px;
+}
+
+#active, .histLinks:hover, histLinks:focus, .ouLink:hover, .ouLink:focus {
+    background-color: #007cc5;
+}
+
+@media screen and (min-width: 600px) {
+  .histLinks, .outLink {
+    font-size: 16px;
+  }
 }

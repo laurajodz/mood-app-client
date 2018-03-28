@@ -6,29 +6,48 @@
   background-color: #e6f3fb;
 }
 
+h1 {
+  font-size: 1.5em;
+}
+
 .choices, .types {
-  margin: 0 auto;
-  padding: 0;
   text-align: left;
+  padding: 0;
+  margin: 0;
 }
 
-.types {
-  columns: 2;
-}
-
-.moods, .moodTypeItem {
+.moods {
   list-style: none;
-  width: 100px;
-  margin: auto;
-  padding: 10px;
+  padding: 20px;
+}
+
+.moodTypeItem {
+  list-style: none;
+  padding: 20px;
 }
 
 .hide {
   display: none;
 }
 
+label {
+  font-size: 26px;
+  vertical-align: middle;
+}
+
+input[type="checkbox"]  {
+   width: 30px;
+   height: 30px;
+   background: white;
+   border-radius: 5px;
+   border: 2px solid #555;
+   vertical-align: middle;
+   margin-right: 10px;
+}
+
 .fa-circle {
   padding-right: 10px;
+  font-size: 30px;
 }
 
 input[type="radio"] + .fa-circle:before, input[type="radio"] + label > .fa-circle:before {
@@ -39,61 +58,26 @@ input[type="radio"]:checked + .fa-circle:before, input[type="radio"]:checked + l
   content: "\f111";
 }
 
-/*Adding custom checkbox icons*/
-label[for=happy], label[for=excited], label[for=optimistic], label[for=relaxed], label[for=great], label[for=silly], label[for=energetic], label[for=sad], label[for=angry], label[for=restless], label[for=nervous], label[for=pessimistic], label[for=bad], label[for=irritated] {
-	position: relative;
-	padding-left: 30px;
-}
-
-label[for=happy]:before, label[for=happy]:after, label[for=excited]:before, label[for=excited]:after, label[for=optimistic]:before, label[for=optimistic]:after, label[for=relaxed]:before, label[for=relaxed]:after, label[for=great]:before, label[for=great]:after, label[for=silly]:before, label[for=silly]:after, label[for=energetic]:before, label[for=energetic]:after, label[for=sad]:before, label[for=sad]:after, label[for=angry]:before, label[for=angry]:after, label[for=restless]:before, label[for=restless]:after, label[for=nervous]:before, label[for=nervous]:after, label[for=pessimistic]:before, label[for=pessimistic]:after, label[for=bad]:before, label[for=bad]:after, label[for=irritated]:before, label[for=irritated]:after {
-	font-family: FontAwesome;
-	font-size: 21px;
-	/*absolutely positioned*/
-	position: absolute; top: 0; left: 0;
-}
-
-label[for=happy]:before, label[for=excited]:before, label[for=optimistic]:before, label[for=relaxed]:before, label[for=great]:before, label[for=silly]:before, label[for=energetic]:before, label[for=sad]:before, label[for=angry]:before, label[for=restless]:before, label[for=nervous]:before, label[for=pessimistic]:before, label[for=bad]:before, label[for=irritated]:before {
-	content: '\f096'; /*unchecked*/
-}
-
-label[for=happy]:after, label[for=excited]:after, label[for=optimistic]:after, label[for=relaxed]:after, label[for=great]:after, label[for=silly]:after, label[for=energetic]:after, label[for=sad]:after, label[for=angry]:after, label[for=restless]:after, label[for=nervous]:after, label[for=pessimistic]:after, label[for=bad]:after, label[for=irritated]:after {
-	content: '\f046'; /*checked*/
-	/*checked icon will be hidden by default by using 0 max-width and overflow hidden*/
-	max-width: 0;
-	overflow: hidden;
-	opacity: 0.5;
-	/*CSS3 transitions for animated effect*/
-	transition: all 0.35s;
-}
-
-/*hiding the original checkboxes*/
-input[type="checkbox"] {
-	display: none;
-}
-
-/*when the user checks the checkbox the checked icon will animate in*/
-input[type="checkbox"]:checked + label:after {
-	max-width: 25px; /*an arbitratry number more than the icon's width*/
-	opacity: 1; /*for fade in effect*/
-}
-
-/*adding some colors for fun*/
-#happy+label:before, #happy+label:after {color: hsl(120, 75%, 35%);}
-#excited+label:before, #excited+label:after {color: hsl(120, 75%, 35%);}
-#optimistic+label:before, #optimistic+label:after {color: hsl(120, 75%, 35%);}
-#relaxed+label:before, #relaxed+label:after {color: hsl(120, 75%, 35%);}
-#great+label:before, #great+label:after {color: hsl(120, 75%, 35%);}
-#silly+label:before, #silly+label:after {color: hsl(120, 75%, 35%);}
-#energetic+label:before, #energetic+label:after {color: hsl(120, 75%, 35%);}
-#sad+label:before, #sad+label:after {color: hsl(0, 75%, 50%);}
-#angry+label:before, #angry+label:after {color: hsl(0, 75%, 50%);}
-#restless+label:before, #restless+label:after {color: hsl(0, 75%, 50%);}
-#nervous+label:before, #nervous+label:after {color: hsl(0, 75%, 50%);}
-#pessimistic+label:before, #pessimistic+label:after {color: hsl(0, 75%, 50%);}
-#bad+label:before, #bad+label:after {color: hsl(0, 75%, 50%);}
-#irritated+label:before, #irritated+label:after {color: hsl(0, 75%, 50%);}
 i#red.fa.fa-fw.fa-circle {color: hsl(0, 75%, 50%);}
 i#orange.fa.fa-fw.fa-circle {color: hsl(33, 100%, 50%);}
 i#yellow.fa.fa-fw.fa-circle {color: hsl(60, 100%, 50%);}
 i#chartreuse.fa.fa-fw.fa-circle {color: hsl(90, 100%, 50%);}
 i#green.fa.fa-fw.fa-circle {color: hsl(120, 75%, 35%);}
+
+@media screen and (min-width: 600px) {
+  .card {
+    margin: 10px 80px;
+  }
+  h1 {
+    font-size: 2em;
+  }
+  .types {
+    columns: 2;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .card {
+    margin: 10px 200px;
+  }
+}

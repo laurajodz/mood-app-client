@@ -1,9 +1,9 @@
 import React from 'react';
 import {shallow} from 'enzyme';
-import {Logout} from './logout';
+import {Dashboard} from './dashboard';
 
-describe('<Logout />', () => {
+describe('<Dashboard />', () => {
     it('Renders without crashing', () => {
-        shallow(<Logout />);
+        shallow(<Dashboard />);
     });
 });

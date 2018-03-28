@@ -10,16 +10,16 @@ export class Logout extends Component{
     }
 
     render() {
-        // Only render the log out button if we are logged in
-        let logOutButton;
+        // Only render the log out link if we are logged in
+        let logOutLink;
         if (this.props.loggedIn) {
-            logOutButton = (
-                <p className="outButton" onClick={() => this.logOut()}>Log out</p>
+            logOutLink = (
+                <p className="outLink" onClick={() => this.logOut()}>Log out</p>
             );
         }
         return (
             <div className="logout">
-                {logOutButton}
+                {logOutLink}
             </div>
         );
     }

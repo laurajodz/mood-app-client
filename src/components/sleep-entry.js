@@ -13,12 +13,11 @@ export class SleepEntry extends Component{
     render() {
 
         const sleeps = this.props.sleeps.map((sleep, key) => {
-            const checked = this.props.sleep === sleep.value ? 'checked': '';
             return (
                 <li className="sleeps" key={key}>
-                  <input type="radio" id={sleep.id} className="hide"
-                         name="sleep" value={sleep.value} onClick={() => this.selectSleep(sleep.value)} checked={checked} />
-                  <label htmlFor={sleep.id}><i className="fa fa-fw fa-circle" id={sleep.colour}></i>{sleep.name}</label>
+                    <input type="radio" id={sleep.id} className="hide" name="sleep"
+                    value={sleep.value} onClick={() => this.selectSleep(sleep.value)} defaultChecked={this.props.sleep === sleep.value} />
+                    <label htmlFor={sleep.id}><i className="fa fa-fw fa-circle" id={sleep.colour}></i>{sleep.name}</label>
                 </li>
             )
         });

@@ -9,12 +9,12 @@
     box-shadow: 0px 0px 0px 2px #3E00E5;
     transition: box-shadow 0.6s linear;
     margin: 1em;
-    font-size: 2em;
+    font-size: 1.5em;
     background-color: #3E00E5;
     border: none;
 }
 
-.start-entry-button:hover {
+.start-entry-button:hover, .start-entry-button:focus {
     box-shadow: 0px 0px 0px 7px #3E00E5;
 }
 

@@ -8,13 +8,14 @@ export default function HistoryHeader(props) {
 
     return (
 
-        <div className="history-header">
-            <div className="histLogo">Mood Today</div>
-            <div className="histLogout"><Logout /></div>
-            <div className="clearfix"></div>
-            <ul className="historyHeader">
-                <li className="histDashboardLink"><Link to="/dashboard" className="dashboardLink">My Dashboard</Link></li>
-            </ul>
-        </div>
+        <ul className="history-header">
+        
+            <li className="histLogout"><Logout /></li>
+            <li className="histLogo">Mood Today</li>
+            <li className="histLinks"><Link to="/dashboard" className="histLink">My Dashboard</Link></li>
+            <li className="histLinks"><Link to="/history" id="active" className="histLink">My History</Link></li>
+
+        </ul>
+
     );
 }
