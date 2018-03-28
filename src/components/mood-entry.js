@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {addMood, addMoodTypes} from '../actions/index';
+import {addMood, addMoodTypes, removeMoodTypes} from '../actions/index';
 
 import './mood-entry.css';
 
@@ -10,8 +10,12 @@ export class MoodEntry extends Component{
         this.props.dispatch(addMood(mood));
     }
 
-    selectMoodTypes(moodTypes){
-        this.props.dispatch(addMoodTypes(moodTypes));
+    selectMoodTypes(moodType){
+      if(!this.props.moodTypes.includes(moodType)) {
+        this.props.dispatch(addMoodTypes(moodType));
+      } else {
+        this.props.dispatch(removeMoodTypes(moodType));
+      }
     }
 
     render() {
@@ -19,7 +23,14 @@ export class MoodEntry extends Component{
         const moods = this.props.moods.map((mood, key) => {
             return (
                 <li className="moods" key={key}>
-                    <input type="radio" id={mood.id} className="hide" name="mood" value={mood.value} onClick={() => this.selectMood(mood.value)} defaultChecked={this.props.mood === mood.value} />
+                    <input
+                        type="radio"
+                        id={mood.id}
+                        className="hide"
+                        name="mood"
+                        value={mood.value}
+                        onClick={() => this.selectMood(mood.value)}
+                        defaultChecked={this.props.mood === mood.value} />
                     <label htmlFor={mood.id}><i className="fa fa-fw fa-circle" id={mood.colour}></i>{mood.name}</label>
                 </li>
             )
@@ -28,7 +39,13 @@ export class MoodEntry extends Component{
         const types = this.props.types.map((type, key) => {
             return (
                 <li className="moodTypeItem" key={key}>
-                    <input type="checkbox" id={type.name} name="moodType" value={type.name} onClick={() => this.selectMoodTypes(type.name)} defaultChecked={this.props.type === type.name} />
+                    <input
+                        type="checkbox"
+                        id={type.name}
+                        name="moodType"
+                        value={type.name}
+                        onClick={() => this.selectMoodTypes(type.name)}
+                        defaultChecked={this.props.moodTypes.includes(type.name)} />
                     <label htmlFor={type.name}>{type.name}</label>
                 </li>
             )

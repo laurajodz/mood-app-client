@@ -12,6 +12,12 @@ export const addMoodTypes = moodTypes => ({
     moodTypes
 });
 
+export const REMOVE_MOOD_TYPES = 'REMOVE_MOOD_TYPES';
+export const removeMoodTypes = moodTypes => ({
+  type: REMOVE_MOOD_TYPES,
+  moodTypes
+});
+
 export const ADD_SLEEP = 'ADD_SLEEP';
 export const addSleep = sleep => ({
     type: ADD_SLEEP,
@@ -67,7 +73,13 @@ export const fetchEntriesError = error => ({
 
 export const addEntry = (entry) => dispatch => {
     dispatch(addEntryRequest());
-    fetch(`${API_BASE_URL}/entries`)
+    fetch(`${API_BASE_URL}/entries`, {
+        method: 'post',
+        body: JSON.stringify(entry),
+        headers:{
+            "Content-type": 'application/json'
+        }
+    })
         .then(res => res.json())
         .then(entry => {
             dispatch(addEntrySuccess(entry));
