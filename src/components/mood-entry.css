@@ -16,12 +16,7 @@ h1 {
   margin: 0;
 }
 
-.moods {
-  list-style: none;
-  padding: 20px;
-}
-
-.moodTypeItem {
+.moods, .moodTypeItem {
   list-style: none;
   padding: 20px;
 }
@@ -66,7 +61,7 @@ i#green.fa.fa-fw.fa-circle {color: hsl(120, 75%, 35%);}
 
 @media screen and (min-width: 600px) {
   .card {
-    margin: 10px 80px;
+    margin: 20px 80px;
   }
   h1 {
     font-size: 2em;
@@ -78,6 +73,15 @@ i#green.fa.fa-fw.fa-circle {color: hsl(120, 75%, 35%);}
 
 @media screen and (min-width: 900px) {
   .card {
-    margin: 10px 200px;
+    margin: 20px 200px;
+  }
+  .choices, .types {
+    margin-left: 50px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .card {
+    margin: 20px 300px;
   }
 }
