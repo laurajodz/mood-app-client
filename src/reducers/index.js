@@ -152,6 +152,15 @@ export const entryReducer = (state=initialState, action) => {
                 moodTypes: [...state.newEntry.moodTypes, action.moodTypes]
             }
         })
+    } else if (action.type === actions.REMOVE_MOOD_TYPES) {
+        return Object.assign({}, state, {
+          newEntry: {
+              ...state.newEntry,
+              moodTypes: state.newEntry.moodTypes.filter(moodType => {
+                 return moodType !== action.moodTypes
+              })
+          }
+        });
     } else if (action.type === actions.ADD_SLEEP) {
         return Object.assign({}, state, {
             newEntry: {
@@ -194,6 +203,15 @@ export const entryReducer = (state=initialState, action) => {
             entries: [...state.entries, {
                 ...state.newEntry, date: Date.now()
             }],
+          newEntry: {
+            date: null,
+            mood: null,
+            moodTypes: [],
+            sleep: null,
+            eating: null,
+            exercise: null,
+            notes: null
+          },
             error: null
         })
     } else if (action.type === actions.ADD_ENTRY_ERROR) {

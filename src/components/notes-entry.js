@@ -10,13 +10,18 @@ export class NotesEntry extends Component{
         this.props.dispatch(addNotes(notes));
     }
 
+
     render() {
         return (
             <div className="notes">
 
                 <h1>Enter any notes for today. What is going on in your world?</h1>
 
-                <textarea autoFocus onChange={(event) => this.selectNotes(event.target.value)}>
+                <textarea
+                    autoFocus
+                    onChange={(event) => this.selectNotes(event.target.value)}
+                    defaultValue={this.props.notes}
+                >
                 </textarea>
 
             </div>

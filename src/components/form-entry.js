@@ -1,5 +1,5 @@
-import React from 'react';
-
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import MoodEntry from './mood-entry';
 import SleepEntry from './sleep-entry';
 import EatingEntry from './eating-entry';
@@ -12,40 +12,64 @@ import StepZilla from 'react-stepzilla';
 
 import './form-entry.css';
 import './stepzilla.css';
+import {addEntry} from "../actions";
 
-export default function FormEntry(props) {
+export class FormEntry extends Component{
 
-    const steps = [
-        {name: 'Mood', component: <MoodEntry />},
-        {name: 'Sleep', component: <SleepEntry />},
-        {name: 'Eating', component: <EatingEntry />},
-        {name: 'Exercise', component: <ExerciseEntry />},
-        {name: 'Notes', component: <NotesEntry />},
-        {name: 'Review', component: <ReviewEntry/>},
-        {name: 'Done!', component: <Done />}
-    ]
+  saveEntry(step){
+    if(step === 6) {
+      this.props.dispatch(addEntry(this.props.newEntry));
+    }
+  }
 
-    var today = new Date().toDateString();
 
-    return (
+   render() {
+     const steps = [
+       {name: 'Mood', component: <MoodEntry/>},
+       {name: 'Sleep', component: <SleepEntry/>},
+       {name: 'Eating', component: <EatingEntry/>},
+       {name: 'Exercise', component: <ExerciseEntry/>},
+       {name: 'Notes', component: <NotesEntry/>},
+       {name: 'Review', component: <ReviewEntry/>},
+       {name: 'Done!', component: <Done/>}
+     ]
 
-        <section className="form-entry">
+     var today = new Date().toDateString();
 
-            <section className="logoForm">
-                Mood Today
-            </section>
 
-            <section>
-                <h1>Daily Entry for</h1>
-                <h2>{today}</h2>
-            </section>
+     return (
 
-            <section className='step-progress'>
-                <StepZilla steps={steps} prevBtnOnLastStep={false} nextTextOnFinalActionStep={"Save Entry"}/>
-            </section>
+         <section className="form-entry">
 
-        </section>
+           <section className="logoForm">
+             Mood Today
+           </section>
 
-    );
+           <section>
+             <h1>Daily Entry for</h1>
+             <h2>{today}</h2>
+           </section>
+
+           <section className='step-progress'>
+             <StepZilla
+                 steps={steps}
+                 prevBtnOnLastStep={false}
+                 nextTextOnFinalActionStep={"Save Entry"}
+                 onStepChange={(step) => this.saveEntry(step)}
+             />
+           </section>
+
+         </section>
+
+     );
+   }
 
 }
+
+
+const mapStateToProps = state => ({
+   newEntry: state.entry.newEntry
+});
+
+export default connect(mapStateToProps)(FormEntry);
+

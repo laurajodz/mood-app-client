@@ -4,10 +4,15 @@ import {connect} from 'react-redux';
 import {VictoryBar, VictoryChart, VictoryLine, VictoryAxis, VictoryTheme} from 'victory';
 import {Link} from 'react-router-dom';
 import moment from 'moment';
+import { fetchEntries } from '../actions';
 
 import './dashboard.css';
 
 export class Dashboard extends Component{
+
+    componentWillMount(){
+      this.props.dispatch(fetchEntries());
+    }
 
     render() {
 
