@@ -1,6 +1,7 @@
 .return-button {
   text-decoration: none;
   color: black;
+  cursor: default;
   padding: 10px;
   margin: 35px 10px;
   border: 1px solid black;

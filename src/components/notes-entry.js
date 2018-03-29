@@ -10,7 +10,6 @@ export class NotesEntry extends Component{
         this.props.dispatch(addNotes(notes));
     }
 
-
     render() {
         return (
             <div className="notes">

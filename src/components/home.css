@@ -12,32 +12,49 @@
 .homeLogo {
   font-family: 'Libre Baskerville', serif;
   float: left;
-  margin: 30px 10px;
-  font-size: 2.5em;
+  margin: 20px 10px;
+  font-size: 2em;
 }
 
 .subtitle {
   font-size: .5em;
+  float: left;
 }
 
 .homeLogin {
   float: right;
   text-decoration: none;
   color: black;
-  padding: 10px;
-  margin: 35px 10px;
+  cursor: default;
+  padding: 5px;
+  margin: 10px 10px;
   border: 1px solid black;
   border-radius: 10px;
+  font-size: .5em;
 }
 
 .homeBody {
   margin-top: 80px;
-  padding-top: 80px;
+  padding-top: 40px;
   max-width: 100%;
 }
 
-.about {
+.about1 {
+  margin-top: 20px;
+}
+
+.orange {
+  color: #eca87f;
+  font-weight: bold;
+}
+
+.about2 {
+  margin-top: 10px;
   font-size: .5em;
+}
+
+.italic {
+  font-style: italic;
 }
 
 .section1 {
@@ -45,43 +62,15 @@
   background-color: #0088D9;
   color: white;
   text-align: center;
-  /* height: 100%; */
 }
 
-.section2 {
+.section2, .section3, .section4, .section5 {
   padding: 20px;
-  /* background-color: #145ADD; */
-  /* color: white; */
   text-align: center;
-  /* height: 100%; */
-}
-
-.section3 {
-  padding: 20px;
-  /* background-color: #292DE1; */
-  /* color: white; */
-  text-align: center;
-  /* height: 100%; */
-}
-
-.section4 {
-  padding: 20px;
-  /* background-color: #3E00E5; */
-  /* color: white; */
-  text-align: center;
-  /* height: 100%; */
-}
-
-.section5 {
-  padding: 20px;
-  /* background-color: white; */
-  text-align: center;
-  /* height: 100%; */
 }
 
 .section6 {
   padding: 20px;
-  /* background-color: white; */
 }
 
 .sectionHeader {

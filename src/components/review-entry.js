@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {addEntry} from '../actions';
 
 import './review-entry.css';
 
@@ -89,7 +88,7 @@ export class ReviewEntry extends Component{
         return (
             <div className="review">
 
-                <h1>Your entry:</h1>
+                <h1>Review your entry:</h1>
 
                 <h2 className="box">
                     <img src={ require('../images/happy.png')} alt="Happy Face" />
@@ -115,12 +114,6 @@ export class ReviewEntry extends Component{
                 <h2 className="box">Notes <br/>
                     {notesDescription}
                 </h2>
-
-                <button
-                    className="save-button" onClick={() => this.props.dispatch(addEntry())}
-                >
-                    Save Entry
-                </button>
 
                 <p className="icons">Icons made by <a href="https://www.flaticon.com/authors/freepik" className="icons" target="_blank" rel="noopener noreferrer">Freepik</a>, <a href="http://www.baianat.com/" className="icons" target="_blank" rel="noopener noreferrer">Baianet</a>, and Cursor Creative from <a href="http://www.flaticon.com" className="icons" target="_blank" rel="noopener noreferrer">www.flaticon.com</a></p>
 

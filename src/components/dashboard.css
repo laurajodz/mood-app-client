@@ -12,7 +12,7 @@
 }
 .start-entry-link {
     padding: 15px 25px;
-    cursor: pointer;
+    cursor: default;
     outline: none;
     border: none;
     border-radius: 25px;

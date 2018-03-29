@@ -11,7 +11,7 @@ import './dashboard.css';
 export class Dashboard extends Component{
 
     componentWillMount(){
-      this.props.dispatch(fetchEntries());
+        this.props.dispatch(fetchEntries());
     }
 
     render() {
@@ -55,7 +55,7 @@ export class Dashboard extends Component{
                         <VictoryLine
                         style={{
                           tickLabels: { angle: -50 },
-                          data: { stroke: "blue"}
+                          data: { stroke: "#3E00E5"}
                         }}
                         data={this.props.entries}
                         x={day => moment(day.date).format('MMM D')}

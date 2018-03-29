@@ -17,24 +17,24 @@ export function Home(props) {
 
             <ul className="homeHeader">
                 <li><Link to="/login" className="homeLogin">Log in</Link></li>
-                <li><p className="homeLogo">Mood Today<span className="subtitle"><br/> Your Mood Tracking App</span></p></li>
+                <li><p className="homeLogo">MOOD TODAY<br/><span className="subtitle">Your Mood Tracking App</span></p></li>
             </ul>
 
             <section className="homeBody">
 
                 <section className="section1">
                     <ul className="sectionHeader">
-                        <li>Mood Today is on a mission to make sense of our changing moods</li>
-                        <li className="about">If your goal is to better understand your mood patterns,
-                        Mood Today provides an easy way to record and track moods -- as well as environmental
-                        factors (sleep, eating, and exercise) -- to help you on your path to mood management</li>
-                        <li className="sectionContent">Record Your Moods <br/>
+                        <li className="about1"><span className="orange">Mood Today</span> is on a mission to help <br/> make sense of our mood patterns</li>
+                        <li className="about2">If your goal is to better understand your mood patterns,
+                        Mood Today provides an easy way to record and track moods  --  as well as other
+                        factors such as <span className="italic">sleep, eating, and exercise</span>  --  to help you on your <span className="orange">path to mood management</span></li>
+                        <li className="sectionContent">RECORD YOUR MOODS <br/>
                             <i className="fa fa-pencil-square-o fa-3x" id="pencil"></i>
                         </li>
-                        <li className="sectionContent">Look For Patterns <br/>
+                        <li className="sectionContent">LOOK FOR PATTERNS <br/>
                             <i className="fa fa-history fa-3x" id="history"></i>
                         </li>
-                        <li className="sectionContent">Gain Insights <br/>
+                        <li className="sectionContent">GAIN INSIGHTS <br/>
                             <i className="fa fa-bar-chart fa-3x" id="history"></i>
                         </li>
                     </ul>
@@ -47,13 +47,13 @@ export function Home(props) {
                             <img src={ require('../images/happy.png')} alt="Happy Face" />
                             <img src={ require('../images/ok.png')} alt="OK Face" />
                             <img src={ require('../images/sad.png')} alt="Sad Face" />
-                            <p>mood</p>
+                            <p>MOOD</p>
                             <img src={ require('../images/sleep.png')} alt="Sleep icon" />
-                            <p>the quality of your sleep</p>
+                            <p>QUALITY OF YOUR SLEEP</p>
                             <img src={ require('../images/eating.png')} alt="Eating icon" />
-                            <p>how healthy you ate</p>
+                            <p>HOW HEALTHY YOU ATE</p>
                             <img src={ require('../images/exercise.png')} alt="Exercise icon" />
-                            <p>if you got some exercise or not</p>
+                            <p>IF YOU EXERCISED</p>
                         </div>
                     </div>
                 </section>
@@ -81,7 +81,7 @@ export function Home(props) {
                 <section className="section5">
                     <ul className="sectionHeader">Privacy
                         <li className="sectionContent">
-                        Your info is yours. Your data is only accessible via your secure login<br/>
+                        <strong>Your info is yours.</strong> Your data is only accessible via your secure login<br/>
                         <img src={ require('../images/padlock.png')} alt="Lock" />
                         </li>
                     </ul>

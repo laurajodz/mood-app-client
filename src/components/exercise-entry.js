@@ -17,7 +17,7 @@ export class ExerciseEntry extends Component{
                 <li className="exercises" key={key}>
                       <input type="radio" id={exercise.id} className="hide"
                              name="exercise" value={exercise.value} onClick={() => this.selectExercise(exercise.value)} defaultChecked={this.props.exercise === exercise.value} />
-                      <label htmlFor={exercise.id}><i className="fa fa-fw fa-circle" id={exercise.colour}></i>{exercise.value}</label>
+                      <label htmlFor={exercise.id}><i className="fa fa-fw fa-circle"></i>{exercise.value}</label>
                 </li>
             )
         });
