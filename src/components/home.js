@@ -28,15 +28,6 @@ export function Home(props) {
                         <li className="about2">If your goal is to better understand your mood patterns,
                         Mood Today provides an easy way to record and track moods  --  as well as other
                         factors such as <span className="italic">sleep, eating, and exercise</span>  --  to help you on your <span className="orange">path to mood management</span></li>
-                        <li className="sectionContent">RECORD YOUR MOODS <br/>
-                            <i className="fa fa-pencil-square-o fa-3x" id="pencil"></i>
-                        </li>
-                        <li className="sectionContent">LOOK FOR PATTERNS <br/>
-                            <i className="fa fa-history fa-3x" id="history"></i>
-                        </li>
-                        <li className="sectionContent">GAIN INSIGHTS <br/>
-                            <i className="fa fa-bar-chart fa-3x" id="history"></i>
-                        </li>
                     </ul>
                 </section>
 
@@ -54,6 +45,8 @@ export function Home(props) {
                             <p>HOW HEALTHY YOU ATE</p>
                             <img src={ require('../images/exercise.png')} alt="Exercise icon" />
                             <p>IF YOU EXERCISED</p>
+                            <img src={ require('../images/notes.png')} alt="Notes icon" />
+                            <p>NOTES ABOUT YOUR DAY</p>
                         </div>
                     </div>
                 </section>
@@ -63,7 +56,7 @@ export function Home(props) {
                         <li className="sectionContent">
                         Access your mood history<br/>
                         Review your previous mood entries<br/>
-                        <img src={ require('../images/history.png')} alt="History" />
+                        <img src={ require('../images/historyIphoneSmall.png')} alt="History" />
                         </li>
                     </ul>
                 </section>
@@ -73,7 +66,7 @@ export function Home(props) {
                         <li className="sectionContent">
                         Examine your mood records via charts and graphs<br/>
                         If patterns in your data emerge, perhaps a greater understanding of your moods is in reach<br/>
-                        <img src={ require('../images/analytics.png')} alt="Analytics" />
+                        <img src={ require('../images/dashboard.png')} alt="Analytics" />
                         </li>
                     </ul>
                 </section>

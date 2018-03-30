@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import DashboardHeader from './dashboard-header';
 import {connect} from 'react-redux';
-import {VictoryBar, VictoryChart, VictoryLine, VictoryAxis, VictoryTheme, VictoryGroup} from 'victory';
+import {VictoryBar, VictoryChart, VictoryLine, VictoryAxis, VictoryTheme, VictoryGroup, VictoryLegend, VictoryZoomContainer, VictoryVoronoiContainer} from 'victory';
 import {Link} from 'react-router-dom';
 import moment from 'moment';
 import { fetchEntries } from '../actions';
@@ -39,32 +39,32 @@ export class Dashboard extends Component{
                 <section>
                     <h1>Analytics</h1>
 
-                    <h2>Mood Rating Over Time</h2>
+                    <p>Mood Rating Over Time</p>
 
                     <VictoryChart
                         theme={VictoryTheme.material}
                         domainPadding={20}
                         width={1000} height={200}
                         animate={{ duration: 4000 }}
+                        containerComponent={<VictoryZoomContainer/>}
                     >
                         <VictoryAxis
-                            tickValues={[1, 2, 3, 4, 5]}
+                            style={{ tickLabels: { angle: -40} }}
+                            sortKey='date'
                         />
                         <VictoryAxis dependentAxis
                             tickValues={[1, 2, 3, 4, 5]}
+                            tickFormat={["Bad", "Meh", "Okay", "Good", "Great"]}
                         />
                         <VictoryLine
-                            style={{
-                              tickLabels: { angle: -50 },
-                              data: { stroke: "#3E00E5"}
-                            }}
+                            style={{ data: { stroke: "#3E00E5"} }}
                             data={this.props.entries}
                             x={day => moment(day.date).format('MMM D')}
                             y='mood'
                         />
                     </VictoryChart>
 
-                    <h2>Average Sleep Quality per Mood</h2>
+                    <p>Average Sleep Quality & Healthy Eating Quality per Mood</p>
 
                     <VictoryChart
                         theme={VictoryTheme.material}
@@ -72,8 +72,25 @@ export class Dashboard extends Component{
                         width={600} height={200}
                         animate={{ duration: 4000 }}
                     >
+                        <VictoryLegend x={400} y={25}
+                            orientation="horizontal"
+                            data={[
+                              { name: "Sleep", symbol: { fill: "chartreuse" } },
+                              { name: "Healthy Eating", symbol: { fill: "orange" } }
+                            ]}
+                        />
+                        <VictoryAxis
+                            tickValues={[1, 2, 3, 4, 5]}
+                            tickFormat={["Bad", "Meh", "Okay", "Good", "Great"]}
+                        />
+                        <VictoryAxis
+                            dependentAxis
+                            tickValues={[1, 2, 3, 4, 5]}
+                            tickFormat={["Bad", "Meh", "Okay", "Good", "Great"]}
+                        />
                         <VictoryGroup
                             offset={20}
+                            style={{ data: { width: 16 } }}
                             colorScale={["chartreuse", "orange"]}
                         >
                             <VictoryBar
@@ -87,6 +104,40 @@ export class Dashboard extends Component{
                                 y='eating'
                             />
                         </VictoryGroup>
+                    </VictoryChart>
+
+                    <p>Average Mood Based on Sleep Quality</p>
+
+                    <VictoryChart
+                        theme={VictoryTheme.material}
+                        domainPadding={20}
+                        width={600} height={200}
+                        animate={{ duration: 4000 }}
+                        containerComponent={
+                            <VictoryVoronoiContainer/>
+                        }
+                    >
+                        <VictoryLegend x={470} y={35}
+                            orientation="horizontal"
+                            data={[
+                              { name: "Sleep", symbol: { fill: "chartreuse" } },
+                            ]}
+                        />
+                        <VictoryAxis
+                            tickValues={[1, 2, 3, 4, 5]}
+                            tickFormat={["Bad", "Meh", "Okay", "Good", "Great"]}
+                        />
+                        <VictoryAxis
+                            dependentAxis
+                            tickValues={[1, 2, 3, 4, 5]}
+                            tickFormat={["Bad", "Meh", "Okay", "Good", "Great"]}
+                        />
+                            <VictoryBar
+                                data={this.props.entries}
+                                x='sleep'
+                                y='mood'
+                                style={{ data: { fill: "chartreuse", width: 16 }  }}
+                            />
                     </VictoryChart>
 
                 </section>
