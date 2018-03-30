@@ -8,7 +8,7 @@ export class Protected extends Component {
     if(this.props.user) {
       return (<div>{this.props.render(this.props.user)}</div>);
     }else{
-      return <Redirect to="/login"/>
+      return <Redirect to="/"/>
     }
   }
 

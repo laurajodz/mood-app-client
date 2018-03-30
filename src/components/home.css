@@ -31,6 +31,7 @@
   border: 1px solid black;
   border-radius: 10px;
   font-size: .5em;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 .homeBody {
@@ -115,4 +116,19 @@ i#linked.fa.fa-linkedin-square {
   font-size: .25em;
   text-decoration: none;
   color: black;
+}
+
+@media screen and (min-width: 630px) {
+  .homeLogin {
+    padding: 10px;
+    font-size: 1em;
+  }
+}
+
+@media screen and (min-width: 910px) {
+
+}
+
+@media screen and (min-width: 1350px) {
+
 }

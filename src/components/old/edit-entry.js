@@ -1,16 +1,14 @@
 import React from 'react';
-// import './edit-day-data.css';
+// import './edit-entry.css';
 
 import {Link} from 'react-router-dom';
+import {editEntry} from '../actions/index';
 
 export default function EditDayData(props) {
 
-    const day = props.day;
-    // const mood = props.mood;
-    // const sleep = props.sleep;
-    // const eating = props.eating;
-    // const exercise = props.exercise;
-    // const notes = props.notes;
+      editEntry(props){
+          this.props.dispatch(editEntry(props));
+      }
 
     return (
 
@@ -88,7 +86,7 @@ export default function EditDayData(props) {
               id="updateButton"
               className="button"
             >
-                <Link to="/calendar-day">Update</Link>  {/*call to the put api and back to calendar day*/}
+                <onClick={() => this.editedEntry(this.props)}
             </button>
 
         </form>

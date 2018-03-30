@@ -5,6 +5,10 @@ import './review-entry.css';
 
 export class ReviewEntry extends Component{
 
+    componentDidMount() {
+        window.scrollTo(0, 0)
+    }
+
     render() {
 
         let moodDescriptionValue = this.props.newEntry.mood;
@@ -88,7 +92,7 @@ export class ReviewEntry extends Component{
         return (
             <div className="review">
 
-                <h1>Review your entry:</h1>
+                <h1>Review your entry</h1>
 
                 <h2 className="box">
                     <img src={ require('../images/happy.png')} alt="Happy Face" />

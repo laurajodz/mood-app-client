@@ -1,10 +1,23 @@
+.add-entry-card {
+  padding: 30px;
+}
+
+.blue {
+  color: #007cc5;
+  font-weight: bold;
+}
+
+.notesMargin {
+  margin-bottom: 30px;
+}
+
 .edit-entry-link {
   text-decoration: none;
   color: black;
   background-color: white;
   cursor: default;
   padding: 10px;
-  margin: 35px 10px;
   border: 1px solid black;
   border-radius: 10px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }

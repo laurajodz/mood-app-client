@@ -10,6 +10,14 @@ const initialState = {
         exercise: null,
         notes: null
     },
+    editedEntry: {
+        mood: null,
+        moodTypes: [],
+        sleep: null,
+        eating: null,
+        exercise: null,
+        notes: null
+    },
     entries: [],
     error: null,
     moods: [
@@ -179,6 +187,19 @@ export const entryReducer = (state=initialState, action) => {
             newEntry: {
                 ...state.newEntry, notes: action.notes}
         })
+    } else if (action.type === actions.FETCH_ENTRY_REQUEST) {
+        return Object.assign({}, state, {
+            error: null
+        })
+    } else if (action.type === actions.FETCH_ENTRY_SUCCESS) {
+        return Object.assign({}, state, {
+            entries: action.entry,
+            error: null
+        })
+    } else if (action.type === actions.FETCH_ENTRY_ERROR) {
+        return Object.assign({}, state, {
+            error: action.error
+        })
     } else if (action.type === actions.FETCH_ENTRIES_REQUEST) {
         return Object.assign({}, state, {
             error: null
@@ -199,7 +220,7 @@ export const entryReducer = (state=initialState, action) => {
     } else if (action.type === actions.ADD_ENTRY_SUCCESS) {
         return Object.assign({}, state, {
             entries: [...state.entries, {
-                ...state.newEntry, date: Date.now()
+                ...state.newEntry
             }],
             newEntry: {
               date: null,
@@ -223,7 +244,7 @@ export const entryReducer = (state=initialState, action) => {
     } else if (action.type === actions.EDIT_ENTRY_SUCCESS) {
         return Object.assign({}, state, {
             entries: [...state.entries, {
-                ...state.newEntry, date: Date.now()
+                ...state.editedEntry
             }],
             error: null
         })

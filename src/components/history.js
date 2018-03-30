@@ -1,9 +1,7 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
-
-import {connect} from 'react-redux';
-// import AddEntryCard from './add-entry-card';
 import HistoryHeader from './history-header';
+import {connect} from 'react-redux';
+import AddEntryCard from './add-entry-card';
 import {fetchEntries} from '../actions';
 
 import './history.css';
@@ -18,19 +16,7 @@ export class History extends Component{
 
         const entries = this.props.entries.map((entry, index) => (
             <li className="entry" key={index}>
-                <p>Date: {this.props.date}</p>
-                <p>Mood: {this.props.mood} out of 5</p>
-                <p>Description: {this.props.moodTypes}</p>
-                <p>Sleep: {this.props.sleep} out of 5</p>
-                <p>Healthy Eating: {this.props.eating} out of 5</p>
-                <p>Exercise: {this.props.exercise}</p>
-                <p>Notes: {this.props.notes}</p>
-                <Link to="/form-entry"
-                    className="edit-entry-link"
-                    onClick={() => this.editThisEntry(this.props)}
-                >
-                    edit
-                </Link>
+                <AddEntryCard index={index} {...entry} />
             </li>
         ));
 

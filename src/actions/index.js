@@ -42,6 +42,35 @@ export const addNotes = notes => ({
     notes
 });
 
+export const fetchEntry = () => dispatch => {
+    dispatch(fetchEntryRequest());
+    fetch(`${API_BASE_URL}/entries/:id`)
+        .then(res => res.json())
+        .then(entry => {
+            dispatch(fetchEntrySuccess(entry));
+        })
+        .catch(error => {
+            dispatch(fetchEntryError(error));
+        });
+};
+
+export const FETCH_ENTRY_REQUEST = 'FETCH_ENTRY_REQUEST';
+export const fetchEntryRequest = () => ({
+    type: FETCH_ENTRY_REQUEST
+});
+
+export const FETCH_ENTRY_SUCCESS = 'FETCH_ENTRY_SUCCESS';
+export const fetchEntrySuccess = entry => ({
+    type: FETCH_ENTRY_SUCCESS,
+    entry
+});
+
+export const FETCH_ENTRY_ERROR = 'FETCH_ENTRY_ERROR';
+export const fetchEntryError = error => ({
+    type: FETCH_ENTRY_ERROR,
+    error
+});
+
 export const fetchEntries = () => dispatch => {
     dispatch(fetchEntriesRequest());
     fetch(`${API_BASE_URL}/entries`)

@@ -20,6 +20,7 @@
     "react-stepzilla": "^4.7.0",
     "react-test-renderer": "^16.2.0",
     "react-vis": "^1.9.2",
+    "react-x-editable": "0.0.9-beta",
     "redux": "^3.7.2",
     "redux-form": "^7.3.0",
     "redux-thunk": "^2.2.0",
@@ -35,6 +36,7 @@
   },
   "devDependencies": {
     "enzyme": "^3.3.0",
-    "enzyme-adapter-react-16": "^1.1.1"
+    "enzyme-adapter-react-16": "^1.1.1",
+    "riek": "^1.1.0"
   }
 }
