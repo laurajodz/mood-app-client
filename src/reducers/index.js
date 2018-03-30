@@ -10,14 +10,6 @@ const initialState = {
         exercise: null,
         notes: null
     },
-    editedEntry: {
-        mood: null,
-        moodTypes: [],
-        sleep: null,
-        eating: null,
-        exercise: null,
-        notes: null
-    },
     entries: [],
     error: null,
     moods: [
