@@ -4,6 +4,7 @@ import {History} from './history';
 
 describe('<History />', () => {
     it('Renders without crashing', () => {
-        shallow(<History />);
+        const dispatch = jest.fn();
+        shallow(<History entries={[]} dispatch={dispatch}/>);
     });
 });
