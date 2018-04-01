@@ -12,9 +12,14 @@ export class Dashboard extends Component{
 
     componentWillMount() {
         this.props.dispatch(fetchEntries());
+
+
     }
 
     render() {
+
+
+
 
         return (
 
@@ -27,7 +32,7 @@ export class Dashboard extends Component{
                 <h1>MY DASHBOARD</h1>
 
                 <section className="hello">
-                    Welcome, {this.props.user.username}
+                    Welcome, {this.props.user.firstName}
                 </section>
 
                 <section className="start">
@@ -50,6 +55,7 @@ export class Dashboard extends Component{
                     >
                         <VictoryAxis
                             style={{ tickLabels: { angle: -40} }}
+                            sortOrder='descending'
                             sortKey='date'
                         />
                         <VictoryAxis dependentAxis

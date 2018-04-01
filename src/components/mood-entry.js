@@ -12,9 +12,9 @@ export class MoodEntry extends Component{
 
     selectMoodTypes(moodType){
       if(!this.props.moodTypes.includes(moodType)) {
-        this.props.dispatch(addMoodTypes(moodType));
+          this.props.dispatch(addMoodTypes(moodType));
       } else {
-        this.props.dispatch(removeMoodTypes(moodType));
+          this.props.dispatch(removeMoodTypes(moodType));
       }
     }
 

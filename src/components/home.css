@@ -40,7 +40,9 @@
 }
 
 .about1 {
-  margin-top: 20px;
+  letter-spacing: .05em;
+  margin-top: 40px;
+  margin-bottom: 80px;
 }
 
 .orange {
@@ -49,8 +51,15 @@
 }
 
 .about2 {
-  margin-top: 10px;
-  font-size: .5em;
+  font-size: 20px;
+  letter-spacing: .1em;
+}
+
+.about3 {
+  font-size: 18px;
+  letter-spacing: .05em;
+  margin-top: 80px;
+  margin-bottom: 40px;
 }
 
 .italic {
@@ -101,12 +110,12 @@
   color: black;
 }
 
-i#git.fa.fa-github-square {
+#git {
   margin-right: 10px;
   color: #3E00E5;
 }
 
-i#linked.fa.fa-linkedin-square {
+#linked {
   color: #3E00E5;
 }
 
@@ -121,13 +130,22 @@ i#linked.fa.fa-linkedin-square {
     padding: 10px;
     font-size: 1em;
   }
-
+  .about3 {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
 }
 
 @media screen and (min-width: 910px) {
-
+  .about3 {
+    padding-left: 150px;
+    padding-right: 150px;
+  }
 }
 
 @media screen and (min-width: 1350px) {
-
+  .about3 {
+    padding-left: 300px;
+    padding-right: 300px;
+  }
 }

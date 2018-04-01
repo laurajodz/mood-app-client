@@ -7,3 +7,32 @@
   margin-top: 10px;
   margin-bottom: 50px;
 }
+
+.temp {
+  border: 1px solid black;
+  text-align: center;
+  font-size: 12px;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+@media screen and (min-width: 630px) {
+  .temp {
+    margin-left: 200px;
+    margin-right: 200px;
+  }
+}
+
+@media screen and (min-width: 910px) {
+  .temp {
+    margin-left: 300px;
+    margin-right: 300px;
+  }
+}
+
+@media screen and (min-width: 1350px) {
+  .temp {
+    margin-left: 400px;
+    margin-right: 400px;
+  }
+}

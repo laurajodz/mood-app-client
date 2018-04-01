@@ -54,7 +54,10 @@ export class Login extends Component{
                 <button className="loginButton" disabled={this.props.pristine || this.props.submitting}>
                     Log in
                 </button>
-                <p><img src={ require('../images/sticky.png')} alt="Login Credentials" /></p>
+                <section className="temp">
+                    <p>DEMO USERNAME: demo</p>
+                    <p>DEMO PASSWORD: Thinkful2018</p>
+                </section>
             </form>
         );
     }

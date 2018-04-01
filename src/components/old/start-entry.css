@@ -1,0 +1,26 @@
+.start-entry {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.start-entry-link {
+    padding: 15px 25px;
+    cursor: default;
+    outline: none;
+    border: 1px solid #a4d3f0;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 25px;
+    text-decoration: none;
+    color: #d95100;
+    font-size: 1em;
+    background-color: #e6f3fb;
+}
+
+.start-entry-link:hover {
+    background-color: #a4d3f0;
+}
+
+@media screen and (min-width: 600px) {
+.start-entry-link  {
+    font-size: 2em;
+  }
+}

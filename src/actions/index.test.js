@@ -6,7 +6,17 @@ import {
     REMOVE_MOOD_TYPES,
     removeMoodTypes,
     ADD_SLEEP,
-    addSleep
+    addSleep,
+    ADD_EATING,
+    addEating,
+    ADD_EXERCISE,
+    addExercise,
+    ADD_NOTES,
+    addNotes,
+    fetchEntry,
+    fetchEntries,
+    addEntry,
+    editEntry
 } from './index';
 
 describe('ADD_MOOD', () => {
