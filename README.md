@@ -2,6 +2,12 @@ MOOD TODAY
 
 https://laughing-snyder-8c7a23.netlify.com/
 
+
+
+
+
+### MOOD TODAY is a mood-tracking app. Every day you can rate your mood, along with other factors such as sleep, healthy eating, and exercise, to build up a database of your mood data over time.
+
 ![Home](screenshots/1home.png)
 
 
@@ -13,20 +19,7 @@ https://laughing-snyder-8c7a23.netlify.com/
 
 
 
-### MOOD TODAY is a mood-tracking app. Every day you can rate your mood, along with other factors such as sleep, healthy eating, and exercise, to build up ### a database of your mood data over time.
 
-![Home](screenshots/2home.png)
-
-
-
-
-
-
-
-
-
-
-### You can then review your mood history as well as see charts and graphs that can help you analyze your data, look for patterns, and gain insights.
 ### A user's data can only be accessed via secure login
 
 ![Home](screenshots/3home.png)
@@ -118,7 +111,7 @@ https://laughing-snyder-8c7a23.netlify.com/
 
 
 
-### There is a History page where the user can view all of their entries.
+### There is a History page where the user can view their mood history
 
 ![History](screenshots/10history.png)
 
@@ -131,7 +124,7 @@ https://laughing-snyder-8c7a23.netlify.com/
 
 
 
-### Finally, there is a Dashboard page where the user can view charts and graphs based on their accumulated data.
+### And there is a Dashboard page where the user can view charts and graphs of their accumulated data, and can use these to help analyze the data, look for patterns, and gain insights
 
 ![Dashboard](screenshots/11dashboard.png)
 

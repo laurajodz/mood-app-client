@@ -14,51 +14,82 @@ export class Dashboard extends Component{
         this.props.dispatch(fetchEntries());
     }
 
+    sleepAverages(){
+      // group by sleep
+        const sleepGroup = this.props.entries
+            .filter(entry => entry.sleep)
+            .reduce((acc, curr)=>{
+                if(acc[curr.sleep]){
+                    acc[curr.sleep].push(curr);
+              }else{
+                    acc[curr.sleep] = [curr]
+              }
+              return acc;
+            }, {});
+
+            console.log(sleepGroup);
+
+        const mood = Object.keys(sleepGroup)
+            .map(key => {
+                const moods = sleepGroup[key]
+                    .filter(entry => entry.mood);
+                const moodAverage = moods
+                    .reduce((acc, curr)=>curr.mood + acc, 0)/moods.length;
+                return {
+                      sleep: key,
+                      mood: moodAverage
+                }
+            });
+        return {mood};
+    }
+
 
     averages(){
       // group by mood
-      const groups = this.props.entries
-          .filter(entry => entry.mood)
-          .reduce((acc, curr)=>{
-            if(acc[curr.mood]){
-              acc[curr.mood].push(curr);
-            }else{
-              acc[curr.mood] = [curr]
-            }
-            return acc;
-          }, {});
+        const groups = this.props.entries
+            .filter(entry => entry.mood)
+            .reduce((acc, curr)=>{
+                if(acc[curr.mood]){
+                    acc[curr.mood].push(curr);
+                }else{
+                    acc[curr.mood] = [curr]
+                }
+                return acc;
+            }, {});
 
-      const sleep = Object.keys(groups)
-          .map(key => {
-            const sleeps = groups[key]
-                .filter(entry => entry.sleep);
-            const sleepAverage = sleeps
-                .reduce((acc, curr)=>curr.sleep + acc, 0)/sleeps.length;
-            return {
-              mood: key,
-              sleep: sleepAverage
-            }
-      });
+        const sleep = Object.keys(groups)
+            .map(key => {
+                const sleeps = groups[key]
+                    .filter(entry => entry.sleep);
+                const sleepAverage = sleeps
+                    .reduce((acc, curr)=>curr.sleep + acc, 0)/sleeps.length;
+                return {
+                    mood: key,
+                    sleep: sleepAverage
+                }
+            });
 
-      const eating = Object.keys(groups)
-          .map(key => {
-            const eatings = groups[key]
-                .filter(entry => entry.eating);
-            const eatingAverage = eatings
-                .reduce((acc, curr)=>curr.eating + acc, 0)/eatings.length;
-            return {
-              mood: key,
-              eating: eatingAverage
-            }
-      });
+        const eating = Object.keys(groups)
+            .map(key => {
+                const eatings = groups[key]
+                    .filter(entry => entry.eating);
+                const eatingAverage = eatings
+                    .reduce((acc, curr)=>curr.eating + acc, 0)/eatings.length;
+                return {
+                  mood: key,
+                  eating: eatingAverage
+                }
+            });
 
-      return {sleep, eating};
+        return {sleep, eating};
     }
 
 
     render() {
 
         const { sleep, eating } = this.averages();
+
+        const { mood } = this.sleepAverages();
 
         return (
 
@@ -162,7 +193,7 @@ export class Dashboard extends Component{
                         <VictoryLegend x={470} y={35}
                             orientation="horizontal"
                             data={[
-                              { name: "Sleep", symbol: { fill: "chartreuse" } },
+                              { name: "Mood", symbol: { fill: "#3E00E5" } },
                             ]}
                         />
                         <VictoryAxis
@@ -175,10 +206,10 @@ export class Dashboard extends Component{
                             tickFormat={["Bad", "Meh", "Okay", "Good", "Great"]}
                         />
                             <VictoryBar
-                                data={sleep}
+                                data={mood}
                                 x='sleep'
                                 y='mood'
-                                style={{ data: { fill: "chartreuse", width: 16 }  }}
+                                style={{ data: { fill: "#3E00E5", width: 16 }  }}
                             />
                     </VictoryChart>
 
