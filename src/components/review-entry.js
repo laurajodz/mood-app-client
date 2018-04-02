@@ -99,7 +99,6 @@ export class ReviewEntry extends Component{
                     <img src={ require('../images/ok.png')} alt="OK Face" />
                     <img src={ require('../images/sad.png')} alt="Sad Face" />
                     <p>{moodDescription}</p>
-                    <p> - - - - - - </p>
                     <p>Your Descriptions:</p>
                     <p>{moodTypesDescription}</p>
                 </h2>

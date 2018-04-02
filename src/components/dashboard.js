@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import DashboardHeader from './dashboard-header';
+import StartEntry from './start-entry';
 import {connect} from 'react-redux';
-import {VictoryBar, VictoryChart, VictoryLine, VictoryAxis, VictoryTheme, VictoryGroup, VictoryLegend, VictoryZoomContainer, VictoryVoronoiContainer} from 'victory';
-import {Link} from 'react-router-dom';
+import {VictoryBar, VictoryChart, VictoryLine, VictoryAxis, VictoryTheme, VictoryGroup, VictoryLegend, VictoryVoronoiContainer} from 'victory';
 import moment from 'moment';
 import { fetchEntries } from '../actions';
 
@@ -12,14 +12,9 @@ export class Dashboard extends Component{
 
     componentWillMount() {
         this.props.dispatch(fetchEntries());
-
-
     }
 
     render() {
-
-
-
 
         return (
 
@@ -36,9 +31,7 @@ export class Dashboard extends Component{
                 </section>
 
                 <section className="start">
-                    <p className="start-entry">
-                        <Link to="/form-entry" className="start-entry-link">Enter Mood for Today</Link>
-                    </p>
+                    <StartEntry />
                 </section>
 
                 <section>
@@ -51,7 +44,6 @@ export class Dashboard extends Component{
                         domainPadding={20}
                         width={1000} height={200}
                         animate={{ duration: 4000 }}
-                        containerComponent={<VictoryZoomContainer/>}
                     >
                         <VictoryAxis
                             style={{ tickLabels: { angle: -40} }}

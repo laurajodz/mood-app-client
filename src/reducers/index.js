@@ -1,6 +1,7 @@
 import * as actions from '../actions';
 
 const initialState = {
+    isHidden: true,
     newEntry: {
         date: null,
         mood: null,
