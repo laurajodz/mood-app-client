@@ -14,7 +14,51 @@ export class Dashboard extends Component{
         this.props.dispatch(fetchEntries());
     }
 
+
+    averages(){
+      // group by mood
+      const groups = this.props.entries
+          .filter(entry => entry.mood)
+          .reduce((acc, curr)=>{
+            if(acc[curr.mood]){
+              acc[curr.mood].push(curr);
+            }else{
+              acc[curr.mood] = [curr]
+            }
+            return acc;
+          }, {});
+
+      const sleep = Object.keys(groups)
+          .map(key => {
+            const sleeps = groups[key]
+                .filter(entry => entry.sleep);
+            const sleepAverage = sleeps
+                .reduce((acc, curr)=>curr.sleep + acc, 0)/sleeps.length;
+            return {
+              mood: key,
+              sleep: sleepAverage
+            }
+      });
+
+      const eating = Object.keys(groups)
+          .map(key => {
+            const eatings = groups[key]
+                .filter(entry => entry.eating);
+            const eatingAverage = eatings
+                .reduce((acc, curr)=>curr.eating + acc, 0)/eatings.length;
+            return {
+              mood: key,
+              eating: eatingAverage
+            }
+      });
+
+      return {sleep, eating};
+    }
+
+
     render() {
+
+        const { sleep, eating } = this.averages();
 
         return (
 
@@ -92,12 +136,12 @@ export class Dashboard extends Component{
                             colorScale={["chartreuse", "orange"]}
                         >
                             <VictoryBar
-                                data={this.props.entries}
+                                data={sleep}
                                 x='mood'
                                 y='sleep'
                             />
                             <VictoryBar
-                                data={this.props.entries}
+                                data={eating}
                                 x='mood'
                                 y='eating'
                             />
@@ -131,7 +175,7 @@ export class Dashboard extends Component{
                             tickFormat={["Bad", "Meh", "Okay", "Good", "Great"]}
                         />
                             <VictoryBar
-                                data={this.props.entries}
+                                data={sleep}
                                 x='sleep'
                                 y='mood'
                                 style={{ data: { fill: "chartreuse", width: 16 }  }}
