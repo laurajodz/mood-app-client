@@ -40,12 +40,6 @@ input[type="radio"]:checked + .fa-circle:before, input[type="radio"]:checked + l
   content: "\f111";
 }
 
-i#red.fa.fa-fw.fa-circle {color: hsl(0, 75%, 50%);}
-i#orange.fa.fa-fw.fa-circle {color: hsl(33, 100%, 50%);}
-i#yellow.fa.fa-fw.fa-circle {color: hsl(60, 100%, 50%);}
-i#chartreuse.fa.fa-fw.fa-circle {color: hsl(90, 100%, 50%);}
-i#green.fa.fa-fw.fa-circle {color: hsl(120, 75%, 35%);}
-
 @media screen and (min-width: 630px) {
   .card {
     margin: 20px 80px;

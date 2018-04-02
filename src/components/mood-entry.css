@@ -45,7 +45,7 @@ input[type="checkbox"]  {
   font-size: 30px;
 }
 
-input[type="radio"] + .fa-circle:before, input[type="radio"] + label > .fa-circle:before {
+input[type="radio"] + .far-fa-circle:before, input[type="radio"] + label > .far-fa-circle:before {
   content: "\f1db";
 }
 
@@ -53,11 +53,11 @@ input[type="radio"]:checked + .fa-circle:before, input[type="radio"]:checked + l
   content: "\f111";
 }
 
-i#red.fa.fa-fw.fa-circle {color: hsl(0, 75%, 50%);}
-i#orange.fa.fa-fw.fa-circle {color: hsl(33, 100%, 50%);}
-i#yellow.fa.fa-fw.fa-circle {color: hsl(60, 100%, 50%);}
-i#chartreuse.fa.fa-fw.fa-circle {color: hsl(90, 100%, 50%);}
-i#green.fa.fa-fw.fa-circle {color: hsl(120, 75%, 35%);}
+#red {color: hsl(0, 75%, 50%);}
+#orange {color: hsl(33, 100%, 50%);}
+#yellow {color: hsl(60, 100%, 50%);}
+#chartreuse {color: hsl(90, 100%, 50%);}
+#green {color: hsl(120, 75%, 35%);}
 
 @media screen and (min-width: 630px) {
   .card {

@@ -26,9 +26,9 @@ export function Home(props) {
                     <ul className="sectionHeader">
                         <li className="about1"><span className="orange">Mood Today</span> is on a mission to help <br/> make sense of our mood patterns</li>
                         <li className="about2">RECORD YOUR MOODS</li>
-                        <li><i className="far fa-arrow-alt-circle-down"></i></li>
+                        <img src={ require('../images/arrow.png')} alt="Down arrow" />
                         <li className="about2">LOOK FOR PATTERNS</li>
-                        <li><i className="far fa-arrow-alt-circle-down"></i></li>
+                        <img src={ require('../images/arrow.png')} alt="Down arrow" />
                         <li className="about2">GAIN INSIGHTS</li>
                         <li className="about3">Many things in life are not under our control, yet they can have great effects on our daily mood. However, maybe there is something we COULD do to influence our mood, like making <span className="orange">a small lifestyle change</span>. For some of us it could be as simple as eating better or getting more sleep. But which change could have THE MOST impact? Mood Today has everything you need to get started on your path to <span className="orange">understanding your moods</span> and the relationship between your mood and your daily habits.</li>
                     </ul>
@@ -93,9 +93,9 @@ export function Home(props) {
 
                 <section className="homeFooter">
                     Copyright 2018, <a href="http://www.laurajodz.com" className="port" target="_blank" rel="noopener noreferrer">Laura Jodz</a><br/>
-                    <a href="https://github.com/laurajodz" target="_blank" rel="noopener noreferrer"><i className="fab fa-github" id="git"></i></a>
-                    <a href="https://www.linkedin.com/in/laurajodz" target="_blank" rel="noopener noreferrer"><i className="fab fa-linkedin-in" id="linked"></i></a>
-                    <p className="icons">Icons made by <a href="https://www.flaticon.com/authors/freepik" className="icons" target="_blank" rel="noopener noreferrer">Freepik</a>, <a href="http://www.baianat.com/" className="icons" target="_blank" rel="noopener noreferrer">Baianet</a>, Gregor Cresnar, and Cursor Creative from <a href="http://www.flaticon.com" className="icons" target="_blank" rel="noopener noreferrer">www.flaticon.com</a></p>
+                    <a href="https://github.com/laurajodz" target="_blank" rel="noopener noreferrer"><i className="fa fa-github-square" id="git"></i></a>
+                    <a href="https://www.linkedin.com/in/laurajodz" target="_blank" rel="noopener noreferrer"><i className="fa fa-linkedin-square" id="linked"></i></a>
+                    <p className="icons">Icons made by <a href="https://www.flaticon.com/authors/freepik" className="icons" target="_blank" rel="noopener noreferrer">Freepik</a>, <a href="http://www.baianat.com/" className="icons" target="_blank" rel="noopener noreferrer">Baianet</a>, Gregor Cresnar, Dave Gandy, and Cursor Creative from <a href="http://www.flaticon.com" className="icons" target="_blank" rel="noopener noreferrer">www.flaticon.com</a></p>
                 </section>
 
             </section>

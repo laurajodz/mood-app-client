@@ -55,7 +55,7 @@ export class Dashboard extends Component{
                     >
                         <VictoryAxis
                             style={{ tickLabels: { angle: -40} }}
-                            sortOrder='descending'
+                            sortOrder='ascending'
                             sortKey='date'
                         />
                         <VictoryAxis dependentAxis
