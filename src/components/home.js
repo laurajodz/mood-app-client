@@ -59,7 +59,7 @@ export function Home(props) {
                         <li className="sectionContent">
                         Access your mood history<br/>
                         Review your previous mood entries<br/>
-                        <img src={ require('../images/historyIphoneSmall.png')} alt="History" />
+                        <img src={ require('../images/historyIphoneSmall.png')} alt="History" className="screenshot" />
                         </li>
                     </ul>
                 </section>
@@ -69,7 +69,7 @@ export function Home(props) {
                         <li className="sectionContent">
                         Examine your mood records via charts and graphs<br/>
                         If patterns in your data emerge, perhaps a greater understanding of your moods is in reach<br/>
-                        <img src={ require('../images/dashboard.png')} alt="Analytics" />
+                        <img src={ require('../images/dashboard.png')} alt="Analytics" className="screenshot" />
                         </li>
                     </ul>
                 </section>
@@ -78,7 +78,7 @@ export function Home(props) {
                     <ul className="sectionHeader">Privacy
                         <li className="sectionContent">
                         <strong>Your info is yours.</strong> Your data is only accessible via your secure login<br/>
-                        <img src={ require('../images/padlock.png')} alt="Lock" />
+                        <img src={ require('../images/padlock.png')} alt="Lock" className="screenshot" />
                         </li>
                     </ul>
                 </section>

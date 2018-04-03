@@ -29,36 +29,44 @@ export class Login extends Component{
             );
         }
         return (
-            <form
-                className="login"
-                onSubmit={this.props.handleSubmit(values =>
-                    this.onSubmit(values)
-                )}>
-                {error}
-                <label htmlFor="username">Username</label>
-                <Field
-                    component={Input}
-                    type="text"
-                    name="username"
-                    id="username"
-                    validate={[required, nonEmpty]}
-                />
-                <label htmlFor="password">Password</label>
-                <Field
-                    component={Input}
-                    type="password"
-                    name="password"
-                    id="password"
-                    validate={[required, nonEmpty]}
-                />
-                <button className="loginButton" disabled={this.props.pristine || this.props.submitting}>
-                    Log in
-                </button>
-                <section className="temp">
-                    <p>DEMO USERNAME: demo</p>
-                    <p>DEMO PASSWORD: Thinkful2018</p>
+
+            <div className="login-form">
+
+                <section className="logoForm">
+                    Mood Today
                 </section>
-            </form>
+
+                <form
+                    className="login"
+                    onSubmit={this.props.handleSubmit(values =>
+                        this.onSubmit(values)
+                    )}>
+                    {error}
+                    <label htmlFor="username">Username</label>
+                    <Field
+                        component={Input}
+                        type="text"
+                        name="username"
+                        id="username"
+                        validate={[required, nonEmpty]}
+                    />
+                    <label htmlFor="password">Password</label>
+                    <Field
+                        component={Input}
+                        type="password"
+                        name="password"
+                        id="password"
+                        validate={[required, nonEmpty]}
+                    />
+                    <button className="loginButton" disabled={this.props.pristine || this.props.submitting}>
+                        Log in
+                    </button>
+                    <section className="temp">
+                        <p>DEMO USERNAME: demo</p>
+                        <p>DEMO PASSWORD: Thinkful2018</p>
+                    </section>
+                </form>
+            </div>
         );
     }
 }
