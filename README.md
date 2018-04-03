@@ -1,7 +1,6 @@
 MOOD TODAY
 
-https://laughing-snyder-8c7a23.netlify.com/
-
+https://moodtoday.netlify.com/
 
 
 
